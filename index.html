@@ -68,6 +68,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-暑期培训第二天" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/暑期培训第二天/" class="article-date">
+  <time datetime="2017-07-11T09:21:07.000Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/11/暑期培训第二天/">暑期培训第二天</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、DOM &amp; BOM<br>HTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。<br>元素节点（如：</p><p>、<div>等各种标签），属性节点（如：href、src等），文本节点即标签所包含的文本内容。<br>监听器addEventListener(event,fn,boolen),移除监听器removeEventListener(event,fn,boolen)<br>【注意！移除时所有参数要一致！且事件名称不能带”on”】此方法不适用IE9以下。<br>IE9适用方法attachEvent(event,fn)【注意！事件名称要带”on”】<br>兼容写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if(object.addEventListener)&#123;</div><div class="line"> 		object.addEventListener();</div><div class="line">&#125;</div><div class="line">else&#123;</div><div class="line"> 		object.attachEvent();</div><div class="line">&#125;</div></pre></td></tr></table></figure></div></p>
+<p>2、window.onload = function(){} 为文档全部加载后再执行的函数，可以加匿名函数也可以加非匿名函数。但是不能以这种方式为事件绑定多个事件处理函数，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">window.onload = function a()&#123;&#125;;</div><div class="line">window.onload = function b()&#123;&#125;;</div></pre></td></tr></table></figure></p>
+<p>  但是可以用以下方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">	window.onload=function()&#123;</div><div class="line">  		function a()&#123;</div><div class="line">   			document.getElementById(&quot;bg&quot;).style.backgroundColor=&quot;#F90&quot;;</div><div class="line">  		&#125;</div><div class="line">  		function b()&#123;</div><div class="line">    		document.getElementById(&quot;bg&quot;).style.width=&quot;200px&quot;;</div><div class="line">  		&#125;</div><div class="line">```bash a();</div><div class="line">```bash b();</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<p>也可以用addEventListener为事件绑定多个事件处理函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">window.addEventListener(&quot;load&quot;,bg,false);</div><div class="line">window.addEventListener(&quot;load&quot;,changeW,false);</div><div class="line">function bg()&#123;</div><div class="line"> 		document.getElementById(&quot;bg&quot;).style.backgroundColor=&quot;#F90&quot;;</div><div class="line">&#125;</div><div class="line">function changeW()&#123;</div><div class="line"> 		document.getElementById(&quot;bg&quot;).style.width=&quot;200px&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3、CSS选择器<br>后代选择器(如：<figure class="highlight plain"><figcaption><span>p```指以div为父元素的p元素）</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">【注意！有关后代选择器有一个易被忽视的方面，即两个元素之间的层次间隔可以是无限的。</div><div class="line">例如，如果写作```ul em```，这个语法就会选择从 ul 元素继承的所有 em 元素，而不论 em 的嵌套层次多深。】</div><div class="line">因此，ul em 将会选择以下标记中的所有 em 元素：</div></pre></td></tr></table></figure></p>
+<p><ul><br>      <li>List item 1<br>        <ol><br>            <li>List item 1-1</li><br>            <li>List item 1-2</li><br>            <li>List item 1-3<br>                 <ol><br>                    <li>List item 1-3-1</li><br>                    <li>List item <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">					&lt;li&gt;List item 1-3-3&lt;/li&gt;</div><div class="line">      			&lt;/ol&gt;</div><div class="line">      		&lt;/li&gt;</div><div class="line">      		&lt;li&gt;List item 1-4&lt;/li&gt;</div><div class="line">    	&lt;/ol&gt;</div><div class="line">  	&lt;/li&gt;</div><div class="line">  	&lt;li&gt;List item 2&lt;/li&gt;</div><div class="line">  	&lt;li&gt;List item 3&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></li></ol></li></ol></li></ul></p>
+<p>3、sort方法排序<br>4、oninput实现实时监听输入框变化<br>5、几个原生函数<br>6、初步认识canvas画法</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj50lsg3i000484uhgnnh5yqc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-关于CLI的基本使用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/11/关于CLI的基本使用/" class="article-date">
@@ -97,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj50lb0kx0003h8uhql5vh58e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj50lsg3c000184uh8vycckh3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -134,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/text/" data-id="cj50lb0ks0001h8uh0elr1tzw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/text/" data-id="cj50lsg3h000384uhfi7gd2yr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -171,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj50lb0kj0000h8uh87anf6nz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj50lsg3f000284uh5ztsknmm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj50lb0kv0002h8uhmfue6506" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj50lsg37000084uhnuwo4bhs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,6 +297,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/07/11/暑期培训第二天/">暑期培训第二天</a>
+          </li>
         
           <li>
             <a href="/2017/07/11/关于CLI的基本使用/">关于CLI的基本使用</a>
