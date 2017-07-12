@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Canvas的语法及基本用法 | Myblog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="canvas 可直接在网页上绘制图形。 建立画布1&amp;lt;canvas id=&quot;myCanvas&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;canvas 要用于文档全部加载之后绘制，所以要放在 window.onload = function( ){ } 中。要获取 Canvas 中的 2D 环境，只需要通过 canvas 的 getContext()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Canvas的语法及基本用法">
+<meta property="og:url" content="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/index.html">
+<meta property="og:site_name" content="Myblog">
+<meta property="og:description" content="canvas 可直接在网页上绘制图形。 建立画布1&amp;lt;canvas id=&quot;myCanvas&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;canvas 要用于文档全部加载之后绘制，所以要放在 window.onload = function( ){ } 中。要获取 Canvas 中的 2D 环境，只需要通过 canvas 的 getContext()">
+<meta property="og:updated_time" content="2017-07-12T14:14:07.791Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Canvas的语法及基本用法">
+<meta name="twitter:description" content="canvas 可直接在网页上绘制图形。 建立画布1&amp;lt;canvas id=&quot;myCanvas&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;canvas 要用于文档全部加载之后绘制，所以要放在 window.onload = function( ){ } 中。要获取 Canvas 中的 2D 环境，只需要通过 canvas 的 getContext()">
+  
+    <link rel="alternate" href="/atom.xml" title="Myblog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Myblog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Canvas的语法及基本用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/12/Canvas的语法及基本用法/" class="article-date">
+  <time datetime="2017-07-12T13:46:25.000Z" itemprop="datePublished">2017-07-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Canvas的语法及基本用法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>canvas 可直接在网页上绘制图形。</strong></p>
+<h2>建立画布</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure><br><br>canvas 要用于文档全部加载之后绘制，所以要放在 window.onload = function( ){ } 中。<br><br>要获取 Canvas 中的 2D 环境，只需要通过 canvas 的 getContext() 方法即可，给这个方法传入一个 2d 的值。并且将这个环境赋予给一个变量。<br><br>例如：var ctx = canvas.getContext(‘2d’);<br><br><h2>坐标系统</h2><br>Web的坐标系统的原点是在屏幕（浏览器屏幕）的左上角。<br><br>同样的它有两个坐标轴，x轴（水平轴）和y轴（垂直轴）。两轴的交汇点（左上角）为坐标原点 (0,0) 。原点沿 x轴 向右是正值，原点沿 y轴 向下是正值。<br><br><h2>常见绘制函数</h2>
+
+<p>moveTo(x,y)：移动画笔到指定的坐标点 (x,y) ，该点就是新的子路径的起始点。该方法并不会从当前路径中清除任何子路径。</p>
+<p>lineTo(x,y)：使用直线连接当前端点和指定的坐标点(x,y)。</p>
+<p>stroke()：沿着绘制路径的坐标点顺序绘制直线。</p>
+<p>fill()：填充闭合图形。</p>
+<p>lineWidth 来改变绘制线段的粗细,默认值是 1.0 ，并且这个属性必须大于 0.0 。 (跟宽高一样，也没有单位)</p>
+<p>fillStyle 来改变填充样式。</p>
+<p>strokeStyle 来改变线段的颜色，该属性的值可以是一个表示 CSS颜色值 的字符串。如果你的绘制需求比较复杂，该属性的值还可以是一个 CanvasGradient 对象 或者 CanvasPattern 对象。</p>
+<p>CanvasGradient 接口表示描述渐变的 不透明对象 。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span> (<span class="params"></span>) </span>&#123; </div><div class="line"><span class="comment">// 创建一个表示线性颜色渐变的CanvasGradient对象， </span></div><div class="line"><span class="comment">// 并设置该对象的作用区域就是线段所在的区域 </span></div><div class="line">	<span class="keyword">var</span> canvasGradient = ctx.createLinearGradient(<span class="number">50</span>, <span class="number">50</span>, <span class="number">250</span>, <span class="number">50</span>);  <span class="comment">//在offset为0的位置(即起点位置)添加一个蓝色的渐变</span></div><div class="line">	canvasGradient.addColorStop(<span class="number">0</span>, <span class="string">"blue"</span>);  <span class="comment">//在offset为0.2的位置(线段左起20%的位置)添加一个绿色的渐变 </span></div><div class="line">	canvasGradient.addColorStop(<span class="number">0.2</span>, <span class="string">"green"</span>);  <span class="comment">//在offset为0的位置(即终点位置)添加一个红色的渐变 </span></div><div class="line">	canvasGradient.addColorStop(<span class="number">1</span>, <span class="string">"red"</span>);  <span class="comment">//将strokeStyle的属性值设为该CanvasGradient对象 </span></div><div class="line">	ctx.strokeStyle = canvasGradient; </div><div class="line">	ctx.lineWidth = <span class="number">10</span>; </div><div class="line">	ctx.moveTo(<span class="number">50</span>, <span class="number">10</span>); </div><div class="line">	ctx.lineTo(<span class="number">350</span>, <span class="number">100</span>); </div><div class="line">	ctx.stroke(); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>beginPath()：开始一个新的绘制路径。每次绘制新的路径之前记得调用该方法。它将重置内存中现有的路径。</p>
+<p>closePath()：如果当前的绘制路径是打开的，则关闭掉该绘制路径。此外，调用该方法时，它会尝试用直线边接当前端点与起始端点来关闭路径，但如果图形已经关闭（比如先调用stroke()）或者只有一个点，它会什么都不做。</p>
+<p>在Canvas中绘制路径，最好加上 beginPath() 和 closePath() 。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span> (<span class="params"></span>) </span>&#123; </div><div class="line">	ctx.strokeStyle = <span class="string">'#f36'</span>; </div><div class="line">	ctx.lineWidth = <span class="number">4</span>; </div><div class="line">	ctx.beginPath(); </div><div class="line">	ctx.moveTo(<span class="number">50</span>, <span class="number">10</span>); </div><div class="line">	ctx.lineTo(<span class="number">150</span>, <span class="number">10</span>); </div><div class="line">	ctx.lineTo(<span class="number">150</span>,<span class="number">200</span>); </div><div class="line">	ctx.lineTo(<span class="number">200</span>,<span class="number">200</span>); </div><div class="line">	ctx.lineTo(<span class="number">200</span>,<span class="number">150</span>); </div><div class="line">	ctx.stroke(); </div><div class="line">	ctx.closePath(); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>特别提醒：</strong> 在绘制图形路径时，一定要先调用 beginPath() 。</p>
+<p> beginPath() 方法将会清空内存中之前的绘制路径信息。如果不这样做，对于绘制单个图形可能没什么影响，但是在绘制多个图形时(例如上面示例的两条直线)</p>
+<p> ，将会导致路径绘制或者颜色填充等操作出现任何意料之外的结果。</p>
+<p>对于 closePath() 方法，初学者一定要稍加注意。在上面绘制折线的代码示例中，我们先调用了 stroke() ，再调用了 closePath() 。其实在调用 stroke() </p>
+<p>方法时，折线就已经绘制好了，当前的绘制路径也就被关闭掉了，所以再调用 closePath() 方法时，它就不会使用直线连接当前端点和起始端点(也就是说，这里的 closePath()</p>
+<p>是可有可无的，不过为了保持良好的习惯，还是建议写上)。如果我们交换一下 stroke() 和 closePath() 的调用顺序，则情况完全不一样了。由于 closePath()</p>
+<p>先调用，此时绘制路径并没有关闭，那么 closePath() 将会用直线连接当前端点和起始端点。</p>
+<h2>像素线</h2><br>如果在像素边界处绘制一条 1 像素宽的垂直线段，那么Canvas的绘图环境对象会试着将半个像素画在边界中线的右边，将另外半个像素画在边界中线的左边。<br><br>然而，在一个整像素的范围内绘制半个像素宽的线段是不可能的，所以左右两个方向上的半像素都被扩展为 1 个像素。<br><br><h2>canvas绘制简单图形</h2>
+
+<p>fillRect(x, y, width, height)：绘制一个填充的矩形</p>
+<p>strokeRect(x, y, width, height)：绘制一个矩形的边框</p>
+<p>clearRect(x, y, width, height)：清除指定矩形区域，让清除部分完全透明</p>
+<p>arc(x,y,r,startdeg,enddeg)：绘制圆 ( x, y 为圆心坐标, r 为圆弧半径 )</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj512jzqh00010suh4mssxsqt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/11/暑期培训第二天/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">暑期培训第二天</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/12/Canvas的语法及基本用法/">Canvas的语法及基本用法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/暑期培训第二天/">暑期培训第二天</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/11/关于CLI的基本使用/">关于CLI的基本使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/10/My-first-passage/">My first passage</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/10/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 yitianZheng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

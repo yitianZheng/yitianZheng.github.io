@@ -5,16 +5,16 @@
   
   <title>暑期培训第二天 | Myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DOM &amp;amp; BOMHTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boolen)">
+  <meta name="description" content="DOM &amp;amp; BOMHTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。 元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。 监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boole">
 <meta property="og:type" content="article">
 <meta property="og:title" content="暑期培训第二天">
 <meta property="og:url" content="http://yoursite.com/2017/07/11/暑期培训第二天/index.html">
 <meta property="og:site_name" content="Myblog">
-<meta property="og:description" content="DOM &amp;amp; BOMHTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boolen)">
-<meta property="og:updated_time" content="2017-07-12T07:02:18.009Z">
+<meta property="og:description" content="DOM &amp;amp; BOMHTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。 元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。 监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boole">
+<meta property="og:updated_time" content="2017-07-12T14:15:38.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="暑期培训第二天">
-<meta name="twitter:description" content="DOM &amp;amp; BOMHTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boolen)">
+<meta name="twitter:description" content="DOM &amp;amp; BOMHTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。 元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。 监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boole">
   
     <link rel="alternate" href="/atom.xml" title="Myblog" type="application/atom+xml">
   
@@ -89,18 +89,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><h2>DOM &amp; BOM</h2><br>HTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。<br>元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。<br>监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boolen)<br>【注意！移除时所有参数要一致！且事件名称不能带 <strong>“on”</strong> 】  此方法不适用IE9以下。<br>IE9适用方法: attachEvent (event, fn)  【注意！事件名称要带 <strong>“on”</strong> 】<br>兼容写法：<p></p>
+        <p></p><h2>DOM &amp; BOM</h2><br>HTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。<p></p>
+<p>元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。</p>
+<p>监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boolen)</p>
+<p>【注意！移除时所有参数要一致！且事件名称不能带 <strong>“on”</strong> 】  此方法不适用IE9以下。</p>
+<p>IE9适用方法: attachEvent (event, fn)  【注意！事件名称要带 <strong>“on”</strong> 】</p>
+<p>兼容写法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(object.addEventListener)&#123;</div><div class="line"> 		object.addEventListener();</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line"> 		object.attachEvent();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p></p><h2>window.onload函数</h2><br>window.onload = function(){} 为文档全部加载后再执行的函数，可以加匿名函数也可以加非匿名函数。但是不能以这种方式为事件绑定多个事件处理函数，例如：<p></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">window.onload = function a()&#123;&#125;;</div><div class="line">window.onload = function b()&#123;&#125;;</div></pre></td></tr></table></figure>
 <p>  但是可以用以下方式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> 		<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  			<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.backgroundColor=<span class="string">"#F90"</span>;</div><div class="line"> 		&#125;</div><div class="line"> 		<span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   		<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.width=<span class="string">"200px"</span>;</div><div class="line"> 		&#125;</div><div class="line">     a();</div><div class="line">     b();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>也可以用addEventListener为事件绑定多个事件处理函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>,bg,<span class="literal">false</span>);</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>,changeW,<span class="literal">false</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bg</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> 		<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.backgroundColor=<span class="string">"#F90"</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeW</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> 		<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.width=<span class="string">"200px"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p></p><h2>CSS选择器</h2><br><strong>后代选择器</strong>（如：div p 指以 div 为父元素的 p 元素）<br>【注意！有关后代选择器有一个易被忽视的方面，即两个元素之间的层次间隔可以是无限的。<br>例如，如果写作 ul em ，这个语法就会选择从 ul 元素继承的所有 em 元素，而不论 em 的嵌套层次多深。】<br>因此，ul em 将会选择以下标记中的所有 em 元素：<p></p>
+<p></p><h2>CSS选择器</h2><br><strong>后代选择器</strong>（如：div p 指以 div 为父元素的 p 元素）<p></p>
+<p>【注意！有关后代选择器有一个易被忽视的方面，即两个元素之间的层次间隔可以是无限的。</p>
+<p>例如，如果写作 ul em ，这个语法就会选择从 ul 元素继承的所有 em 元素，而不论 em 的嵌套层次多深。】</p>
+<p>因此，ul em 将会选择以下标记中的所有 em 元素：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1</div><div class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-3</div><div class="line">        <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">				  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-3-1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item ```bash<span class="tag">&lt;<span class="name">em</span>&gt;</span>1-3-2<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-3-3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><strong>子元素选择器</strong> (如： h1 &gt; strong 指作为 h1 元素子元素的所有 strong 元素 )<br>例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> &gt; <span class="selector-tag">strong</span> &#123;<span class="attribute">color</span>:red;&#125;</div></pre></td></tr></table></figure></p>
 <p>这个规则会把第一个 h1 下面的两个 strong 元素变为红色，但是第二个 h1 中的 strong 不受影响：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="name">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> <span class="tag">&lt;<span class="name">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> important.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="name">em</span>&gt;</span>really <span class="tag">&lt;<span class="name">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span> important.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p><strong>相邻兄弟选择器</strong> ( 紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器 )<br>例如：h1 + p 指选择紧接在 h1 元素后出现的段落，h1 和 p 元素拥有共同的父元素<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>在上面的片段中，div 元素中包含两个列表：一个无序列表，一个有序列表，每个列表都包含三个列表项。这两个列表是相邻兄弟，列表项本身也是相邻兄弟。不过，第一个列表中的列表项与第二个列表中的列表项不是相邻兄弟，因为这两组列表项不属于同一父元素（最多只能算堂兄弟）。</p>
+<p><strong>相邻兄弟选择器</strong> ( 紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器 )</p>
+<p>例如：h1 + p 指选择紧接在 h1 元素后出现的段落，h1 和 p 元素拥有共同的父元素<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在上面的片段中，div 元素中包含两个列表：一个无序列表，一个有序列表，每个列表都包含三个列表项。这两个列表是相邻兄弟，列表项本身也是相邻兄弟。不过，第一个列表中的列表项与</p>
+<p>第二个列表中的列表项不是相邻兄弟，因为这两组列表项不属于同一父元素（最多只能算堂兄弟）。</p>
 <p>请记住，用一个结合符只能选择两个相邻兄弟中的第二个元素。请看下面的选择器：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span> + <span class="selector-tag">li</span> &#123;<span class="attribute">font-weight</span>:bold;&#125;</div></pre></td></tr></table></figure></p>
 <p>上面这个选择器只会把列表中的第二个和第三个列表项变为粗体。第一个列表项不受影响。</p>
 <p></p><h2>sort方法排序</h2><br>参阅 <a><a href="http://www.webkaka.com/tutorial/js/2015/070314/" target="_blank" rel="external">http://www.webkaka.com/tutorial/js/2015/070314/</a></a><p></p>
@@ -111,7 +121,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj50m9rhy00042guhevrbfn69" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj512jzqx00050suh6pwlx9g7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -119,6 +129,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/07/12/Canvas的语法及基本用法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Canvas的语法及基本用法
+        
+      </div>
+    </a>
   
   
     <a href="/2017/07/11/关于CLI的基本使用/" id="article-nav-older" class="article-nav-link-wrap">
@@ -160,15 +179,15 @@
       <ul>
         
           <li>
+            <a href="/2017/07/12/Canvas的语法及基本用法/">Canvas的语法及基本用法</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/11/暑期培训第二天/">暑期培训第二天</a>
           </li>
         
           <li>
             <a href="/2017/07/11/关于CLI的基本使用/">关于CLI的基本使用</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/10/text/">text</a>
           </li>
         
           <li>

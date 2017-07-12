@@ -68,6 +68,71 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Canvas的语法及基本用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/12/Canvas的语法及基本用法/" class="article-date">
+  <time datetime="2017-07-12T13:46:25.000Z" itemprop="datePublished">2017-07-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/12/Canvas的语法及基本用法/">Canvas的语法及基本用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>canvas 可直接在网页上绘制图形。</strong></p>
+<h2>建立画布</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure><br><br>canvas 要用于文档全部加载之后绘制，所以要放在 window.onload = function( ){ } 中。<br><br>要获取 Canvas 中的 2D 环境，只需要通过 canvas 的 getContext() 方法即可，给这个方法传入一个 2d 的值。并且将这个环境赋予给一个变量。<br><br>例如：var ctx = canvas.getContext(‘2d’);<br><br><h2>坐标系统</h2><br>Web的坐标系统的原点是在屏幕（浏览器屏幕）的左上角。<br><br>同样的它有两个坐标轴，x轴（水平轴）和y轴（垂直轴）。两轴的交汇点（左上角）为坐标原点 (0,0) 。原点沿 x轴 向右是正值，原点沿 y轴 向下是正值。<br><br><h2>常见绘制函数</h2>
+
+<p>moveTo(x,y)：移动画笔到指定的坐标点 (x,y) ，该点就是新的子路径的起始点。该方法并不会从当前路径中清除任何子路径。</p>
+<p>lineTo(x,y)：使用直线连接当前端点和指定的坐标点(x,y)。</p>
+<p>stroke()：沿着绘制路径的坐标点顺序绘制直线。</p>
+<p>fill()：填充闭合图形。</p>
+<p>lineWidth 来改变绘制线段的粗细,默认值是 1.0 ，并且这个属性必须大于 0.0 。 (跟宽高一样，也没有单位)</p>
+<p>fillStyle 来改变填充样式。</p>
+<p>strokeStyle 来改变线段的颜色，该属性的值可以是一个表示 CSS颜色值 的字符串。如果你的绘制需求比较复杂，该属性的值还可以是一个 CanvasGradient 对象 或者 CanvasPattern 对象。</p>
+<p>CanvasGradient 接口表示描述渐变的 不透明对象 。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span> (<span class="params"></span>) </span>&#123; </div><div class="line"><span class="comment">// 创建一个表示线性颜色渐变的CanvasGradient对象， </span></div><div class="line"><span class="comment">// 并设置该对象的作用区域就是线段所在的区域 </span></div><div class="line">	<span class="keyword">var</span> canvasGradient = ctx.createLinearGradient(<span class="number">50</span>, <span class="number">50</span>, <span class="number">250</span>, <span class="number">50</span>);  <span class="comment">//在offset为0的位置(即起点位置)添加一个蓝色的渐变</span></div><div class="line">	canvasGradient.addColorStop(<span class="number">0</span>, <span class="string">"blue"</span>);  <span class="comment">//在offset为0.2的位置(线段左起20%的位置)添加一个绿色的渐变 </span></div><div class="line">	canvasGradient.addColorStop(<span class="number">0.2</span>, <span class="string">"green"</span>);  <span class="comment">//在offset为0的位置(即终点位置)添加一个红色的渐变 </span></div><div class="line">	canvasGradient.addColorStop(<span class="number">1</span>, <span class="string">"red"</span>);  <span class="comment">//将strokeStyle的属性值设为该CanvasGradient对象 </span></div><div class="line">	ctx.strokeStyle = canvasGradient; </div><div class="line">	ctx.lineWidth = <span class="number">10</span>; </div><div class="line">	ctx.moveTo(<span class="number">50</span>, <span class="number">10</span>); </div><div class="line">	ctx.lineTo(<span class="number">350</span>, <span class="number">100</span>); </div><div class="line">	ctx.stroke(); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>beginPath()：开始一个新的绘制路径。每次绘制新的路径之前记得调用该方法。它将重置内存中现有的路径。</p>
+<p>closePath()：如果当前的绘制路径是打开的，则关闭掉该绘制路径。此外，调用该方法时，它会尝试用直线边接当前端点与起始端点来关闭路径，但如果图形已经关闭（比如先调用stroke()）或者只有一个点，它会什么都不做。</p>
+<p>在Canvas中绘制路径，最好加上 beginPath() 和 closePath() 。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span> (<span class="params"></span>) </span>&#123; </div><div class="line">	ctx.strokeStyle = <span class="string">'#f36'</span>; </div><div class="line">	ctx.lineWidth = <span class="number">4</span>; </div><div class="line">	ctx.beginPath(); </div><div class="line">	ctx.moveTo(<span class="number">50</span>, <span class="number">10</span>); </div><div class="line">	ctx.lineTo(<span class="number">150</span>, <span class="number">10</span>); </div><div class="line">	ctx.lineTo(<span class="number">150</span>,<span class="number">200</span>); </div><div class="line">	ctx.lineTo(<span class="number">200</span>,<span class="number">200</span>); </div><div class="line">	ctx.lineTo(<span class="number">200</span>,<span class="number">150</span>); </div><div class="line">	ctx.stroke(); </div><div class="line">	ctx.closePath(); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>特别提醒：</strong> 在绘制图形路径时，一定要先调用 beginPath() 。</p>
+<p> beginPath() 方法将会清空内存中之前的绘制路径信息。如果不这样做，对于绘制单个图形可能没什么影响，但是在绘制多个图形时(例如上面示例的两条直线)</p>
+<p> ，将会导致路径绘制或者颜色填充等操作出现任何意料之外的结果。</p>
+<p>对于 closePath() 方法，初学者一定要稍加注意。在上面绘制折线的代码示例中，我们先调用了 stroke() ，再调用了 closePath() 。其实在调用 stroke() </p>
+<p>方法时，折线就已经绘制好了，当前的绘制路径也就被关闭掉了，所以再调用 closePath() 方法时，它就不会使用直线连接当前端点和起始端点(也就是说，这里的 closePath()</p>
+<p>是可有可无的，不过为了保持良好的习惯，还是建议写上)。如果我们交换一下 stroke() 和 closePath() 的调用顺序，则情况完全不一样了。由于 closePath()</p>
+<p>先调用，此时绘制路径并没有关闭，那么 closePath() 将会用直线连接当前端点和起始端点。</p>
+<h2>像素线</h2><br>如果在像素边界处绘制一条 1 像素宽的垂直线段，那么Canvas的绘图环境对象会试着将半个像素画在边界中线的右边，将另外半个像素画在边界中线的左边。<br><br>然而，在一个整像素的范围内绘制半个像素宽的线段是不可能的，所以左右两个方向上的半像素都被扩展为 1 个像素。<br><br><h2>canvas绘制简单图形</h2>
+
+<p>fillRect(x, y, width, height)：绘制一个填充的矩形</p>
+<p>strokeRect(x, y, width, height)：绘制一个矩形的边框</p>
+<p>clearRect(x, y, width, height)：清除指定矩形区域，让清除部分完全透明</p>
+<p>arc(x,y,r,startdeg,enddeg)：绘制圆 ( x, y 为圆心坐标, r 为圆弧半径 )</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj512jzqh00010suh4mssxsqt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-暑期培训第二天" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/11/暑期培训第二天/" class="article-date">
@@ -90,18 +155,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><h2>DOM &amp; BOM</h2><br>HTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。<br>元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。<br>监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boolen)<br>【注意！移除时所有参数要一致！且事件名称不能带 <strong>“on”</strong> 】  此方法不适用IE9以下。<br>IE9适用方法: attachEvent (event, fn)  【注意！事件名称要带 <strong>“on”</strong> 】<br>兼容写法：<p></p>
+        <p></p><h2>DOM &amp; BOM</h2><br>HTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。<p></p>
+<p>元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。</p>
+<p>监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boolen)</p>
+<p>【注意！移除时所有参数要一致！且事件名称不能带 <strong>“on”</strong> 】  此方法不适用IE9以下。</p>
+<p>IE9适用方法: attachEvent (event, fn)  【注意！事件名称要带 <strong>“on”</strong> 】</p>
+<p>兼容写法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(object.addEventListener)&#123;</div><div class="line"> 		object.addEventListener();</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line"> 		object.attachEvent();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p></p><h2>window.onload函数</h2><br>window.onload = function(){} 为文档全部加载后再执行的函数，可以加匿名函数也可以加非匿名函数。但是不能以这种方式为事件绑定多个事件处理函数，例如：<p></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">window.onload = function a()&#123;&#125;;</div><div class="line">window.onload = function b()&#123;&#125;;</div></pre></td></tr></table></figure>
 <p>  但是可以用以下方式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> 		<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  			<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.backgroundColor=<span class="string">"#F90"</span>;</div><div class="line"> 		&#125;</div><div class="line"> 		<span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   		<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.width=<span class="string">"200px"</span>;</div><div class="line"> 		&#125;</div><div class="line">     a();</div><div class="line">     b();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>也可以用addEventListener为事件绑定多个事件处理函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>,bg,<span class="literal">false</span>);</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>,changeW,<span class="literal">false</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bg</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> 		<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.backgroundColor=<span class="string">"#F90"</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeW</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> 		<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.width=<span class="string">"200px"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p></p><h2>CSS选择器</h2><br><strong>后代选择器</strong>（如：div p 指以 div 为父元素的 p 元素）<br>【注意！有关后代选择器有一个易被忽视的方面，即两个元素之间的层次间隔可以是无限的。<br>例如，如果写作 ul em ，这个语法就会选择从 ul 元素继承的所有 em 元素，而不论 em 的嵌套层次多深。】<br>因此，ul em 将会选择以下标记中的所有 em 元素：<p></p>
+<p></p><h2>CSS选择器</h2><br><strong>后代选择器</strong>（如：div p 指以 div 为父元素的 p 元素）<p></p>
+<p>【注意！有关后代选择器有一个易被忽视的方面，即两个元素之间的层次间隔可以是无限的。</p>
+<p>例如，如果写作 ul em ，这个语法就会选择从 ul 元素继承的所有 em 元素，而不论 em 的嵌套层次多深。】</p>
+<p>因此，ul em 将会选择以下标记中的所有 em 元素：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1</div><div class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-3</div><div class="line">        <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">				  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-3-1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item ```bash<span class="tag">&lt;<span class="name">em</span>&gt;</span>1-3-2<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-3-3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><strong>子元素选择器</strong> (如： h1 &gt; strong 指作为 h1 元素子元素的所有 strong 元素 )<br>例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> &gt; <span class="selector-tag">strong</span> &#123;<span class="attribute">color</span>:red;&#125;</div></pre></td></tr></table></figure></p>
 <p>这个规则会把第一个 h1 下面的两个 strong 元素变为红色，但是第二个 h1 中的 strong 不受影响：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="name">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> <span class="tag">&lt;<span class="name">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> important.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="name">em</span>&gt;</span>really <span class="tag">&lt;<span class="name">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span> important.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p><strong>相邻兄弟选择器</strong> ( 紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器 )<br>例如：h1 + p 指选择紧接在 h1 元素后出现的段落，h1 和 p 元素拥有共同的父元素<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>在上面的片段中，div 元素中包含两个列表：一个无序列表，一个有序列表，每个列表都包含三个列表项。这两个列表是相邻兄弟，列表项本身也是相邻兄弟。不过，第一个列表中的列表项与第二个列表中的列表项不是相邻兄弟，因为这两组列表项不属于同一父元素（最多只能算堂兄弟）。</p>
+<p><strong>相邻兄弟选择器</strong> ( 紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器 )</p>
+<p>例如：h1 + p 指选择紧接在 h1 元素后出现的段落，h1 和 p 元素拥有共同的父元素<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在上面的片段中，div 元素中包含两个列表：一个无序列表，一个有序列表，每个列表都包含三个列表项。这两个列表是相邻兄弟，列表项本身也是相邻兄弟。不过，第一个列表中的列表项与</p>
+<p>第二个列表中的列表项不是相邻兄弟，因为这两组列表项不属于同一父元素（最多只能算堂兄弟）。</p>
 <p>请记住，用一个结合符只能选择两个相邻兄弟中的第二个元素。请看下面的选择器：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span> + <span class="selector-tag">li</span> &#123;<span class="attribute">font-weight</span>:bold;&#125;</div></pre></td></tr></table></figure></p>
 <p>上面这个选择器只会把列表中的第二个和第三个列表项变为粗体。第一个列表项不受影响。</p>
 <p></p><h2>sort方法排序</h2><br>参阅 <a><a href="http://www.webkaka.com/tutorial/js/2015/070314/" target="_blank" rel="external">http://www.webkaka.com/tutorial/js/2015/070314/</a></a><p></p>
@@ -112,7 +187,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj50m9rhy00042guhevrbfn69" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj512jzqx00050suh6pwlx9g7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,44 +226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj50m9rhx00032guh19216p0x" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-text" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/10/text/" class="article-date">
-  <time datetime="2017-07-10T15:43:27.000Z" itemprop="datePublished">2017-07-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/text/">text</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是一个测试</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/text/" data-id="cj50m9rhv00022guho2l12b25" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj512jzqh00030suhbq6w64ab" class="article-share-link">Share</a>
       
       
     </footer>
@@ -225,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj50m9rhs00012guh5jtaivn6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj512jzqh00000suhm3d7ow03" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj50m9rhj00002guhn7sghagq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj512jzqh00020suhq77szy44" class="article-share-link">Share</a>
       
       
     </footer>
@@ -310,15 +348,15 @@
       <ul>
         
           <li>
+            <a href="/2017/07/12/Canvas的语法及基本用法/">Canvas的语法及基本用法</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/11/暑期培训第二天/">暑期培训第二天</a>
           </li>
         
           <li>
             <a href="/2017/07/11/关于CLI的基本使用/">关于CLI的基本使用</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/10/text/">text</a>
           </li>
         
           <li>
