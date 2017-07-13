@@ -68,6 +68,84 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Flexbox的属性及基本用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/13/Flexbox的属性及基本用法/" class="article-date">
+  <time datetime="2017-07-13T00:18:59.000Z" itemprop="datePublished">2017-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/13/Flexbox的属性及基本用法/">Flexbox的属性及基本用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>Flexbox的定义及适用范围</h2><br>Flexbox 即弹性盒子，应用时在 CSS 里写上 display : flex; <p></p>
+<p>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。</p>
+<p><ul><br>    <li>任何一个容器都能指定为 flex 布局</li><br>    <li>行内元素也能指定为 flex </li><br>    <li>webkit 内核的浏览器要加上 -webkit 前缀</li><br></ul><br><strong>注意：</strong>指定 flex 后，子元素的 float, clear, vertical-align 属性均失效。</p>
+<p></p><h2>容器的轴线</h2><br>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做 main start，结束位置叫做 main <p></p>
+<p>end；交叉轴的开始位置叫做 cross start，结束位置叫做 cross end。</p>
+<p>项目默认沿主轴排列。单个项目占据的主轴空间叫做 main size，占据的交叉轴空间叫做 cross size。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt=""></p>
+<p></p><h2>容器的属性</h2><p></p>
+<p><ul><br>    <li>flex-direction : 决定项目的排列方向</li><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure></ul></p>
+<p>（ row 为水平排列，column 为垂直排列 ）</p>
+<pre><code>&lt;li&gt;flex-wrap : 决定一行排不下时要不要换行&lt;/li&gt;
+</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>( nowrap 为不换行，wrap 为换行 )</p>
+<pre><code>&lt;li&gt;flex-flow : 是 flex-direction 属性和 flex-wrap 属性的简写形式，默认值为 row nowrap 。&lt;/li&gt;
+</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>&lt;li&gt;justify-content : 定义了项目在主轴上的对齐方式。&lt;/li&gt;
+</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt=""></p>
+<p>flex-start（默认值）：左对齐</p>
+<p>flex-end：右对齐</p>
+<p>center： 居中</p>
+<p>space-between：两端对齐，项目之间的间隔都相等。</p>
+<p>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍</p>
+<pre><code>&lt;li&gt;align-items : 定义项目在交叉轴上如何对齐。&lt;/li&gt;
+</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt=""></p>
+<p>flex-start：交叉轴的起点对齐。</p>
+<p>flex-end：交叉轴的终点对齐。</p>
+<p>center：交叉轴的中点对齐。</p>
+<p>baseline: 项目的第一行文字的基线对齐。</p>
+<p>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
+<pre><code>&lt;li&gt;align-content : 定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。&lt;/li&gt;
+</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt=""></p>
+<p>flex-start：与交叉轴的起点对齐。</p>
+<p>flex-end：与交叉轴的终点对齐。</p>
+<p>center：与交叉轴的中点对齐。</p>
+<p>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</p>
+<p>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</p>
+<p>stretch（默认值）：轴线占满整个交叉轴。<br></p>
+<p></p><h2>项目的属性</h2><br>order, flex-grow, flex-shrink, flex-basis, flex, align-self<p></p>
+<p>详情见 <a><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool</a></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/13/Flexbox的属性及基本用法/" data-id="cj51zhmi40002ikuh84epmr62" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Canvas的语法及基本用法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/12/Canvas的语法及基本用法/" class="article-date">
@@ -123,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj512jzqh00010suh4mssxsqt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj51zhmhv0000ikuhicxya1yp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -187,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj512jzqx00050suh6pwlx9g7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj51zhmi80003ikuhvrsmcuxg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -226,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj512jzqh00030suhbq6w64ab" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj51zhmi80004ikuhl9755chk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -263,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj512jzqh00000suhm3d7ow03" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj51zhmi10001ikuhogox4n9x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -308,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj512jzqh00020suhq77szy44" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj51zhmic0005ikuhs71w0zc9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,6 +426,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/13/Flexbox的属性及基本用法/">Flexbox的属性及基本用法</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/12/Canvas的语法及基本用法/">Canvas的语法及基本用法</a>
           </li>
         
@@ -361,10 +443,6 @@
         
           <li>
             <a href="/2017/07/10/My-first-passage/">My first passage</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/10/hello-world/">Hello World</a>
           </li>
         
       </ul>
