@@ -68,6 +68,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-bootstrap的基本语法及引用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/13/bootstrap的基本语法及引用/" class="article-date">
+  <time datetime="2017-07-13T15:01:00.000Z" itemprop="datePublished">2017-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/13/bootstrap的基本语法及引用/">bootstrap的基本语法及引用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>基本语法</h2><br>Bootstrap 使用到的某些 HTML 元素和 CSS 属性需要将页面设置为 HTML5 文档类型。在你项目中的每个页面都要参照下面的格式进行设置。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span></div><div class="line">  ...</div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure><p></p>
+<p>Bootstrap 是移动设备优先的。</p>
+<p>为了确保适当的绘制和触屏缩放，需要在 head 之中添加 viewport 元数据标签。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>在移动设备浏览器上，通过为视口（viewport）设置 meta 属性为 user-scalable = no 可以禁用其缩放（zooming）功能。这样禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上</p>
+<p>去更像原生应用的感觉。注意，这种方式我们并不推荐所有网站使用，还是要看你自己的情况而定！</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p></p><h2>引用</h2><p></p>
+<p><ul><br>    <li>引入下载好的 bootstrap 文件夹中的 css 文件</li><br>    <li>引入 Jquery 库，注意要比较新的版本</li><br>    <li>引入下载好的 bootstrap 文件夹中的 js 文件</li><br></ul><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"bootstrap/css/bootstrap.min.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"bootstrap/js/jquery-3.2.1.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"bootstrap/js/bootstrap.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p></p><h2>布局容器</h2><br>Bootstrap 需要为页面内容和栅格系统包裹一个 .container 容器。我们提供了两个作此用处的类。注意，由于 padding 等属性的原因，这两种 容器类不能互相嵌套。<p></p>
+<p>.container 类用于固定宽度并支持响应式布局的容器。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class="container"&gt;</div><div class="line">  ...</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>.container-fluid 类用于 100% 宽度，占据全部视口（viewport）的容器。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class="container-fluid"&gt;</div><div class="line">  ...</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p></p><h2>栅格系统</h2><br>Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多 <strong>12</strong> 列。<p></p>
+<p><ul></ul></p>
+<li>“行（row）”必须包含在 .container （固定宽度）或 .container-fluid （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。</li><br><li>通过“行（row）”在水平方向创建一组“列（column）”。</li><br><li>你的内容应当放置于“列（column）”内，并且，只有“列（column）”可以作为行（row）”的直接子元素。</li><br><li>类似 .row 和 .col-xs-4 这种预定义的类，可以用来快速创建栅格布局。Bootstrap 源码中定义的 mixin 也可以用来创建语义化的布局。</li><br><li>通过为“列（column）”设置 padding 属性，从而创建列与列之间的间隔（gutter）。通过为 .row 元素设置负值 margin 从而抵消掉为 .container 元素设置的 padding，也就间接为“行（row）”所包含的“列（column）”抵消掉了padding。</li><br><li>负值的 margin就是下面的示例为什么是向外突出的原因。在栅格列中的内容排成一行。</li><br><li>栅格系统中的列是通过指定1到12的值来表示其跨越的范围。例如，三个等宽的列可以使用三个 .col-xs-4 来创建。</li><br><li>如果一“行（row）”中包含了的“列（column）”大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。</li><br><li>栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-md-<em><br><br>栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-lg-</em> 不存在，<br><br>也影响大屏幕设备。</li>
+
+<p><img src="http://a1.qpic.cn/psb?/23001069-29a3-4060-b3f9-94be37b745c7/*ikwQ5.J2iDFIQ26aEikn.z8sZNFhzUHl9lrAkUtPks!/b/dHIAAAAAAAAA&amp;bo=IwToAQAAAAADAOs!&amp;rf=viewer_4" alt=""></p>
+<p>实例：从堆叠到水平排列<br>使用单一的一组 .col-md-* 栅格类，就可以创建一个基本的栅格系统，在手机和平板设备上一开始是堆叠在一起的（超小屏幕到小屏幕这一范围），</p>
+<p>在桌面（中等）屏幕设备上变为水平排列。所有列（column）必须放在  .row 内</p>
+<p><img src="http://a2.qpic.cn/psb?/23001069-29a3-4060-b3f9-94be37b745c7/4To*JOgeu9r.qdHLl8v9pNUVvVYV*F*l8UiFWfSrZU0!/b/dD8BAAAAAAAA&amp;bo=SQQhAQAAAAADB08!&amp;rf=viewer_4" alt=""><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-1"</span>&gt;</span>.col-md-1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-8"</span>&gt;</span>.col-md-8<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4"</span>&gt;</span>.col-md-4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span>.col-md-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-6"</span>&gt;</span>.col-md-6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>更多实例请参阅 <a><a href="http://v3.bootcss.com/css/#grid-intro" target="_blank" rel="external">http://v3.bootcss.com/css/#grid-intro</a></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/13/bootstrap的基本语法及引用/" data-id="cj52kg6fv00030wuhglgbvecw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Flexbox的属性及基本用法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/13/Flexbox的属性及基本用法/" class="article-date">
@@ -131,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/13/Flexbox的属性及基本用法/" data-id="cj520ga0b0001ukuh2xw0ij96" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/13/Flexbox的属性及基本用法/" data-id="cj52kg6fj00000wuhlpgyfl43" class="article-share-link">Share</a>
       
       
     </footer>
@@ -196,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj520ga0b0000ukuhkfum8x27" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj52kg6fr00010wuh3iwvpkas" class="article-share-link">Share</a>
       
       
     </footer>
@@ -260,7 +317,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj520ga0q0003ukuhgykw8rd9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj52kg6g300060wuhf0ymgrmi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -299,7 +356,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj520ga0q0004ukuh6dtxndep" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj52kg6fv00040wuhwgbcbzv9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -336,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj520ga0q0002ukuh5o3s5jb3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj52kg6fu00020wuhz2g3drou" class="article-share-link">Share</a>
       
       
     </footer>
@@ -381,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj520ga0q0005ukuh4cr3yxem" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj52kg6g000050wuhva2864nf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -421,6 +478,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/13/bootstrap的基本语法及引用/">bootstrap的基本语法及引用</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/13/Flexbox的属性及基本用法/">Flexbox的属性及基本用法</a>
           </li>
         
@@ -434,10 +495,6 @@
         
           <li>
             <a href="/2017/07/11/关于CLI的基本使用/">关于CLI的基本使用</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/10/My-first-passage/">My first passage</a>
           </li>
         
       </ul>
