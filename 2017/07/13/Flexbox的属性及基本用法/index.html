@@ -15,7 +15,7 @@
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png">
-<meta property="og:updated_time" content="2017-07-13T05:41:37.603Z">
+<meta property="og:updated_time" content="2017-07-13T05:46:41.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flexbox的属性及基本用法">
 <meta name="twitter:description" content="Flexbox的定义及适用范围Flexbox 即弹性盒子，应用时在 CSS 里写上 display : flex;  采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。     任何一个容器都能指定为 flex 布局    行内元素也能指定为 flex     w">
@@ -104,29 +104,24 @@
 <p></p><h2>容器的属性</h2><p></p>
 <p><ul><br>    <li>flex-direction : 决定项目的排列方向</li><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure></ul></p>
 <p>（ row 为水平排列，column 为垂直排列 ）</p>
-<pre><code>&lt;li&gt;flex-wrap : 决定一行排不下时要不要换行&lt;/li&gt;
-</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><li>flex-wrap : 决定一行排不下时要不要换行</li><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>( nowrap 为不换行，wrap 为换行 )</p>
-<pre><code>&lt;li&gt;flex-flow : 是 flex-direction 属性和 flex-wrap 属性的简写形式，默认值为 row nowrap 。&lt;/li&gt;
-</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>&lt;li&gt;justify-content : 定义了项目在主轴上的对齐方式。&lt;/li&gt;
-</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><li>flex-flow : 是 flex-direction 属性和 flex-wrap 属性的简写形式，默认值为 row nowrap 。</li><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><li>justify-content : 定义了项目在主轴上的对齐方式。</li><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt=""></p>
 <p>flex-start（默认值）：左对齐</p>
 <p>flex-end：右对齐</p>
 <p>center： 居中</p>
 <p>space-between：两端对齐，项目之间的间隔都相等。</p>
 <p>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍</p>
-<pre><code>&lt;li&gt;align-items : 定义项目在交叉轴上如何对齐。&lt;/li&gt;
-</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><li>align-items : 定义项目在交叉轴上如何对齐。</li><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt=""></p>
 <p>flex-start：交叉轴的起点对齐。</p>
 <p>flex-end：交叉轴的终点对齐。</p>
 <p>center：交叉轴的中点对齐。</p>
 <p>baseline: 项目的第一行文字的基线对齐。</p>
 <p>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
-<pre><code>&lt;li&gt;align-content : 定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。&lt;/li&gt;
-</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><li>align-content : 定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</li><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt=""></p>
 <p>flex-start：与交叉轴的起点对齐。</p>
 <p>flex-end：与交叉轴的终点对齐。</p>
@@ -140,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/13/Flexbox的属性及基本用法/" data-id="cj51zhmi40002ikuh84epmr62" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/13/Flexbox的属性及基本用法/" data-id="cj520ga0b0001ukuh2xw0ij96" class="article-share-link">Share</a>
       
       
     </footer>
