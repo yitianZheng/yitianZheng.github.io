@@ -68,6 +68,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-box-sizing的初步认识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/15/box-sizing的初步认识/" class="article-date">
+  <time datetime="2017-07-15T00:41:29.000Z" itemprop="datePublished">2017-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/15/box-sizing的初步认识/">box-sizing的初步认识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>盒子模型</h2><br>W3C 的标准 Box Model:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/*外盒尺寸计算（元素空间尺寸）*/</div><div class="line">Element空间高度 = content height + padding + border + margin</div><div class="line">Element 空间宽度 = content width + padding + border + margin</div><div class="line">/*内盒尺寸计算（元素大小）*/</div><div class="line">Element Height = content height + padding + border （Height为内容高度）</div><div class="line">Element Width = content width + padding + border （Width为内容宽度）</div></pre></td></tr></table></figure><p></p>
+<p>IE 传统 Box Model:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/*外盒尺寸计算（元素空间尺寸）*/</div><div class="line">Element空间高度 = content Height + margin (Height包含了元素内容宽度，边框宽度，内距宽度)</div><div class="line">Element空间宽度 = content Width + margin (Width包含了元素内容宽度、边框宽度、内距宽度)</div><div class="line">/*内盒尺寸计算（元素大小）*/</div><div class="line">Element Height = content Height(Height包含了元素内容宽度，边框宽度，内距宽度)</div><div class="line">Element Width = content Width(Width包含了元素内容宽度、边框宽度、内距宽度)</div></pre></td></tr></table></figure></p>
+<p></p><h2>语法</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">box-sizing ： content-box || border-box || inherit</div></pre></td></tr></table></figure><p></p>
+<p>说明：<br>1、content-box:此值为其默认值，其让元素维持 W3C 的标准 Box Model，也就是说元素的宽度/高度</p>
+<p>（width/height）等于元素边框宽度（border）加上元素内边距（padding）加上元素内容宽度/高度（content width/height）</p>
+<p>即：Element Width/Height = border + padding + content width/height </p>
+<p>2、border-box:此值让元素维持 IE 传统的 Box Model（IE6以下版本），也就是说元素的宽度/高度等于元素内容的宽度/高度。</p>
+<p>（从上面 Box Model 介绍可知，我们这里的 content width/height 包含了元素的 border,padding, 内容的 width/height</p>
+<p>【 此处的内容宽度/高度 = width/height-border-padding 】 ）。</p>
+<p><img src="http://www.w3cplus.com/sites/default/files/box-sizing.png" alt=""><br>box-sizing 现代浏览器都支持，但IE家族只有 IE8 版本以上才支持，虽然现代浏览器支持 box-sizing，但有些浏览器还是需要加上自己的前</p>
+<p>缀，Mozilla 需要加上-moz-，Webkit 内核需要加上-webkit-，Presto 内核-o-,IE8-ms-，所以 box-sizing 兼容浏览器时需要加上各自的前缀:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*Content box*/</span></div><div class="line">  <span class="selector-tag">Element</span> &#123;</div><div class="line">     <span class="attribute">-moz-box-sizing</span>: content-box;  <span class="comment">/*Firefox3.5+*/</span></div><div class="line">     <span class="attribute">-webkit-box-sizing</span>: content-box; <span class="comment">/*Safari3.2+*/</span></div><div class="line">     <span class="attribute">-o-box-sizing</span>: content-box; <span class="comment">/*Opera9.6*/</span></div><div class="line">     <span class="attribute">-ms-box-sizing</span>: content-box; <span class="comment">/*IE8*/</span></div><div class="line">     <span class="attribute">box-sizing</span>: content-box; <span class="comment">/*W3C标准(IE9+，Safari5.1+,Chrome10.0+,Opera10.6+都符合box-sizing的w3c标准语法)*/</span></div><div class="line">  &#125;</div><div class="line">        </div><div class="line">  <span class="comment">/*Border box*/</span></div><div class="line">  <span class="selector-tag">Element</span> &#123;</div><div class="line">     <span class="attribute">-moz-box-sizing</span>: border-box;  <span class="comment">/*Firefox3.5+*/</span></div><div class="line">     <span class="attribute">-webkit-box-sizing</span>: border-box; <span class="comment">/*Safari3.2+*/</span></div><div class="line">     <span class="attribute">-o-box-sizing</span>: border-box; <span class="comment">/*Opera9.6*/</span></div><div class="line">     <span class="attribute">-ms-box-sizing</span>: border-box; <span class="comment">/*IE8*/</span></div><div class="line">     <span class="attribute">box-sizing</span>: border-box; <span class="comment">/*W3C标准(IE9+，Safari5.1+,Chrome10.0+,Opera10.6+都符合box-sizing的w3c标准语法)*/</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p></p><h2>实例</h2><br>HTML code<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"imgBox"</span> <span class="attr">id</span>=<span class="string">"contentBox"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/images/header.jpeg"</span> <span class="attr">alt</span>=<span class="string">""</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"imgBox"</span> <span class="attr">id</span>=<span class="string">"borderBox"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/images/header.jpeg"</span> <span class="attr">alt</span>=<span class="string">""</span> /&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure><p></p>
+<p>css code<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.imgBox</span> <span class="selector-tag">img</span>&#123;</div><div class="line">   <span class="attribute">width</span>: <span class="number">140px</span>;</div><div class="line">   <span class="attribute">height</span>: <span class="number">140px</span>;</div><div class="line">   <span class="attribute">padding</span>: <span class="number">20px</span>;</div><div class="line">   <span class="attribute">border</span>: <span class="number">20px</span> solid orange;</div><div class="line">   <span class="attribute">margin</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#contentBox</span> <span class="selector-tag">img</span>&#123;</div><div class="line">   <span class="attribute">-moz-box-sizing</span>: content-box;</div><div class="line">   <span class="attribute">-webkit-box-sizing</span>: content-box;</div><div class="line">   <span class="attribute">-o-box-sizing</span>: content-box;</div><div class="line">   <span class="attribute">-ms-box-sizing</span>: content-box;</div><div class="line">   <span class="attribute">box-sizing</span>: content-box; </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-id">#borderBox</span> <span class="selector-tag">img</span>&#123;</div><div class="line">   <span class="attribute">-moz-box-sizing</span>: border-box;</div><div class="line">   <span class="attribute">-webkit-box-sizing</span>: border-box;</div><div class="line">   <span class="attribute">-o-box-sizing</span>: border-box;</div><div class="line">   <span class="attribute">-ms-box-sizing</span>: border-box;</div><div class="line">   <span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>效果：<img src="http://www.w3cplus.com/sites/default/files/box-sizing-demo1.jpg" alt=""><br><img src="http://www.w3cplus.com/sites/default/files/box-sizing-img-box.png" alt=""></p>
+<p>Layout 分析图证明了 box-sizing:content-box 是维持了 W3C 的标准 Box Model，而 box-sizing:border-box 是维持了IE传统（IE怪异模式）下的 Box Model。</p>
+<p>一般应用于拯救排版布局和统一表单格式。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/15/box-sizing的初步认识/" data-id="cj5503nu8000020uh7oexeri0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-媒体查询" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/14/媒体查询/" class="article-date">
@@ -98,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/14/媒体查询/" data-id="cj53s11ot0003gkuh6k25mnf7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/14/媒体查询/" data-id="cj5503nus000620uh19557mxb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +208,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/13/bootstrap的基本语法及引用/" data-id="cj53s11ov0004gkuhd9ohnixl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/13/bootstrap的基本语法及引用/" data-id="cj5503nuh000220uhsypxldlo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -228,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/13/Flexbox的属性及基本用法/" data-id="cj53s11p00005gkuhzr8yvbff" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/13/Flexbox的属性及基本用法/" data-id="cj5503num000320uh3k2k4k4q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -293,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj53s11oo0001gkuh8ciwk9un" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj5503nue000120uhgjztj4wp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -357,7 +410,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj53s11ph0007gkuhn7czn1ie" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj5503nut000720uhtc02smxh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -399,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj53s11p20006gkuhpj24qvlt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj5503nuz000820uhgb8gd149" class="article-share-link">Share</a>
       
       
     </footer>
@@ -436,7 +489,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj53s11oj0000gkuh033uj92e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj5503nun000420uhiy97lwof" class="article-share-link">Share</a>
       
       
     </footer>
@@ -481,7 +534,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj53s11oq0002gkuhzp5ly9sf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj5503nuq000520uhozsmi2ka" class="article-share-link">Share</a>
       
       
     </footer>
@@ -521,6 +574,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/15/box-sizing的初步认识/">box-sizing的初步认识</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/14/媒体查询/">媒体查询</a>
           </li>
         
@@ -534,10 +591,6 @@
         
           <li>
             <a href="/2017/07/12/Canvas的语法及基本用法/">Canvas的语法及基本用法</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/11/暑期培训第二天/">暑期培训第二天</a>
           </li>
         
       </ul>
