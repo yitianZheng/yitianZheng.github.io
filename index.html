@@ -68,6 +68,76 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-this之认识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/17/this之认识/" class="article-date">
+  <time datetime="2017-07-17T15:40:36.000Z" itemprop="datePublished">2017-07-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/17/this之认识/">this之认识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 JavaScript 中，<strong>this</strong> 是当前执行函数的上下文。因为 JavaScript 有4种不同的函数调用方式：</p>
+<p>函数调用: alert(‘Hello World!’)</p>
+<p>方法调用: console.log(‘Hello World!’)</p>
+<p>构造函数调用: new RegExp(‘\d’)</p>
+<p>隐式调用: alert.call(undefined, ‘Hello World!’)</p>
+<p>函数调用指执行构成一个函数的代码（简单说就是 call 一个函数）例如 parseInt(‘15’)是 parseInt 函数调用.</p>
+<p>函数调用的上下文指 this 在函数体中的值。 即 <strong>this指的是调用函数的那个对象</strong>，例：object.fn()，这里的 this 便是 object。</p>
+<p>函数的作用域指的是在函数体内可以使用的变量、对象以及函数的集合。</p>
+<p></p><h2>函数调用</h2><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">name</span>) </span>&#123; </div><div class="line">	<span class="keyword">return</span> <span class="string">'Hello '</span> + name + <span class="string">'!'</span>; </div><div class="line">&#125; </div><div class="line"><span class="comment">// Function invocation </span></div><div class="line"><span class="keyword">var</span> message = hello(<span class="string">'World'</span>); <span class="built_in">console</span>.log(message); </div><div class="line"><span class="comment">// =&gt; 'Hello World!'</span></div></pre></td></tr></table></figure><p></p>
+<p>更加高级的例子是 IIFE (立即调用的函数表达式):<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> message = (<span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123; </div><div class="line">	<span class="keyword">return</span> <span class="string">'Hello '</span> + name + <span class="string">'!'</span>; </div><div class="line">&#125;)(<span class="string">'World'</span>);</div><div class="line"><span class="built_in">console</span>.log(message) <span class="comment">// =&gt; 'Hello World!'</span></div></pre></td></tr></table></figure></p>
+<p>IIFE 也是一个函数调用: 第一对括号(function(name) {…}) 是一个等价于函数的表达式, 紧接着一对括号以及’World’参数: (‘World’)</p>
+<p><strong>函数调用中的this</strong></p>
+<p>this 在函数调用中是一个全局对象</p>
+<p>全局对象是由执行的环境决定的。在浏览器里它是window对象。</p>
+<p>在函数调用里，函数执行的上下文是全局对象。让我们一起看看下面函数里的上下文：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span> === <span class="built_in">window</span>); <span class="comment">// =&gt; true</span></div><div class="line">	<span class="keyword">this</span>.myNumber = <span class="number">20</span>; </div><div class="line">	<span class="comment">// add 'myNumber' property to global object </span></div><div class="line">	<span class="keyword">return</span> a + b; </div><div class="line">&#125; </div><div class="line">	<span class="comment">// sum() is invoked as a function </span></div><div class="line">	<span class="comment">// this in sum() is a global object (window) </span></div><div class="line">	sum(<span class="number">15</span>, <span class="number">16</span>); <span class="comment">// =&gt; 31 </span></div><div class="line">	<span class="built_in">window</span>.myNumber; <span class="comment">// =&gt; 20</span></div></pre></td></tr></table></figure>
+<p></p><h2>函数调用中的 this, strict 模式</h2><br>strict 模式下，函数调用中的 this 是 undefined<p></p>
+<p>为了使用它，把’use strict’放在函数体的开始。这个模式会影响执行的上下文，把 this 变成 undefined。函数执行的上下文跟上面的例子相反，不再是全局对象</p>
+<p>在strict模式下执行函数的例子:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">a, b</span>) </span>&#123; </div><div class="line"><span class="meta">	'use strict'</span>; <span class="comment">// enable the strict mode </span></div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span> === <span class="literal">undefined</span>); <span class="comment">// =&gt; true </span></div><div class="line">	<span class="keyword">return</span> a * b; </div><div class="line">&#125; </div><div class="line"><span class="comment">// multiply() function invocation with strict mode enabled // this in multiply() is undefined </span></div><div class="line">multiply(<span class="number">2</span>, <span class="number">5</span>); <span class="comment">// =&gt; 10</span></div></pre></td></tr></table></figure></p>
+<p>当 multiply(2, 5) 作为函数被调用时，this 是 undefined。</p>
+<p>strict 模式不仅在当前作用域起作用，也会对内部的作用域起作用(对所有在内部定义的函数有效)：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">execute</span>(<span class="params"></span>) </span>&#123; </div><div class="line"><span class="meta">	'use strict'</span>; <span class="comment">// activate the strict mode </span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">concat</span>(<span class="params">str1, str2</span>) </span>&#123; </div><div class="line">	<span class="comment">// the strict mode is enabled too </span></div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span> === <span class="literal">undefined</span>); <span class="comment">// =&gt; true </span></div><div class="line">	<span class="keyword">return</span> str1 + str2; </div><div class="line">&#125; </div><div class="line"><span class="comment">// concat() is invoked as a function in strict mode </span></div><div class="line"><span class="comment">// this in concat() is undefined </span></div><div class="line">concat(<span class="string">'Hello'</span>, <span class="string">' World!'</span>); <span class="comment">// =&gt; "Hello World!" </span></div><div class="line">&#125; </div><div class="line">execute();</div></pre></td></tr></table></figure></p>
+<p>‘use strict’ 插入在 execute 函数体的一开始, 使它在 execute 函数的作用域内起作用。 因为 concat 定义在 execute 的作用域内, 它也会继承 strict 模式，</p>
+<p>这导致调用 concat(‘Hello’, ‘ World!’)时， this 是 undefined。</p>
+<p>单个的JavaScript文件可能既包含 strict 模式又包含 非strict 模式。所以，在单个的脚本内，同样的调用方法可能有不同的上下文行为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">nonStrictSum</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">	 <span class="comment">// non-strict mode </span></div><div class="line">	 <span class="built_in">console</span>.log(<span class="keyword">this</span> === <span class="built_in">window</span>); <span class="comment">// =&gt; true</span></div><div class="line">	 <span class="keyword">return</span> a + b;</div><div class="line">&#125; </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">strictSum</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line"><span class="meta">	 'use strict'</span>; <span class="comment">// strict mode is enabled</span></div><div class="line">	  <span class="built_in">console</span>.log(<span class="keyword">this</span> === <span class="literal">undefined</span>); <span class="comment">// =&gt; true </span></div><div class="line">	  <span class="keyword">return</span> a + b; </div><div class="line">&#125; </div><div class="line"><span class="comment">// nonStrictSum() is invoked as a function in non-strict mode </span></div><div class="line"><span class="comment">// this in nonStrictSum() is the window object </span></div><div class="line">nonStrictSum(<span class="number">5</span>, <span class="number">6</span>); <span class="comment">// =&gt; 11 </span></div><div class="line"><span class="comment">// strictSum() is invoked as a function in strict mode </span></div><div class="line"><span class="comment">// this in strictSum() is undefined </span></div><div class="line">strictSum(<span class="number">8</span>, <span class="number">12</span>); <span class="comment">// =&gt; 20</span></div></pre></td></tr></table></figure></p>
+<p></p><h2>陷阱: 内部函数中的this</h2><br>一个函数调用中的常见错误就是以为 this 在内部函数中跟在外部函数中一样。 正确来说，内部函数的上下文依赖于调用方法，而不是外部函数的上下文。 <p></p>
+<p>为了能使 this 跟预期的一样，用隐式调用来修改内部函数的上下文 (用.call()或者.apply()) 或者创建一个绑定函数 (用.bind())</p>
+<p>下面的例子计算了2个数字的和：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> numbers = &#123;</div><div class="line">	<span class="attr">numberA</span>: <span class="number">5</span>, </div><div class="line">	<span class="attr">numberB</span>: <span class="number">10</span>,</div><div class="line">	<span class="attr">sum</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span> === numbers); <span class="comment">// =&gt; true </span></div><div class="line">		<span class="function"><span class="keyword">function</span> <span class="title">calculate</span>(<span class="params"></span>) </span>&#123; </div><div class="line">			<span class="comment">// this is window or undefined in strict mode </span></div><div class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span> === numbers); <span class="comment">// =&gt; false </span></div><div class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.numberA + <span class="keyword">this</span>.numberB; </div><div class="line">		&#125; </div><div class="line">		<span class="keyword">return</span> calculate(); </div><div class="line">	&#125; </div><div class="line">&#125;; </div><div class="line">numbers.sum(); </div><div class="line"><span class="comment">// =&gt; NaN or throws TypeError in strict mode</span></div></pre></td></tr></table></figure></p>
+<p>numbers.sum() 是一个对象上的方法调用 ，所以 sum 中的上下文是 numbers 对象。calculate 函数定义在 sum 内部，所以你会指望 calculate()</p>
+<p>中的 this 也是 numbers 对象。然而，calculate() 是一个<strong>函数</strong>调用（而不是<strong>方法</strong></p>
+<p>调用），它的 this 是全局对象 window 或者 strict 模式下的 undefined。即使外部函数 sum 的上下文是 numbers对象，它在这里也没有影响。numbers.sum()的调用结果是NaN或者 </p>
+<p>strict 模式下的 TypeError: Cannot read property ‘numberA’ of undefined 错误。因为 calculate 没有被正确调用，结果绝不是预期的 5 + 10 = 15。</p>
+<p>为了解决这个问题，calculate应该跟sum有一样的上下文，以便于使用numberA和numberB。解决方法之一是使用.call()方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> numbers = &#123;</div><div class="line">	<span class="attr">numberA</span>: <span class="number">5</span>, </div><div class="line">	<span class="attr">numberB</span>: <span class="number">10</span>, </div><div class="line">	<span class="attr">sum</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </div><div class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span> === numbers); <span class="comment">// =&gt; true </span></div><div class="line">		<span class="function"><span class="keyword">function</span> <span class="title">calculate</span>(<span class="params"></span>) </span>&#123; </div><div class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span> === numbers); <span class="comment">// =&gt; true </span></div><div class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.numberA + <span class="keyword">this</span>.numberB; </div><div class="line">		&#125; <span class="comment">// use .call() method to modify the context </span></div><div class="line">		<span class="keyword">return</span> calculate.call(<span class="keyword">this</span>); </div><div class="line">	&#125; </div><div class="line">&#125;; </div><div class="line">numbers.sum(); <span class="comment">// =&gt; 15</span></div></pre></td></tr></table></figure></p>
+<p>calculate.call(this) 像往常一样执行 calculate，但是上下文由第一个参数指定。现在 this.numberA + this.numberB 相当于 numbers.numberA + numbers.numberB，函数会返回预期的结果 5 + 10 = 15。</p>
+<p>深入了解更多参阅：<a><a href="http://www.w3cplus.com/javascript/gentle-explanation-of-this-in-javascript.html" target="_blank" rel="external">http://www.w3cplus.com/javascript/gentle-explanation-of-this-in-javascript.html</a></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/17/this之认识/" data-id="cj58cmta9000438uhfzu1s5um" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Github创建管理仓库" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/15/Github创建管理仓库/" class="article-date">
@@ -95,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/15/Github创建管理仓库/" data-id="cj551pnza0002z4uhl5h0vsdd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/15/Github创建管理仓库/" data-id="cj58cmta0000138uh4hkamzpy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -148,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/15/box-sizing的初步认识/" data-id="cj551pnzu0006z4uhmtywm0f6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/15/box-sizing的初步认识/" data-id="cj58cmtat000738uhn6uxatlz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -188,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/14/媒体查询/" data-id="cj551po010008z4uh4pze8c9r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/14/媒体查询/" data-id="cj58cmtb1000938uhnnq7anns" class="article-share-link">Share</a>
       
       
     </footer>
@@ -245,7 +315,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/13/bootstrap的基本语法及引用/" data-id="cj551pnzi0005z4uhh8nopes6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/13/bootstrap的基本语法及引用/" data-id="cj58cmtaq000638uhljo8wb0k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -318,7 +388,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/13/Flexbox的属性及基本用法/" data-id="cj551pnz60001z4uhxuh8evo9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/13/Flexbox的属性及基本用法/" data-id="cj58cmta7000338uh6mhb92lj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj551pnz00000z4uha6lanqbn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj58cmt9r000038uhpi8j4y66" class="article-share-link">Share</a>
       
       
     </footer>
@@ -447,7 +517,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj551po030009z4uhyy0wn68n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj58cmtb0000838uhh9zr9uox" class="article-share-link">Share</a>
       
       
     </footer>
@@ -489,7 +559,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj551pnzw0007z4uhgqdyaejt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj58cmtb4000a38uhl2b22c71" class="article-share-link">Share</a>
       
       
     </footer>
@@ -526,52 +596,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj551pnzd0003z4uhiunmvkwr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/10/hello-world/" class="article-date">
-  <time datetime="2017-07-10T11:06:30.944Z" itemprop="datePublished">2017-07-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj551pnzf0004z4uhkvzxm8v6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj58cmta4000238uh5f141b8n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -582,6 +607,10 @@
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -611,6 +640,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/17/this之认识/">this之认识</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/15/Github创建管理仓库/">Github创建管理仓库</a>
           </li>
         
@@ -624,10 +657,6 @@
         
           <li>
             <a href="/2017/07/13/bootstrap的基本语法及引用/">bootstrap的基本语法及引用</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/13/Flexbox的属性及基本用法/">Flexbox的属性及基本用法</a>
           </li>
         
       </ul>
