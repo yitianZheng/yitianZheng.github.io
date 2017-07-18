@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Javascript内置对象 | Myblog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String. 对象创建对象：两种方法 1、使用 new 操作符1var person = new Object(); 2、对象字面量法1234567var apple = &amp;#123;    price: 100,    color: &apos;red&apos;,    from: &apos;Gua">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript内置对象">
+<meta property="og:url" content="http://yoursite.com/2017/07/18/Javascript内置对象/index.html">
+<meta property="og:site_name" content="Myblog">
+<meta property="og:description" content="包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String. 对象创建对象：两种方法 1、使用 new 操作符1var person = new Object(); 2、对象字面量法1234567var apple = &amp;#123;    price: 100,    color: &apos;red&apos;,    from: &apos;Gua">
+<meta property="og:updated_time" content="2017-07-18T05:35:25.709Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript内置对象">
+<meta name="twitter:description" content="包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String. 对象创建对象：两种方法 1、使用 new 操作符1var person = new Object(); 2、对象字面量法1234567var apple = &amp;#123;    price: 100,    color: &apos;red&apos;,    from: &apos;Gua">
+  
+    <link rel="alternate" href="/atom.xml" title="Myblog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Myblog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Javascript内置对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/18/Javascript内置对象/" class="article-date">
+  <time datetime="2017-07-18T05:09:29.000Z" itemprop="datePublished">2017-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript内置对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String.</p>
+<p></p><h2>对象</h2><br><strong>创建对象</strong>：两种方法<p></p>
+<p>1、使用 new 操作符<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div></pre></td></tr></table></figure></p>
+<p>2、对象字面量法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> apple = &#123;</div><div class="line">    <span class="attr">price</span>: <span class="number">100</span>,</div><div class="line">    <span class="attr">color</span>: <span class="string">'red'</span>,</div><div class="line">    <span class="attr">from</span>: <span class="string">'GuangZhou'</span>,</div><div class="line">    <span class="attr">isFruit</span>: <span class="literal">true</span>,</div><div class="line">    to where: <span class="string">'BeiJing'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><strong>访问对象属性</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">apple.price;  <span class="comment">//100</span></div><div class="line">apple[<span class="string">"price"</span>]; <span class="comment">//100  </span></div><div class="line"><span class="keyword">var</span> fruitColor = <span class="string">"color"</span>;  <span class="comment">// 使用方括号语法可以通过变量来访问对象属性</span></div><div class="line">apple[fruitColor]; <span class="comment">// 'red'</span></div><div class="line"><span class="comment">//to where 含有空格,不能使用"."来访问,只能用方括号语法.  </span></div><div class="line">apple[<span class="string">"to where"</span>]; <span class="comment">// "BeiJing"</span></div></pre></td></tr></table></figure></p>
+<p></p><h2>数组（Array）</h2><br><strong>数组的方法</strong><p></p>
+<p>Array 对象有如下方法：</p>
+<p>concat() 将两个数组连接成一个新数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>);</div><div class="line">myArray = myArray.concat(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</div><div class="line"> <span class="comment">// myArray is now ["1", "2", "3", "a", "b", "c"]</span></div></pre></td></tr></table></figure></p>
+<p>join(deliminator = “,”) 将数组的所有元素连接成一个字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"Wind"</span>, <span class="string">"Rain"</span>, <span class="string">"Fire"</span>);</div><div class="line"><span class="keyword">var</span> list = myArray.join(<span class="string">" - "</span>); <span class="comment">// list is "Wind - Rain - Fire"</span></div></pre></td></tr></table></figure></p>
+<p>push() 在数组的最后增加一个元素并且返回数组的新长度。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"1"</span>, <span class="string">"2"</span>);</div><div class="line">myArray.push(<span class="string">"3"</span>); <span class="comment">// myArray is now ["1", "2", "3"]</span></div></pre></td></tr></table></figure></p>
+<p>pop() 从数组中删除最后一个元素并且返回该元素。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>);</div><div class="line"><span class="keyword">var</span> last = myArray.pop(); <span class="comment">// myArray is now ["1", "2"], last = "3"</span></div></pre></td></tr></table></figure></p>
+<p>shift() 从数组中删除第一个元素并且返回该元素。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span> (<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>);</div><div class="line"><span class="keyword">var</span> first = myArray.shift(); <span class="comment">// myArray is now ["2", "3"], first is "1"</span></div><div class="line"><span class="string">``</span><span class="string">` javascript</span></div><div class="line">unshift() 在数组开头增加一个或多个元素并且返回数组的新长度。</div><div class="line">`<span class="string">``</span> javascript</div><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span> (<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>);</div><div class="line">myArray.unshift(<span class="string">"4"</span>, <span class="string">"5"</span>); <span class="comment">// myArray becomes ["4", "5", "1", "2", "3"]</span></div></pre></td></tr></table></figure></p>
+<p>slice(start_index, upto_index) 抽取数组的一个片断并将其作为新数组返回。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span> (<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>, <span class="string">"e"</span>);</div><div class="line">myArray = myArray.slice(<span class="number">1</span>, <span class="number">4</span>); </div><div class="line"><span class="comment">/* starts at index 1 and extracts all elements</span></div><div class="line">  until index 3, returning [ "b", "c", "d"] */</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line">splice(index, count_to_remove, addelement1, addelement2, ...) 从数组中删除元素并且（可选地）替换它们。</div><div class="line">`<span class="string">``</span> javascript</div><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span> (<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>, <span class="string">"4"</span>, <span class="string">"5"</span>);</div><div class="line">myArray.splice(<span class="number">1</span>, <span class="number">3</span>, <span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>); </div><div class="line"><span class="comment">// myArray is now ["1", "a", "b", "c", "d", "5"]</span></div><div class="line"><span class="comment">// This code started at index one (or where the "2" was), removed 3 elements there, </span></div><div class="line"><span class="comment">// and then inserted all consecutive elements in its place.</span></div></pre></td></tr></table></figure></p>
+<p>reverse() 将数组元素进行反转（颠倒）：第一个的数组元素将变为最后一个，而最后的元素将变为第一个。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span> (<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>);</div><div class="line">myArray.reverse(); </div><div class="line"><span class="comment">// transposes the array so that myArray = [ "3", "2", "1" ]</span></div></pre></td></tr></table></figure></p>
+<p>sort() 对数组元素进行排序。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"Wind"</span>, <span class="string">"Rain"</span>, <span class="string">"Fire"</span>);</div><div class="line">myArray.sort(); <span class="comment">// sorts the array so that myArrray = [ "Fire", "Rain", "Wind" ]</span></div></pre></td></tr></table></figure></p>
+<p>sort() 也可以接收一个函数用于判定元素的比较结果。该函数对两个值进行比较并且返回以下三个值之一：</p>
+<p>如果在排序方式中 a 小于 b，则返回 -1 (或任何负数)</p>
+<p>如果在排序方式中 a 大于 b，则返回 1  (或任意正数)</p>
+<p>如果 a 和 b 被认为相等，则返回 0。</p>
+<p>例如，下面的代码按数组中最后一个字符进行排序：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sortFn = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span> (a[a.length - <span class="number">1</span>] &lt; b[b.length - <span class="number">1</span>]) <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">  <span class="keyword">if</span> (a[a.length - <span class="number">1</span>] &gt; b[b.length - <span class="number">1</span>]) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">  <span class="keyword">if</span> (a[a.length - <span class="number">1</span>] == b[b.length - <span class="number">1</span>]) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line">myArray.sort(sortFn); </div><div class="line"><span class="comment">// sorts the array so that myArray = ["Wind","Fire","Rain"]</span></div></pre></td></tr></table></figure></p>
+<p>indexOf(searchElement[, fromIndex]) 根据给定元素查找数组中第一个匹配的元素，返回其索引值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>];</div><div class="line">alert(a.indexOf(<span class="string">'b'</span>)); <span class="comment">// Alerts 1</span></div><div class="line"><span class="comment">// Now try again, starting from after the last match</span></div><div class="line">alert(a.indexOf(<span class="string">'b'</span>, <span class="number">2</span>)); <span class="comment">// Alerts 3</span></div><div class="line">alert(a.indexOf(<span class="string">'z'</span>)); <span class="comment">// Alerts -1, because 'z' was not found</span></div></pre></td></tr></table></figure></p>
+<p>lastIndexOf(searchElement[, fromIndex]) 和indexOf类似,但是是从末尾开始并且是反向查找。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>];</div><div class="line">alert(a.lastIndexOf(<span class="string">'b'</span>)); <span class="comment">// Alerts 5</span></div><div class="line"><span class="comment">// Now try again, starting from before the last match</span></div><div class="line">alert(a.lastIndexOf(<span class="string">'b'</span>, <span class="number">4</span>)); <span class="comment">// Alerts 1</span></div><div class="line">alert(a.lastIndexOf(<span class="string">'z'</span>)); <span class="comment">// Alerts -1</span></div></pre></td></tr></table></figure></p>
+<p>forEach(callback[, thisObject]) 对数组的每一项调用callback方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line">a.forEach(alert); <span class="comment">// Alerts each item in turn</span></div></pre></td></tr></table></figure></p>
+<p>map(callback[, thisObject]) 对数组的每一项调用callback方法并返回一个新的数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a1 = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> a2 = a1.map(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123; <span class="keyword">return</span> item.toUpperCase(); &#125;);</div><div class="line">alert(a2); <span class="comment">// Alerts A,B,C</span></div></pre></td></tr></table></figure></p>
+<p>filter(callback[, thisObject]) 对数组的每一项调用callback方法并且返回值为true的项作为一个新数组返回。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a1 = [<span class="string">'a'</span>, <span class="number">10</span>, <span class="string">'b'</span>, <span class="number">20</span>, <span class="string">'c'</span>, <span class="number">30</span>];</div><div class="line"><span class="keyword">var</span> a2 = a1.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">typeof</span> item == <span class="string">'number'</span>; &#125;);</div><div class="line">alert(a2); <span class="comment">// Alerts 10,20,30</span></div></pre></td></tr></table></figure></p>
+<p>every(callback[, thisObject]) 如果数组中的<strong>每一项</strong>调用callback返回都为true则返回true。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumber</span>(<span class="params">value</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> value == <span class="string">'number'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">alert(a1.every(isNumber)); <span class="comment">// Alerts true</span></div><div class="line"><span class="keyword">var</span> a2 = [<span class="number">1</span>, <span class="string">'2'</span>, <span class="number">3</span>];</div><div class="line">alert(a2.every(isNumber)); <span class="comment">// Alerts false</span></div></pre></td></tr></table></figure></p>
+<p>some(callback[, thisObject]) 如果数组中的<strong>至少</strong>一项调用callback返回都为true则返回true。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumber</span>(<span class="params">value</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> value == <span class="string">'number'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">alert(a1.some(isNumber)); <span class="comment">// Alerts true</span></div><div class="line"><span class="keyword">var</span> a2 = [<span class="number">1</span>, <span class="string">'2'</span>, <span class="number">3</span>];</div><div class="line">alert(a2.some(isNumber)); <span class="comment">// Alerts true</span></div><div class="line"><span class="keyword">var</span> a3 = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>];</div><div class="line">alert(a3.some(isNumber)); <span class="comment">// Alerts false</span></div></pre></td></tr></table></figure></p>
+<p>reduce(callback[, initialValue]) 通过合并两个值然后重复此操作来把一个序列归约成一个值的算法。（比如数组求和）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</div><div class="line"><span class="keyword">var</span> total = a.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">first, second</span>) </span>&#123; </div><div class="line">	<span class="keyword">return</span> first + second; </div><div class="line">&#125;, <span class="number">0</span>);</div><div class="line">alert(total) <span class="comment">// Alerts 60</span></div></pre></td></tr></table></figure></p>
+<p>上面这些函数里面有些需要接受callback 函数作为参数，在这里的被传递进去作为参数的函数叫做遍历器（iterative methods），因为这些方法遍历了整个数组，并在遍历的过程中把需要的值喂给了这些遍历器。此外，可以通过第二个可选的参数用于指定遍历器的执行上下文 this，如果没有给出这个可选的参数，this 将会是这种情况下的取值：函数在一个明确的对象上下文之外被调用，而这种情况下 this 一般指向全局对象（比如 window ）</p>
+<p>上面的回调函数（遍历器）需要三个参数，第一个是当前遍历到的元素 item ，第二个是当前遍历到的元素的索引 index，第三个是被遍历的数组本身 itself。JavaScript 函数会忽略任何没有在形参中声明的参数，因此有时候你大可以省略后面的索引和数组而不必担心会发生什么不好的事情.</p>
+<p></p><h2>函数（Function）</h2><br>在JavaScript中，函数是Function类的具体实例。而且都与其它引用类型一样具有属性和方法。函数名实际上是指向函数对象的指针，函数可以作为参数参与到传参和返回值中。<p></p>
+<p><strong>定义</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//函数声明式定义</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;</div><div class="line"><span class="comment">//函数表达式定义</span></div><div class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> num1 + num2;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//使用Function构造函数定义</span></div><div class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"num1"</span>,<span class="string">"num2"</span>,<span class="string">"return num1 + num2"</span>)；</div><div class="line"><span class="comment">//实际上创建一个Function实例并不一定要赋值给具体的指针，可以直接执行</span></div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;<span class="keyword">return</span> x+y&#125;)(<span class="number">1</span>,<span class="number">2</span>);</div><div class="line"><span class="comment">//之所以用圆括号把function()&#123;&#125;括起来是因为js解释器会将function解释为函数声明，而函数声明不能直接跟着(x,y)，我们需要将其转换为函数表达式。</span></div><div class="line"><span class="comment">//(1,2)表示要传递跟函数的参数。</span></div><div class="line"><span class="comment">//上面的例子也可以写成：</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> x+y;</div><div class="line">&#125;(<span class="number">1</span>,<span class="number">2</span>);</div><div class="line"><span class="comment">//函数声明的方式无法定义匿名函数，因此如果想使用匿名函数，则必须用函数表达式的定义方式。</span></div></pre></td></tr></table></figure></p>
+<p><strong>注意：</strong>只有函数声明式存在函数声明提升，调用写在函数声明式的前面也不会报错，因为解析器已经先读取了函数声明，把函数声明放在顶部，所以函数调用不会出错。而函数表达式必须等到JS引擎执行到它所在行时才会解析函数表达式。所以以后尽量写要注意把函数的定义要写在函数调用的前面。</p>
+<p><strong>函数的对象特性</strong><br>因为函数是Function的实例，而函数名仅仅是该实例的一个引用地址。因此可以作为参数和返回值参与到函数的传参过程中。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">call_some_function</span>(<span class="params">some_function, some_argument</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> some_function(some_argument);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add_10</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> num + <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(call_some_function(add_10,<span class="number">20</span>)); <span class="comment">//30</span></div></pre></td></tr></table></figure></p>
+<p><strong>call(), apply() 和 bing()方法</strong></p>
+<p>call(), apply(), bind()是每个函数都包含的自有方法。之前已经提到了函数是定义的对象，那么调用函数时候，函数中的 this 是对当前与下变量的调用。而如果想改变函数执行所在域空间，则可以使用call(),apply(),bind()来实现。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">color = <span class="string">'red'</span>;</div><div class="line"><span class="keyword">var</span> o = &#123;<span class="attr">color</span>: <span class="string">'blue'</span>&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.color);</div><div class="line">&#125;</div><div class="line">sayColor(); <span class="comment">//red</span></div><div class="line">sayColor.call(<span class="keyword">this</span>); <span class="comment">//red</span></div><div class="line">sayColor.call(o); <span class="comment">//blue</span></div></pre></td></tr></table></figure></p>
+<p>app()和call()的作用是相同的，区别主要在于传入参数的不同。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">call(this,para1,prar2,prar3) 第一个参数是函数要执行的作用域，后面的参数是函数的输入参数，有多少个依次写多少个。</div><div class="line"></div><div class="line">apply(this,[para1,para2,prara3])第一个参数也是函数要执行的作用域，后面是一个Array的数组对象。</div><div class="line"></div><div class="line">而bind( )方法创建一个新的函数，当被调用时，将其this关键字设置为提供的值,在调用新函数时，在任何提供之前提供一个给定的参数序列。</div></pre></td></tr></table></figure></p>
+<p>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> aFun = &#123;</div><div class="line">    <span class="attr">x</span>: <span class="number">30</span>,</div><div class="line">    <span class="attr">getX</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.x;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> o = &#123;</div><div class="line">    <span class="attr">x</span>: <span class="number">20</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> newFun = aFun.getX.bind(o);  <span class="comment">//</span></div><div class="line"><span class="built_in">console</span>.log(newFun) <span class="comment">// function() &#123; return this.x; &#125;  跟aFun.getX一样的函数体 只不过newFun的this指向是o对象. </span></div><div class="line"><span class="keyword">typeof</span>(newFun) <span class="comment">// function</span></div><div class="line">newFun();  <span class="comment">// 20</span></div><div class="line"><span class="comment">// # 修改o对象的x值</span></div><div class="line">o.x = <span class="number">233</span>;</div><div class="line">newFun();  <span class="comment">//233</span></div></pre></td></tr></table></figure></p>
+<p><strong>apply、call、bind总结</strong></p>
+<p>三者都是用来改变函数的this对象的指向的</p>
+<p>三者第一个参数都是this要指向的对象，也就是想指定的上下文</p>
+<p>三者都可以利用后续参数传参</p>
+<p><strong>bind是返回一个新函数，便于稍后调用；apply、call则是立即调用</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/18/Javascript内置对象/" data-id="cj594ei0p000620uhdjtlvs8r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/18/作用域与作用域链/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">作用域与作用域链</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/07/18/Javascript内置对象/">Javascript内置对象</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/18/作用域与作用域链/">作用域与作用域链</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/17/this之认识/">this之认识</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/15/Github创建管理仓库/">Github创建管理仓库</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/15/box-sizing的初步认识/">box-sizing的初步认识</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 yitianZheng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
