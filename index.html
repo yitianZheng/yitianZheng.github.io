@@ -68,6 +68,79 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-范式初体验" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/19/范式初体验/" class="article-date">
+  <time datetime="2017-07-19T01:10:44.000Z" itemprop="datePublished">2017-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/19/范式初体验/">范式初体验</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、命令式<br>2、声明式<br>3、面向对象<br>4、函数式</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/19/范式初体验/" data-id="cj5acnsub000cmouh1enyslt3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-prototype原型链" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/19/prototype原型链/" class="article-date">
+  <time datetime="2017-07-19T00:32:07.000Z" itemprop="datePublished">2017-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/19/prototype原型链/">prototype原型链</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/19/prototype原型链/" data-id="cj5acnstg0005mouhyweitzw8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Javascript内置对象" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/18/Javascript内置对象/" class="article-date">
@@ -91,6 +164,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String.</p>
+<p>分为基本类型：underfined, boolean, null, number, string 和引用类型。</p>
+<p></p><h2>区分基本类型与引用类型</h2><p></p>
+<ul><br><li>基本类型指简单的数据段，按值访问，可以操作保存在变量中的实际的值。<br>引用类型指可能有多个值构成的对象，按引用访问，保存在内存中，不允许直接访问。因此只能通过操作引用的对象而不是实际的对象。<br></li><br><li>可以给引用对象动态地添加属性，而不能给基本类型的值添加属性。</li><br><li>复制基本类型时，会在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上。<br>复制引用类型时，不同在于复制的值实际是一个指针，两个变量实际上引用同一个对象。对其中一个变量操作会影响另一个变量。<br></li><br></ul>
+
+<p>typeof 操作符可以检测一个变量是什么类型的数据，但若是引用类型只能检测是对象而不能检测出是什么类型的对象。 typeof + 变量名</p>
+<p>instanceof 操作符可以检测引用类型的变量是什么类型的对象（根据原型链识别）。 变量名 + instanceof + constructor (返回 true/false )<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(person instanceof Object); //变量person是Object吗?</div><div class="line">alert(color instanceof Array); //变量color是Array吗?</div><div class="line">alert(render instanceof RegExp); //变量render是RegExp吗?</div></pre></td></tr></table></figure></p>
 <p></p><h2>对象</h2><br><strong>创建对象</strong>：两种方法<p></p>
 <p>1、使用 new 操作符<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div></pre></td></tr></table></figure></p>
 <p>2、对象字面量法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> apple = &#123;</div><div class="line">    <span class="attr">price</span>: <span class="number">100</span>,</div><div class="line">    <span class="attr">color</span>: <span class="string">'red'</span>,</div><div class="line">    <span class="attr">from</span>: <span class="string">'GuangZhou'</span>,</div><div class="line">    <span class="attr">isFruit</span>: <span class="literal">true</span>,</div><div class="line">    to where: <span class="string">'BeiJing'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
@@ -118,6 +197,7 @@
 <p>every(callback[, thisObject]) 如果数组中的<strong>每一项</strong>调用callback返回都为true则返回true。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumber</span>(<span class="params">value</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> value == <span class="string">'number'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">alert(a1.every(isNumber)); <span class="comment">// Alerts true</span></div><div class="line"><span class="keyword">var</span> a2 = [<span class="number">1</span>, <span class="string">'2'</span>, <span class="number">3</span>];</div><div class="line">alert(a2.every(isNumber)); <span class="comment">// Alerts false</span></div></pre></td></tr></table></figure></p>
 <p>some(callback[, thisObject]) 如果数组中的<strong>至少</strong>一项调用callback返回都为true则返回true。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumber</span>(<span class="params">value</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> value == <span class="string">'number'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">alert(a1.some(isNumber)); <span class="comment">// Alerts true</span></div><div class="line"><span class="keyword">var</span> a2 = [<span class="number">1</span>, <span class="string">'2'</span>, <span class="number">3</span>];</div><div class="line">alert(a2.some(isNumber)); <span class="comment">// Alerts true</span></div><div class="line"><span class="keyword">var</span> a3 = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>];</div><div class="line">alert(a3.some(isNumber)); <span class="comment">// Alerts false</span></div></pre></td></tr></table></figure></p>
 <p>reduce(callback[, initialValue]) 通过合并两个值然后重复此操作来把一个序列归约成一个值的算法。（比如数组求和）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</div><div class="line"><span class="keyword">var</span> total = a.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">first, second</span>) </span>&#123; </div><div class="line">	<span class="keyword">return</span> first + second; </div><div class="line">&#125;, <span class="number">0</span>);</div><div class="line">alert(total) <span class="comment">// Alerts 60</span></div></pre></td></tr></table></figure></p>
+<p>数组迭代方法详情：<a><a href="http://www.w3cplus.com/javascript/array-part-7.html" target="_blank" rel="external">http://www.w3cplus.com/javascript/array-part-7.html</a></a></p>
 <p>上面这些函数里面有些需要接受callback 函数作为参数，在这里的被传递进去作为参数的函数叫做遍历器（iterative methods），因为这些方法遍历了整个数组，并在遍历的过程中把需要的值喂给了这些遍历器。此外，可以通过第二个可选的参数用于指定遍历器的执行上下文 this，如果没有给出这个可选的参数，this 将会是这种情况下的取值：函数在一个明确的对象上下文之外被调用，而这种情况下 this 一般指向全局对象（比如 window ）</p>
 <p>上面的回调函数（遍历器）需要三个参数，第一个是当前遍历到的元素 item ，第二个是当前遍历到的元素的索引 index，第三个是被遍历的数组本身 itself。JavaScript 函数会忽略任何没有在形参中声明的参数，因此有时候你大可以省略后面的索引和数组而不必担心会发生什么不好的事情.</p>
 <p></p><h2>函数（Function）</h2><br>在JavaScript中，函数是Function类的具体实例。而且都与其它引用类型一样具有属性和方法。函数名实际上是指向函数对象的指针，函数可以作为参数参与到传参和返回值中。<p></p>
@@ -137,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/18/Javascript内置对象/" data-id="cj594ei0p000620uhdjtlvs8r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/18/Javascript内置对象/" data-id="cj5acnst00000mouhezhv3jo4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -169,11 +249,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。</p>
+<p></p><h2>全局作用域</h2><br>在代码中任何地方都能访问到的对象拥有全局作用域，一般来说以下几种情形拥有全局作用域：<p></p>
+<p>（1）最外层函数和在最外层函数外面定义的变量拥有全局作用域，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> authorName=<span class="string">"山边小溪"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> blogName=<span class="string">"梦想天空"</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innerSay</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(blogName);</div><div class="line">    &#125;</div><div class="line">    innerSay();</div><div class="line">&#125;</div><div class="line">alert(authorName); <span class="comment">//山边小溪</span></div><div class="line">alert(blogName); <span class="comment">//脚本错误</span></div><div class="line">doSomething(); <span class="comment">//梦想天空</span></div><div class="line">innerSay() <span class="comment">//脚本错误</span></div></pre></td></tr></table></figure></p>
+<p>（2）所有末定义直接赋值的变量自动声明为拥有全局作用域，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> authorName=<span class="string">"山边小溪"</span>;</div><div class="line">    blogName=<span class="string">"梦想天空"</span>;</div><div class="line">    alert(authorName);</div><div class="line">&#125;</div><div class="line">doSomething(); <span class="comment">//山边小溪</span></div><div class="line">alert(blogName); <span class="comment">//梦想天空</span></div><div class="line">alert(authorName); <span class="comment">//脚本错误</span></div></pre></td></tr></table></figure></p>
+<p>变量blogName拥有全局作用域，而authorName在函数外部无法访问到。</p>
+<p>（3）所有window对象的属性拥有全局作用域</p>
+<p>一般情况下，window 对象的内置属性都拥有全局作用域，例如 window.name、window.location、window.top 等等。</p>
+<p></p><h2>局部作用域</h2>　<br>和全局作用域相反，局部作用域一般只在固定的代码片段内可访问到，最常见的例如函数内部，所有在一些地方也会看到有人把这种作用域称为函数作用域，<p></p>
+<p>例如下列代码中的 blogName 和函数 innerSay 都只拥有局部作用域。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> blogName=<span class="string">"梦想天空"</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innerSay</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(blogName);</div><div class="line">    &#125;</div><div class="line">    innerSay();</div><div class="line">&#125;</div><div class="line">alert(blogName); <span class="comment">//脚本错误</span></div><div class="line">innerSay(); <span class="comment">//脚本错误</span></div></pre></td></tr></table></figure></p>
+<p></p><h2>作用域链及代码优化</h2><br>执行函数时会创建一个称为 “运行期上下文” 的内部对象，运行期上下文定义了函数执行时的环境。每个运行期上下文都有自己的作用域链，用于标识符解析，当运行期上下文被创建时，而它的作用域链初始化为当前运行函数的上下文所包含的对象。<p></p>
+<p>这些值按照它们出现在函数中的顺序被复制到运行期上下文的作用域链中。它们共同组成了一个新的对象，叫“活动对象(activation object)”，该对象包含了函数的所有局部变量、命名参数、参数集合以及this，然后此对象会被推入作用域链的前端，当运行期上下文被销毁，活动对象也随之销毁。</p>
+<p>在函数执行过程中，每遇到一个变量，都会经历一次标识符解析过程以决定从哪里获取和存储数据。该过程从作用域链头部，也就是从活动对象开始搜索，查找同名的标识符，如果找到了就使用这个标识符对应的变量，如果没找到继续搜索作用域链中的下一个对象，如果搜索完所有对象都未找到，则认为该标识符未定义。函数执行过程中，每个标识符都要经历这样的搜索过程。</p>
+<p>从作用域链的结构可以看出，在运行期上下文的作用域链中，标识符所在的位置越深，读写速度就会越慢。如上图所示，因为全局变量总是存在于运行期上下文作用域链的最末端，因此在标识符解析的时候，查找全局变量是最慢的。所以，在编写代码的时候应尽量少使用全局变量，尽可能使用局部变量。一个好的经验法则是：如果一个跨作用域的对象被引用了一次以上，则先把它存储到局部变量里再使用。例如下面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"btnChange"</span>).onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"targetCanvas"</span>).style.backgroundColor=<span class="string">"red"</span>;</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这个函数引用了两次全局变量document，查找该变量必须遍历整个作用域链，直到最后在全局对象中才能找到。这段代码可以重写如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> doc=<span class="built_in">document</span>;</div><div class="line">    doc.getElementById(<span class="string">"btnChange"</span>).onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        doc.getElementById(<span class="string">"targetCanvas"</span>).style.backgroundColor=<span class="string">"red"</span>;</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这段代码比较简单，重写后不会显示出巨大的性能提升，但是如果程序中有大量的全局变量被从反复访问，那么重写后的代码性能会有显著改善。</p>
+<p></p><h2>注意事项及Demo</h2><br>1、作用域链在声明后就已经创建 （确切的说是编译器解析之后生成）<br>2、JavaScript 通过遍历作用域链来查找变量<p></p>
+<p>特别地，针对第二点：</p>
+<p>当使用变量的时候，JavaScript 会做如下的事情：</p>
+<p>先在当前函数里（作用域）找这个变量</p>
+<p>如果没有则向外层找，如果外层也没，则继续在外层的外层查找。</p>
+<p>当全局作用域也找不到的时候，报错 “XXX is not defined”</p>
+<h1 id="Demo-00"><a href="#Demo-00" class="headerlink" title="Demo 00"></a>Demo 00</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">I_Have_A</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="string">'a'</span>; </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">I_Have_B</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> b = <span class="string">'b'</span>; </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayA</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(a); </div><div class="line">&#125;</div><div class="line"></div><div class="line">sayA(); </div><div class="line"><span class="comment">// =&gt; </span></div><div class="line"><span class="comment">// 报错 找不到 a</span></div></pre></td></tr></table></figure>
+<p>调用 sayA 的时候（在全局环境调用），其作用域链是 [sayA, GlobalEnv] 因此查找不倒 a ，所以会报错。</p>
+<h1 id="Demo-01"><a href="#Demo-01" class="headerlink" title="Demo 01"></a>Demo 01</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">I_Have_A</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="string">'a'</span>; </div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayA</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a); </div><div class="line">    &#125;</div><div class="line">    sayA(); </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">I_Have_B</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> b = <span class="string">'b'</span>; </div><div class="line">&#125;</div><div class="line"></div><div class="line">I_Have_A(); </div><div class="line"><span class="comment">// =&gt; </span></div><div class="line"><span class="comment">// 打印输出 'a'</span></div></pre></td></tr></table></figure>
+<p>此时调用 sayA 的时候（在 I_Have_A 内），其作用域链是 [sayA, I_Have_A, GlobalEnv] 因此可以查找到 a 输出无误。</p>
+<h1 id="Demo-02"><a href="#Demo-02" class="headerlink" title="Demo 02"></a>Demo 02</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">I_Have_A</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="string">'a'</span>; </div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayA</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(a); </div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> sayA; </div><div class="line">&#125;</div><div class="line"></div><div class="line">I_Have_A()(); </div><div class="line"><span class="comment">// I_Have_A()() ===&gt; sayA()</span></div><div class="line"><span class="comment">// 最后得到 'a'</span></div></pre></td></tr></table></figure>
+<p>调用 sayA 的时候（在全局环境调用），其作用域链仍然是 [sayA, I_Have_A, GlobalEnv] 因此可以得到结果。</p>
+<p>Demo 00 尝试从全局访问内部，失败。<br>Demo 01 尝试从内部访问内部，成功。<br>Demo 02 尝试从全局访问内部，成功。</p>
+<p>这种将作用域传播另一个地方的特性被成为 <strong>闭包</strong> ，上述实现了一个闭包，使得全局可以访问内部变量 a</p>
+<p>更一般的，只要编程语言具备以下两种特性，就一定可以会有闭包特性：</p>
+<p>函数是一等公民</p>
+<p>采用词法作用域</p>
+<p>针对第一点：任何函数都能像其他一等公民那样普通的被函数返回、普通的作为函数的参数传递，函数是值。<br>（其他的一等公民比如数字、数组、字符串等）</p>
+<p>特别的，也不一定一定是要词法作用域才能有闭包，其他类型作用域比如动态作用域也可以有闭包，不过比较复杂。</p>
+<h1 id="Demo-03-异步操作中的闭包（一）"><a href="#Demo-03-异步操作中的闭包（一）" class="headerlink" title="Demo 03 异步操作中的闭包（一）"></a>Demo 03 异步操作中的闭包（一）</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say0to4</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> i = <span class="number">0</span>; </div><div class="line">    <span class="keyword">for</span> (;i &lt; <span class="number">5</span>; i++)&#123;</div><div class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">            <span class="built_in">console</span>.log(i); </div><div class="line">        &#125;, i * <span class="number">100</span>); </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">say0to4();</div></pre></td></tr></table></figure>
+<p>调用后会得到 5 个 5，结果不符合预期。</p>
+<h1 id="Demo-04-异步操作中的闭包（二）"><a href="#Demo-04-异步操作中的闭包（二）" class="headerlink" title="Demo 04 异步操作中的闭包（二）"></a>Demo 04 异步操作中的闭包（二）</h1><p>在此利用闭包去解决第上一个例子的 bug</p>
+<p>分析一下，问题出现在 i，和 setTimeout 的异步，当回调函数执行的时候， for 已经跑完，意味着：</p>
+<p>在执行 setTimeOut 之前，i 已经变成了 5 ，setTimeout 了 5 次函数，这些函数的作用域链一样，查找 i 的时候得到的结果也一样</p>
+<p>解决如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say0to4</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> i = <span class="number">0</span>; </div><div class="line">    <span class="keyword">for</span> (;i &lt; <span class="number">5</span>; i++)&#123;</div><div class="line">        (<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">the_i</span>)</span>&#123;</div><div class="line">            setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">                <span class="built_in">console</span>.log(the_i); </div><div class="line">            &#125;, the_i * <span class="number">100</span>); </div><div class="line">        &#125;)(i)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">say0to4();</div></pre></td></tr></table></figure></p>
+<p>上述结果正确。 过程如下：</p>
+<p>调用了 5 次 f，每次的 f 的作用域链是一致的。<br>但是 f 调用的时候，会传递参数 i，并作为函数的参数存在 f 作用域下，每次调用的时候给进去的 i 不同，因此作用域内容不同。<br>setTimeout 后查找 i 的时候很自然的就找到了 5 次调用的时候给进去的 5 个不同的值。 结果正确</p>
+<p>了解更多参阅：<a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures</a></a></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/18/作用域与作用域链/" data-id="cj594ei0y000920uhb81y9r13" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/18/作用域与作用域链/" data-id="cj5acnsub0008mouhq3yc1wm8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -243,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/17/this之认识/" data-id="cj594ei0w000820uhhz86qz6h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/17/this之认识/" data-id="cj5acnsub000bmouhyixmbyjd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/15/Github创建管理仓库/" data-id="cj594ei0g000220uhwyerqrrw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/15/Github创建管理仓库/" data-id="cj5acnstg0001mouhgpwim24g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -333,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/15/box-sizing的初步认识/" data-id="cj594ei0m000520uh8mk9gsxu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/15/box-sizing的初步认识/" data-id="cj5acnsub0009mouhfj7gt11r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -373,7 +496,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/14/媒体查询/" data-id="cj594ei12000c20uh5a3kg3pd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/14/媒体查询/" data-id="cj5acnsub000dmouhuxei2i5f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -430,7 +553,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/13/bootstrap的基本语法及引用/" data-id="cj594ei0j000420uhii8yv271" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/13/bootstrap的基本语法及引用/" data-id="cj5acnstw0006mouh5h5f7n8n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -503,136 +626,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/13/Flexbox的属性及基本用法/" data-id="cj594ei0d000120uhol6nkjrv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Canvas的语法及基本用法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/12/Canvas的语法及基本用法/" class="article-date">
-  <time datetime="2017-07-12T13:46:25.000Z" itemprop="datePublished">2017-07-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/12/Canvas的语法及基本用法/">Canvas的语法及基本用法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>canvas 可直接在网页上绘制图形。</strong></p>
-<h2>建立画布</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure><br><br>canvas 要用于文档全部加载之后绘制，所以要放在 window.onload = function( ){ } 中。<br><br>要获取 Canvas 中的 2D 环境，只需要通过 canvas 的 getContext() 方法即可，给这个方法传入一个 2d 的值。并且将这个环境赋予给一个变量。<br><br>例如：var ctx = canvas.getContext(‘2d’);<br><br><h2>坐标系统</h2><br>Web的坐标系统的原点是在屏幕（浏览器屏幕）的左上角。<br><br>同样的它有两个坐标轴，x轴（水平轴）和y轴（垂直轴）。两轴的交汇点（左上角）为坐标原点 (0,0) 。原点沿 x轴 向右是正值，原点沿 y轴 向下是正值。<br><br><h2>常见绘制函数</h2>
-
-<p>moveTo(x,y)：移动画笔到指定的坐标点 (x,y) ，该点就是新的子路径的起始点。该方法并不会从当前路径中清除任何子路径。</p>
-<p>lineTo(x,y)：使用直线连接当前端点和指定的坐标点(x,y)。</p>
-<p>stroke()：沿着绘制路径的坐标点顺序绘制直线。</p>
-<p>fill()：填充闭合图形。</p>
-<p>lineWidth 来改变绘制线段的粗细,默认值是 1.0 ，并且这个属性必须大于 0.0 。 (跟宽高一样，也没有单位)</p>
-<p>fillStyle 来改变填充样式。</p>
-<p>strokeStyle 来改变线段的颜色，该属性的值可以是一个表示 CSS颜色值 的字符串。如果你的绘制需求比较复杂，该属性的值还可以是一个 CanvasGradient 对象 或者 CanvasPattern 对象。</p>
-<p>CanvasGradient 接口表示描述渐变的 不透明对象 。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span> (<span class="params"></span>) </span>&#123; </div><div class="line"><span class="comment">// 创建一个表示线性颜色渐变的CanvasGradient对象， </span></div><div class="line"><span class="comment">// 并设置该对象的作用区域就是线段所在的区域 </span></div><div class="line">	<span class="keyword">var</span> canvasGradient = ctx.createLinearGradient(<span class="number">50</span>, <span class="number">50</span>, <span class="number">250</span>, <span class="number">50</span>);  <span class="comment">//在offset为0的位置(即起点位置)添加一个蓝色的渐变</span></div><div class="line">	canvasGradient.addColorStop(<span class="number">0</span>, <span class="string">"blue"</span>);  <span class="comment">//在offset为0.2的位置(线段左起20%的位置)添加一个绿色的渐变 </span></div><div class="line">	canvasGradient.addColorStop(<span class="number">0.2</span>, <span class="string">"green"</span>);  <span class="comment">//在offset为0的位置(即终点位置)添加一个红色的渐变 </span></div><div class="line">	canvasGradient.addColorStop(<span class="number">1</span>, <span class="string">"red"</span>);  <span class="comment">//将strokeStyle的属性值设为该CanvasGradient对象 </span></div><div class="line">	ctx.strokeStyle = canvasGradient; </div><div class="line">	ctx.lineWidth = <span class="number">10</span>; </div><div class="line">	ctx.moveTo(<span class="number">50</span>, <span class="number">10</span>); </div><div class="line">	ctx.lineTo(<span class="number">350</span>, <span class="number">100</span>); </div><div class="line">	ctx.stroke(); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>beginPath()：开始一个新的绘制路径。每次绘制新的路径之前记得调用该方法。它将重置内存中现有的路径。</p>
-<p>closePath()：如果当前的绘制路径是打开的，则关闭掉该绘制路径。此外，调用该方法时，它会尝试用直线边接当前端点与起始端点来关闭路径，但如果图形已经关闭（比如先调用stroke()）或者只有一个点，它会什么都不做。</p>
-<p>在Canvas中绘制路径，最好加上 beginPath() 和 closePath() 。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawScreen</span> (<span class="params"></span>) </span>&#123; </div><div class="line">	ctx.strokeStyle = <span class="string">'#f36'</span>; </div><div class="line">	ctx.lineWidth = <span class="number">4</span>; </div><div class="line">	ctx.beginPath(); </div><div class="line">	ctx.moveTo(<span class="number">50</span>, <span class="number">10</span>); </div><div class="line">	ctx.lineTo(<span class="number">150</span>, <span class="number">10</span>); </div><div class="line">	ctx.lineTo(<span class="number">150</span>,<span class="number">200</span>); </div><div class="line">	ctx.lineTo(<span class="number">200</span>,<span class="number">200</span>); </div><div class="line">	ctx.lineTo(<span class="number">200</span>,<span class="number">150</span>); </div><div class="line">	ctx.stroke(); </div><div class="line">	ctx.closePath(); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>特别提醒：</strong> 在绘制图形路径时，一定要先调用 beginPath() 。</p>
-<p> beginPath() 方法将会清空内存中之前的绘制路径信息。如果不这样做，对于绘制单个图形可能没什么影响，但是在绘制多个图形时(例如上面示例的两条直线)</p>
-<p> ，将会导致路径绘制或者颜色填充等操作出现任何意料之外的结果。</p>
-<p>对于 closePath() 方法，初学者一定要稍加注意。在上面绘制折线的代码示例中，我们先调用了 stroke() ，再调用了 closePath() 。其实在调用 stroke() </p>
-<p>方法时，折线就已经绘制好了，当前的绘制路径也就被关闭掉了，所以再调用 closePath() 方法时，它就不会使用直线连接当前端点和起始端点(也就是说，这里的 closePath()</p>
-<p>是可有可无的，不过为了保持良好的习惯，还是建议写上)。如果我们交换一下 stroke() 和 closePath() 的调用顺序，则情况完全不一样了。由于 closePath()</p>
-<p>先调用，此时绘制路径并没有关闭，那么 closePath() 将会用直线连接当前端点和起始端点。</p>
-<h2>像素线</h2><br>如果在像素边界处绘制一条 1 像素宽的垂直线段，那么Canvas的绘图环境对象会试着将半个像素画在边界中线的右边，将另外半个像素画在边界中线的左边。<br><br>然而，在一个整像素的范围内绘制半个像素宽的线段是不可能的，所以左右两个方向上的半像素都被扩展为 1 个像素。<br><br><h2>canvas绘制简单图形</h2>
-
-<p>fillRect(x, y, width, height)：绘制一个填充的矩形</p>
-<p>strokeRect(x, y, width, height)：绘制一个矩形的边框</p>
-<p>clearRect(x, y, width, height)：清除指定矩形区域，让清除部分完全透明</p>
-<p>arc(x,y,r,startdeg,enddeg)：绘制圆 ( x, y 为圆心坐标, r 为圆弧半径 )</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj594ei06000020uhg59wiqn7" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-暑期培训第二天" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/11/暑期培训第二天/" class="article-date">
-  <time datetime="2017-07-11T09:21:07.000Z" itemprop="datePublished">2017-07-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/11/暑期培训第二天/">暑期培训第二天</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>DOM &amp; BOM</h2><br>HTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。<p></p>
-<p>元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。</p>
-<p>监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boolen)</p>
-<p>【注意！移除时所有参数要一致！且事件名称不能带 <strong>“on”</strong> 】  此方法不适用IE9以下。</p>
-<p>IE9适用方法: attachEvent (event, fn)  【注意！事件名称要带 <strong>“on”</strong> 】</p>
-<p>兼容写法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(object.addEventListener)&#123;</div><div class="line"> 		object.addEventListener();</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line"> 		object.attachEvent();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p></p><h2>window.onload函数</h2><br>window.onload = function(){} 为文档全部加载后再执行的函数，可以加匿名函数也可以加非匿名函数。但是不能以这种方式为事件绑定多个事件处理函数，例如：<p></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">window.onload = function a()&#123;&#125;;</div><div class="line">window.onload = function b()&#123;&#125;;</div></pre></td></tr></table></figure>
-<p>  但是可以用以下方式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> 		<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  			<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.backgroundColor=<span class="string">"#F90"</span>;</div><div class="line"> 		&#125;</div><div class="line"> 		<span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   		<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.width=<span class="string">"200px"</span>;</div><div class="line"> 		&#125;</div><div class="line">     a();</div><div class="line">     b();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>也可以用addEventListener为事件绑定多个事件处理函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>,bg,<span class="literal">false</span>);</div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>,changeW,<span class="literal">false</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bg</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> 		<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.backgroundColor=<span class="string">"#F90"</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeW</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> 		<span class="built_in">document</span>.getElementById(<span class="string">"bg"</span>).style.width=<span class="string">"200px"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p></p><h2>CSS选择器</h2><br><strong>后代选择器</strong>（如：div p 指以 div 为父元素的 p 元素）<p></p>
-<p>【注意！有关后代选择器有一个易被忽视的方面，即两个元素之间的层次间隔可以是无限的。</p>
-<p>例如，如果写作 ul em ，这个语法就会选择从 ul 元素继承的所有 em 元素，而不论 em 的嵌套层次多深。】</p>
-<p>因此，ul em 将会选择以下标记中的所有 em 元素：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1</div><div class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-3</div><div class="line">        <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">				  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-3-1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item ```bash<span class="tag">&lt;<span class="name">em</span>&gt;</span>1-3-2<span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-3-3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1-4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>子元素选择器</strong> (如： h1 &gt; strong 指作为 h1 元素子元素的所有 strong 元素 )<br>例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> &gt; <span class="selector-tag">strong</span> &#123;<span class="attribute">color</span>:red;&#125;</div></pre></td></tr></table></figure></p>
-<p>这个规则会把第一个 h1 下面的两个 strong 元素变为红色，但是第二个 h1 中的 strong 不受影响：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="name">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> <span class="tag">&lt;<span class="name">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> important.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="name">em</span>&gt;</span>really <span class="tag">&lt;<span class="name">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="name">strong</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span> important.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p><strong>相邻兄弟选择器</strong> ( 紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器 )</p>
-<p>例如：h1 + p 指选择紧接在 h1 元素后出现的段落，h1 和 p 元素拥有共同的父元素<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>List item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>在上面的片段中，div 元素中包含两个列表：一个无序列表，一个有序列表，每个列表都包含三个列表项。这两个列表是相邻兄弟，列表项本身也是相邻兄弟。不过，第一个列表中的列表项与</p>
-<p>第二个列表中的列表项不是相邻兄弟，因为这两组列表项不属于同一父元素（最多只能算堂兄弟）。</p>
-<p>请记住，用一个结合符只能选择两个相邻兄弟中的第二个元素。请看下面的选择器：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span> + <span class="selector-tag">li</span> &#123;<span class="attribute">font-weight</span>:bold;&#125;</div></pre></td></tr></table></figure></p>
-<p>上面这个选择器只会把列表中的第二个和第三个列表项变为粗体。第一个列表项不受影响。</p>
-<p></p><h2>sort方法排序</h2><br>参阅 <a><a href="http://www.webkaka.com/tutorial/js/2015/070314/" target="_blank" rel="external">http://www.webkaka.com/tutorial/js/2015/070314/</a></a><p></p>
-<p></p><h2>oninput实现实时监听输入框变化</h2><br>在元素上绑定oninput事件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"a"</span> <span class="attr">oninput</span>=<span class="string">"change()"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>您输入的值是：<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"b"</span>&gt;</span>尚无录入<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure><p></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> input = <span class="built_in">document</span>.getElementById(<span class="string">"a"</span>);</div><div class="line">  <span class="keyword">var</span> span = <span class="built_in">document</span>.getElementById(<span class="string">"b"</span>);</div><div class="line">  span.innerHTML = input.value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p></p><h2>几个原生函数</h2><br>map、forEach、some、every、filter、reduce函数 ,<br>参阅 <a><a href="https://eczn.coding.me/blog/%E6%B4%BB%E7%94%A8%E5%8E%9F%E7%94%9F%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98.html" target="_blank" rel="external">https://eczn.coding.me/blog/%E6%B4%BB%E7%94%A8%E5%8E%9F%E7%94%9F%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3%E6%95%B0%E7%BB%84%E9%97%AE%E9%A2%98.html</a></a><p></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj594ei13000d20uhfhecnuya" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/13/Flexbox的属性及基本用法/" data-id="cj5acnstg0003mouhslqryuhm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -676,6 +670,14 @@
       <ul>
         
           <li>
+            <a href="/2017/07/19/范式初体验/">范式初体验</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/19/prototype原型链/">prototype原型链</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/18/Javascript内置对象/">Javascript内置对象</a>
           </li>
         
@@ -685,14 +687,6 @@
         
           <li>
             <a href="/2017/07/17/this之认识/">this之认识</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/15/Github创建管理仓库/">Github创建管理仓库</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/15/box-sizing的初步认识/">box-sizing的初步认识</a>
           </li>
         
       </ul>

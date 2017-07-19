@@ -5,16 +5,16 @@
   
   <title>Javascript内置对象 | Myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String. 对象创建对象：两种方法 1、使用 new 操作符1var person = new Object(); 2、对象字面量法1234567var apple = &amp;#123;    price: 100,    color: &apos;red&apos;,    from: &apos;Gua">
+  <meta name="description" content="包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String. 分为基本类型：underfined, boolean, null, number, string 和引用类型。 区分基本类型与引用类型 基本类型指简单的数据段，按值访问，可以操作保存在变量中的实际的值。引用类型指可能有多个值构成的对象，按引用访问，保存在内存中，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript内置对象">
 <meta property="og:url" content="http://yoursite.com/2017/07/18/Javascript内置对象/index.html">
 <meta property="og:site_name" content="Myblog">
-<meta property="og:description" content="包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String. 对象创建对象：两种方法 1、使用 new 操作符1var person = new Object(); 2、对象字面量法1234567var apple = &amp;#123;    price: 100,    color: &apos;red&apos;,    from: &apos;Gua">
-<meta property="og:updated_time" content="2017-07-18T05:35:25.709Z">
+<meta property="og:description" content="包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String. 分为基本类型：underfined, boolean, null, number, string 和引用类型。 区分基本类型与引用类型 基本类型指简单的数据段，按值访问，可以操作保存在变量中的实际的值。引用类型指可能有多个值构成的对象，按引用访问，保存在内存中，">
+<meta property="og:updated_time" content="2017-07-19T02:37:19.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript内置对象">
-<meta name="twitter:description" content="包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String. 对象创建对象：两种方法 1、使用 new 操作符1var person = new Object(); 2、对象字面量法1234567var apple = &amp;#123;    price: 100,    color: &apos;red&apos;,    from: &apos;Gua">
+<meta name="twitter:description" content="包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String. 分为基本类型：underfined, boolean, null, number, string 和引用类型。 区分基本类型与引用类型 基本类型指简单的数据段，按值访问，可以操作保存在变量中的实际的值。引用类型指可能有多个值构成的对象，按引用访问，保存在内存中，">
   
     <link rel="alternate" href="/atom.xml" title="Myblog" type="application/atom+xml">
   
@@ -90,6 +90,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String.</p>
+<p>分为基本类型：underfined, boolean, null, number, string 和引用类型。</p>
+<p></p><h2>区分基本类型与引用类型</h2><p></p>
+<ul><br><li>基本类型指简单的数据段，按值访问，可以操作保存在变量中的实际的值。<br>引用类型指可能有多个值构成的对象，按引用访问，保存在内存中，不允许直接访问。因此只能通过操作引用的对象而不是实际的对象。<br></li><br><li>可以给引用对象动态地添加属性，而不能给基本类型的值添加属性。</li><br><li>复制基本类型时，会在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上。<br>复制引用类型时，不同在于复制的值实际是一个指针，两个变量实际上引用同一个对象。对其中一个变量操作会影响另一个变量。<br></li><br></ul>
+
+<p>typeof 操作符可以检测一个变量是什么类型的数据，但若是引用类型只能检测是对象而不能检测出是什么类型的对象。 typeof + 变量名</p>
+<p>instanceof 操作符可以检测引用类型的变量是什么类型的对象（根据原型链识别）。 变量名 + instanceof + constructor (返回 true/false )<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alert(person instanceof Object); //变量person是Object吗?</div><div class="line">alert(color instanceof Array); //变量color是Array吗?</div><div class="line">alert(render instanceof RegExp); //变量render是RegExp吗?</div></pre></td></tr></table></figure></p>
 <p></p><h2>对象</h2><br><strong>创建对象</strong>：两种方法<p></p>
 <p>1、使用 new 操作符<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div></pre></td></tr></table></figure></p>
 <p>2、对象字面量法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> apple = &#123;</div><div class="line">    <span class="attr">price</span>: <span class="number">100</span>,</div><div class="line">    <span class="attr">color</span>: <span class="string">'red'</span>,</div><div class="line">    <span class="attr">from</span>: <span class="string">'GuangZhou'</span>,</div><div class="line">    <span class="attr">isFruit</span>: <span class="literal">true</span>,</div><div class="line">    to where: <span class="string">'BeiJing'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
@@ -117,6 +123,7 @@
 <p>every(callback[, thisObject]) 如果数组中的<strong>每一项</strong>调用callback返回都为true则返回true。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumber</span>(<span class="params">value</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> value == <span class="string">'number'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">alert(a1.every(isNumber)); <span class="comment">// Alerts true</span></div><div class="line"><span class="keyword">var</span> a2 = [<span class="number">1</span>, <span class="string">'2'</span>, <span class="number">3</span>];</div><div class="line">alert(a2.every(isNumber)); <span class="comment">// Alerts false</span></div></pre></td></tr></table></figure></p>
 <p>some(callback[, thisObject]) 如果数组中的<strong>至少</strong>一项调用callback返回都为true则返回true。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumber</span>(<span class="params">value</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> value == <span class="string">'number'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">alert(a1.some(isNumber)); <span class="comment">// Alerts true</span></div><div class="line"><span class="keyword">var</span> a2 = [<span class="number">1</span>, <span class="string">'2'</span>, <span class="number">3</span>];</div><div class="line">alert(a2.some(isNumber)); <span class="comment">// Alerts true</span></div><div class="line"><span class="keyword">var</span> a3 = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>];</div><div class="line">alert(a3.some(isNumber)); <span class="comment">// Alerts false</span></div></pre></td></tr></table></figure></p>
 <p>reduce(callback[, initialValue]) 通过合并两个值然后重复此操作来把一个序列归约成一个值的算法。（比如数组求和）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>];</div><div class="line"><span class="keyword">var</span> total = a.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">first, second</span>) </span>&#123; </div><div class="line">	<span class="keyword">return</span> first + second; </div><div class="line">&#125;, <span class="number">0</span>);</div><div class="line">alert(total) <span class="comment">// Alerts 60</span></div></pre></td></tr></table></figure></p>
+<p>数组迭代方法详情：<a><a href="http://www.w3cplus.com/javascript/array-part-7.html" target="_blank" rel="external">http://www.w3cplus.com/javascript/array-part-7.html</a></a></p>
 <p>上面这些函数里面有些需要接受callback 函数作为参数，在这里的被传递进去作为参数的函数叫做遍历器（iterative methods），因为这些方法遍历了整个数组，并在遍历的过程中把需要的值喂给了这些遍历器。此外，可以通过第二个可选的参数用于指定遍历器的执行上下文 this，如果没有给出这个可选的参数，this 将会是这种情况下的取值：函数在一个明确的对象上下文之外被调用，而这种情况下 this 一般指向全局对象（比如 window ）</p>
 <p>上面的回调函数（遍历器）需要三个参数，第一个是当前遍历到的元素 item ，第二个是当前遍历到的元素的索引 index，第三个是被遍历的数组本身 itself。JavaScript 函数会忽略任何没有在形参中声明的参数，因此有时候你大可以省略后面的索引和数组而不必担心会发生什么不好的事情.</p>
 <p></p><h2>函数（Function）</h2><br>在JavaScript中，函数是Function类的具体实例。而且都与其它引用类型一样具有属性和方法。函数名实际上是指向函数对象的指针，函数可以作为参数参与到传参和返回值中。<p></p>
@@ -136,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/18/Javascript内置对象/" data-id="cj594ei0p000620uhdjtlvs8r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/18/Javascript内置对象/" data-id="cj5acnst00000mouhezhv3jo4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,6 +151,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/07/19/prototype原型链/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          prototype原型链
+        
+      </div>
+    </a>
   
   
     <a href="/2017/07/18/作用域与作用域链/" id="article-nav-older" class="article-nav-link-wrap">
@@ -185,6 +201,14 @@
       <ul>
         
           <li>
+            <a href="/2017/07/19/范式初体验/">范式初体验</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/19/prototype原型链/">prototype原型链</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/18/Javascript内置对象/">Javascript内置对象</a>
           </li>
         
@@ -194,14 +218,6 @@
         
           <li>
             <a href="/2017/07/17/this之认识/">this之认识</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/15/Github创建管理仓库/">Github创建管理仓库</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/15/box-sizing的初步认识/">box-sizing的初步认识</a>
           </li>
         
       </ul>
