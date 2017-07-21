@@ -5,16 +5,16 @@
   
   <title>作用域与作用域链 | Myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。 全局作用域在代码中任何地方都能访问到的对象拥有全局作用域，一般来说以下几种情形拥有全局作用域： （1）最外层函数和在最外层函数外面定义的变量拥有全局作用域，例如：123456789101112var authorName=&quot;山边小溪&quot;;f">
+  <meta name="description" content="简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="作用域与作用域链">
 <meta property="og:url" content="http://yoursite.com/2017/07/18/作用域与作用域链/index.html">
 <meta property="og:site_name" content="Myblog">
-<meta property="og:description" content="简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。 全局作用域在代码中任何地方都能访问到的对象拥有全局作用域，一般来说以下几种情形拥有全局作用域： （1）最外层函数和在最外层函数外面定义的变量拥有全局作用域，例如：123456789101112var authorName=&quot;山边小溪&quot;;f">
-<meta property="og:updated_time" content="2017-07-19T03:21:34.698Z">
+<meta property="og:description" content="简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。">
+<meta property="og:updated_time" content="2017-07-21T05:02:06.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="作用域与作用域链">
-<meta name="twitter:description" content="简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。 全局作用域在代码中任何地方都能访问到的对象拥有全局作用域，一般来说以下几种情形拥有全局作用域： （1）最外层函数和在最外层函数外面定义的变量拥有全局作用域，例如：123456789101112var authorName=&quot;山边小溪&quot;;f">
+<meta name="twitter:description" content="简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。">
   
     <link rel="alternate" href="/atom.xml" title="Myblog" type="application/atom+xml">
   
@@ -89,7 +89,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。</p>
+        <p>简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。<br><a id="more"></a></p>
 <p></p><h2>全局作用域</h2><br>在代码中任何地方都能访问到的对象拥有全局作用域，一般来说以下几种情形拥有全局作用域：<p></p>
 <p>（1）最外层函数和在最外层函数外面定义的变量拥有全局作用域，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> authorName=<span class="string">"山边小溪"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> blogName=<span class="string">"梦想天空"</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">innerSay</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(blogName);</div><div class="line">    &#125;</div><div class="line">    innerSay();</div><div class="line">&#125;</div><div class="line">alert(authorName); <span class="comment">//山边小溪</span></div><div class="line">alert(blogName); <span class="comment">//脚本错误</span></div><div class="line">doSomething(); <span class="comment">//梦想天空</span></div><div class="line">innerSay() <span class="comment">//脚本错误</span></div></pre></td></tr></table></figure></p>
 <p>（2）所有末定义直接赋值的变量自动声明为拥有全局作用域，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> authorName=<span class="string">"山边小溪"</span>;</div><div class="line">    blogName=<span class="string">"梦想天空"</span>;</div><div class="line">    alert(authorName);</div><div class="line">&#125;</div><div class="line">doSomething(); <span class="comment">//山边小溪</span></div><div class="line">alert(blogName); <span class="comment">//梦想天空</span></div><div class="line">alert(authorName); <span class="comment">//脚本错误</span></div></pre></td></tr></table></figure></p>
@@ -140,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/18/作用域与作用域链/" data-id="cj5aotkao000700uhpsl5asfe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/18/作用域与作用域链/" data-id="cj5de2joq000db4uh1h217umx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -198,6 +198,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/20/small-tips/">small tips</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/19/范式初体验/">范式初体验</a>
           </li>
         
@@ -211,10 +215,6 @@
         
           <li>
             <a href="/2017/07/18/作用域与作用域链/">作用域与作用域链</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/17/this之认识/">this之认识</a>
           </li>
         
       </ul>

@@ -5,16 +5,16 @@
   
   <title>prototype原型链 | Myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="构造函数按照惯例，构造函数要以一个大写字母开头，而非构造函数要以一个小写字母开头。例如：1234567891011function Person(name,age,job) &amp;#123;	this.name = name;	this.age = age;	this.job = job;	this.sayName = function() &amp;#123;		alert(this.name);	&amp;#12">
+  <meta name="description" content="构造函数按照惯例，构造函数要以一个大写字母开头，而非构造函数要以一个小写字母开头。例如：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="prototype原型链">
 <meta property="og:url" content="http://yoursite.com/2017/07/19/prototype原型链/index.html">
 <meta property="og:site_name" content="Myblog">
-<meta property="og:description" content="构造函数按照惯例，构造函数要以一个大写字母开头，而非构造函数要以一个小写字母开头。例如：1234567891011function Person(name,age,job) &amp;#123;	this.name = name;	this.age = age;	this.job = job;	this.sayName = function() &amp;#123;		alert(this.name);	&amp;#12">
-<meta property="og:updated_time" content="2017-07-19T12:57:24.598Z">
+<meta property="og:description" content="构造函数按照惯例，构造函数要以一个大写字母开头，而非构造函数要以一个小写字母开头。例如：">
+<meta property="og:updated_time" content="2017-07-21T04:59:57.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="prototype原型链">
-<meta name="twitter:description" content="构造函数按照惯例，构造函数要以一个大写字母开头，而非构造函数要以一个小写字母开头。例如：1234567891011function Person(name,age,job) &amp;#123;	this.name = name;	this.age = age;	this.job = job;	this.sayName = function() &amp;#123;		alert(this.name);	&amp;#12">
+<meta name="twitter:description" content="构造函数按照惯例，构造函数要以一个大写字母开头，而非构造函数要以一个小写字母开头。例如：">
   
     <link rel="alternate" href="/atom.xml" title="Myblog" type="application/atom+xml">
   
@@ -89,7 +89,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><h2>构造函数</h2><br>按照惯例，构造函数要以一个大写字母开头，而非构造函数要以一个小写字母开头。例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.job = job;</div><div class="line">	<span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">	&#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"Amy"</span>,<span class="number">24</span>,<span class="string">"engineer"</span>);</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"Mary"</span>,<span class="number">25</span>,<span class="string">"teacher"</span>);</div></pre></td></tr></table></figure><p></p>
+        <p></p><h2>构造函数</h2><br>按照惯例，构造函数要以一个大写字母开头，而非构造函数要以一个小写字母开头。例如：<p></p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age,job</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.job = job;</div><div class="line">	<span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">	&#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"Amy"</span>,<span class="number">24</span>,<span class="string">"engineer"</span>);</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"Mary"</span>,<span class="number">25</span>,<span class="string">"teacher"</span>);</div></pre></td></tr></table></figure>
 <p>用 new 操作符调用构造函数实际会经历以下5个步骤：</p>
 <p>1、创建一个新对象</p>
 <p>2、将构造函数的作用域赋给新对象（因此 this 就指向了这个新对象）</p>
@@ -112,7 +114,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/19/prototype原型链/" data-id="cj5aotkb3000a00uhg9syjan0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/19/prototype原型链/" data-id="cj5de2joq000cb4uhusxullk3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,6 +172,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/20/small-tips/">small tips</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/19/范式初体验/">范式初体验</a>
           </li>
         
@@ -183,10 +189,6 @@
         
           <li>
             <a href="/2017/07/18/作用域与作用域链/">作用域与作用域链</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/17/this之认识/">this之认识</a>
           </li>
         
       </ul>

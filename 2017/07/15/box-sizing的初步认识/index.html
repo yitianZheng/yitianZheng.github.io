@@ -14,7 +14,7 @@
 <meta property="og:image" content="http://www.w3cplus.com/sites/default/files/box-sizing.png">
 <meta property="og:image" content="http://www.w3cplus.com/sites/default/files/box-sizing-demo1.jpg">
 <meta property="og:image" content="http://www.w3cplus.com/sites/default/files/box-sizing-img-box.png">
-<meta property="og:updated_time" content="2017-07-15T08:30:56.128Z">
+<meta property="og:updated_time" content="2017-07-21T05:03:54.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="box-sizing的初步认识">
 <meta name="twitter:description" content="盒子模型W3C 的标准 Box Model:123456/*外盒尺寸计算（元素空间尺寸）*/Element空间高度 = content height + padding + border + marginElement 空间宽度 = content width + padding + border + margin/*内盒尺寸计算（元素大小）*/Element Height = content h">
@@ -95,6 +95,7 @@
       
         <p></p><h2>盒子模型</h2><br>W3C 的标准 Box Model:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/*外盒尺寸计算（元素空间尺寸）*/</div><div class="line">Element空间高度 = content height + padding + border + margin</div><div class="line">Element 空间宽度 = content width + padding + border + margin</div><div class="line">/*内盒尺寸计算（元素大小）*/</div><div class="line">Element Height = content height + padding + border （Height为内容高度）</div><div class="line">Element Width = content width + padding + border （Width为内容宽度）</div></pre></td></tr></table></figure><p></p>
 <p>IE 传统 Box Model:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/*外盒尺寸计算（元素空间尺寸）*/</div><div class="line">Element空间高度 = content Height + margin (Height包含了元素内容宽度，边框宽度，内距宽度)</div><div class="line">Element空间宽度 = content Width + margin (Width包含了元素内容宽度、边框宽度、内距宽度)</div><div class="line">/*内盒尺寸计算（元素大小）*/</div><div class="line">Element Height = content Height(Height包含了元素内容宽度，边框宽度，内距宽度)</div><div class="line">Element Width = content Width(Width包含了元素内容宽度、边框宽度、内距宽度)</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p></p><h2>语法</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">box-sizing ： content-box || border-box || inherit</div></pre></td></tr></table></figure><p></p>
 <p>说明：<br>1、content-box:此值为其默认值，其让元素维持 W3C 的标准 Box Model，也就是说元素的宽度/高度</p>
 <p>（width/height）等于元素边框宽度（border）加上元素内边距（padding）加上元素内容宽度/高度（content width/height）</p>
@@ -114,7 +115,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/15/box-sizing的初步认识/" data-id="cj5aotkb3000800uhectjc28i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/15/box-sizing的初步认识/" data-id="cj5de2joa0007b4uhbevxuerv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,6 +173,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/20/small-tips/">small tips</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/19/范式初体验/">范式初体验</a>
           </li>
         
@@ -185,10 +190,6 @@
         
           <li>
             <a href="/2017/07/18/作用域与作用域链/">作用域与作用域链</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/17/this之认识/">this之认识</a>
           </li>
         
       </ul>

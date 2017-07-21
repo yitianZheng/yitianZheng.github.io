@@ -5,16 +5,16 @@
   
   <title>Canvas的语法及基本用法 | Myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="canvas 可直接在网页上绘制图形。 建立画布1&amp;lt;canvas id=&quot;myCanvas&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;canvas 要用于文档全部加载之后绘制，所以要放在 window.onload = function( ){ } 中。要获取 Canvas 中的 2D 环境，只需要通过 canvas 的 getContext()">
+  <meta name="description" content="canvas 可直接在网页上绘制图形。 建立画布1&amp;lt;canvas id=&quot;myCanvas&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Canvas的语法及基本用法">
 <meta property="og:url" content="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/index.html">
 <meta property="og:site_name" content="Myblog">
-<meta property="og:description" content="canvas 可直接在网页上绘制图形。 建立画布1&amp;lt;canvas id=&quot;myCanvas&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;canvas 要用于文档全部加载之后绘制，所以要放在 window.onload = function( ){ } 中。要获取 Canvas 中的 2D 环境，只需要通过 canvas 的 getContext()">
-<meta property="og:updated_time" content="2017-07-13T03:44:10.418Z">
+<meta property="og:description" content="canvas 可直接在网页上绘制图形。 建立画布1&amp;lt;canvas id=&quot;myCanvas&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;">
+<meta property="og:updated_time" content="2017-07-21T05:05:41.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Canvas的语法及基本用法">
-<meta name="twitter:description" content="canvas 可直接在网页上绘制图形。 建立画布1&amp;lt;canvas id=&quot;myCanvas&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;canvas 要用于文档全部加载之后绘制，所以要放在 window.onload = function( ){ } 中。要获取 Canvas 中的 2D 环境，只需要通过 canvas 的 getContext()">
+<meta name="twitter:description" content="canvas 可直接在网页上绘制图形。 建立画布1&amp;lt;canvas id=&quot;myCanvas&quot; width=&quot;400&quot; height=&quot;400&quot;&amp;gt;&amp;lt;/canvas&amp;gt;">
   
     <link rel="alternate" href="/atom.xml" title="Myblog" type="application/atom+xml">
   
@@ -90,7 +90,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>canvas 可直接在网页上绘制图形。</strong></p>
-<h2>建立画布</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure><br><br>canvas 要用于文档全部加载之后绘制，所以要放在 window.onload = function( ){ } 中。<br><br>要获取 Canvas 中的 2D 环境，只需要通过 canvas 的 getContext() 方法即可，给这个方法传入一个 2d 的值。并且将这个环境赋予给一个变量。<br><br>例如：var ctx = canvas.getContext(‘2d’);<br><br><h2>坐标系统</h2><br>Web的坐标系统的原点是在屏幕（浏览器屏幕）的左上角。<br><br>同样的它有两个坐标轴，x轴（水平轴）和y轴（垂直轴）。两轴的交汇点（左上角）为坐标原点 (0,0) 。原点沿 x轴 向右是正值，原点沿 y轴 向下是正值。<br><br><h2>常见绘制函数</h2>
+<h2>建立画布</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure><br><br><a id="more"></a><br>canvas 要用于文档全部加载之后绘制，所以要放在 window.onload = function( ){ } 中。<br><br>要获取 Canvas 中的 2D 环境，只需要通过 canvas 的 getContext() 方法即可，给这个方法传入一个 2d 的值。并且将这个环境赋予给一个变量。<br><br>例如：var ctx = canvas.getContext(‘2d’);<br><br><h2>坐标系统</h2><br>Web的坐标系统的原点是在屏幕（浏览器屏幕）的左上角。<br><br>同样的它有两个坐标轴，x轴（水平轴）和y轴（垂直轴）。两轴的交汇点（左上角）为坐标原点 (0,0) 。原点沿 x轴 向右是正值，原点沿 y轴 向下是正值。<br><br><h2>常见绘制函数</h2>
 
 <p>moveTo(x,y)：移动画笔到指定的坐标点 (x,y) ，该点就是新的子路径的起始点。该方法并不会从当前路径中清除任何子路径。</p>
 <p>lineTo(x,y)：使用直线连接当前端点和指定的坐标点(x,y)。</p>
@@ -122,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj5aotka8000100uh9vp48a5u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj5de2jnu0000b4uhprtzm7f0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,6 +180,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/20/small-tips/">small tips</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/19/范式初体验/">范式初体验</a>
           </li>
         
@@ -193,10 +197,6 @@
         
           <li>
             <a href="/2017/07/18/作用域与作用域链/">作用域与作用域链</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/17/this之认识/">this之认识</a>
           </li>
         
       </ul>
