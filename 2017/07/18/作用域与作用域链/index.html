@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/18/作用域与作用域链/index.html">
 <meta property="og:site_name" content="Myblog">
 <meta property="og:description" content="简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。">
-<meta property="og:updated_time" content="2017-07-21T05:02:06.622Z">
+<meta property="og:updated_time" content="2017-07-21T11:33:57.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="作用域与作用域链">
 <meta name="twitter:description" content="简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在 JavaScript 中，变量的作用域有全局作用域和局部作用域两种。">
@@ -135,12 +135,11 @@
 <p>解决如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say0to4</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> i = <span class="number">0</span>; </div><div class="line">    <span class="keyword">for</span> (;i &lt; <span class="number">5</span>; i++)&#123;</div><div class="line">        (<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">the_i</span>)</span>&#123;</div><div class="line">            setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">                <span class="built_in">console</span>.log(the_i); </div><div class="line">            &#125;, the_i * <span class="number">100</span>); </div><div class="line">        &#125;)(i)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">say0to4();</div></pre></td></tr></table></figure></p>
 <p>上述结果正确。 过程如下：</p>
 <p>调用了 5 次 f，每次的 f 的作用域链是一致的。<br>但是 f 调用的时候，会传递参数 i，并作为函数的参数存在 f 作用域下，每次调用的时候给进去的 i 不同，因此作用域内容不同。<br>setTimeout 后查找 i 的时候很自然的就找到了 5 次调用的时候给进去的 5 个不同的值。 结果正确</p>
-<p>了解更多参阅：<a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures</a></a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/18/作用域与作用域链/" data-id="cj5de2joq000db4uh1h217umx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/18/作用域与作用域链/" data-id="cj5dvfzwu000cekuhzf1tqun5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -198,6 +197,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/21/闭包之通俗理解/">闭包之通俗理解</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/20/small-tips/">small tips</a>
           </li>
         
@@ -211,10 +214,6 @@
         
           <li>
             <a href="/2017/07/18/Javascript内置对象/">Javascript内置对象</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/18/作用域与作用域链/">作用域与作用域链</a>
           </li>
         
       </ul>
