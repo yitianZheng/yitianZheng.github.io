@@ -68,6 +68,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-认识前端工程化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/25/认识前端工程化/" class="article-date">
+  <time datetime="2017-07-25T06:45:31.000Z" itemprop="datePublished">2017-07-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/25/认识前端工程化/">认识前端工程化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>前端工程化的含义</h2><br>1、持续集成。<p></p>
+<p>2、规范化。</p>
+<p>3、模块化。</p>
+<p>4、单元和功能测试。</p>
+<p>5、自动化。</p>
+<p></p><h2>持续集成</h2><br>用 Git 术语来说，持续集成就是 <strong>各个开发人员的开发代码频繁地合并进主干，始终保持代码是最新的、可用的、可随时发布的状态的这个过程。</strong><p></p>
+<p><strong>持续集成主要通过 Git 的合并分支体现</strong></p>
+<p></p><h2>规范化</h2><br>规范化指多人合作开发时约定遵守的开发规范。如：目录命名规则、变量命名规则、模块化接口说明、后台接口说明、等等诸如以上共识均可以算作规范化。<p></p>
+<p></p><h2>模块化</h2><br>前端模块化尤为重要，甚至是前端工程化要做的最重要的事，它的主要思想是：<p></p>
+<p>划分软件成多个实际的模块，以降低系统复杂度。</p>
+<p>而模块本身，又可以是多个子模块的集合，又进一步降低模块的复杂度。</p>
+<p>而且模块化之后的软件也很易于团队分工，向持续集成输出了一个正向回馈。</p>
+<p></p><h2>单元和功能测试</h2><br>测试主要有两种：<p></p>
+<p>单元测试就是测试函数的输入和输出是否符合预期。</p>
+<p>功能测试就是测试模块和网页的行为是否符合预期。</p>
+<p>特别地，针对第一种，如果要测试如下函数，则还需写多额外的代码用于测试 add ：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// add.js </span></div><div class="line"><span class="comment">// 求和 a + b </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a + b; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>以下是供测试 add 函数的额外代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// test4main.js </span></div><div class="line"><span class="comment">// For Test </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">testAdd</span>(<span class="params">func, inputArr, except</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a = inputArr[<span class="number">0</span>] </div><div class="line">      , b = inputArr[<span class="number">1</span>]</div><div class="line">      , result = func(a, b);</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (result === except) &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`[√] 函数 <span class="subst">$&#123;func.name&#125;</span> 测试通过`</span>); </div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`    输入： <span class="subst">$&#123;inputArr&#125;</span>`</span>); </div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`    输出： <span class="subst">$&#123;result&#125;</span>`</span>); </div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>; </div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`[×] 函数 <span class="subst">$&#123;func.name&#125;</span> 测试驳回`</span>); </div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`    输入： <span class="subst">$&#123;inputArr&#125;</span>`</span>); </div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`    输出： <span class="subst">$&#123;result&#125;</span>`</span>); </div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>; </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面定义好了 add 函数和对应的改卷员 testAdd，现在还差一个函数用于调用 testAdd :<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// testAll.js </span></div><div class="line"><span class="comment">// 多组测试数据 </span></div><div class="line"><span class="keyword">var</span> datas = [</div><div class="line">    &#123;</div><div class="line">        <span class="attr">input</span>: [<span class="number">1</span>, <span class="number">2</span>], </div><div class="line">        <span class="attr">output</span>: <span class="number">3</span></div><div class="line">    &#125;, </div><div class="line">    &#123;</div><div class="line">        <span class="attr">input</span>: [<span class="number">3</span>, <span class="number">6</span>], </div><div class="line">        <span class="attr">output</span>: <span class="number">9</span></div><div class="line">    &#125;, </div><div class="line">    &#123;</div><div class="line">        <span class="attr">input</span>: [<span class="number">-4</span>, <span class="number">10</span>], </div><div class="line">        <span class="attr">output</span>: <span class="number">6</span></div><div class="line">    &#125;, </div><div class="line">    &#123;</div><div class="line">        <span class="attr">input</span>: [<span class="number">-1</span>, <span class="number">-2</span>], </div><div class="line">        <span class="attr">output</span>: <span class="number">-3</span></div><div class="line">    &#125;</div><div class="line">]; </div><div class="line"></div><div class="line">datas.map(<span class="function"><span class="params">test</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> testAdd(add, test.input, test.output); </div><div class="line">&#125;); </div><div class="line"></div><div class="line"><span class="comment">// =&gt; </span></div><div class="line"><span class="comment">// [√] 函数 add 测试通过</span></div><div class="line"><span class="comment">//     输入： [1, 2]</span></div><div class="line"><span class="comment">//     输出： 3</span></div><div class="line"><span class="comment">// ..... </span></div><div class="line"><span class="comment">// .....</span></div><div class="line"><span class="comment">// 等等</span></div></pre></td></tr></table></figure></p>
+<p>以上即为一个简单的测试过程，由此总结，测试需要的两个要素：</p>
+<p>1、测试断言 （指的是 testAdd 函数）</p>
+<p>2、测试用例 （指的是 datas 里面的）</p>
+<p></p><h2>自动化</h2><br>自动化主要是三个内容：<p></p>
+<p>1、开发的自动化</p>
+<p>2、测试的自动化</p>
+<p>3、部署的自动化</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/25/认识前端工程化/" data-id="cj5j9pim2000i48uh6zgo9z6h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JSON浅析" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/24/JSON浅析/" class="article-date">
@@ -104,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/JSON浅析/" data-id="cj5hxjl890004kwuh7g9iokqy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/24/JSON浅析/" data-id="cj5j9pim2000k48uhzi4ou9qs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -148,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" data-id="cj5hxjl8a000bkwuh9exb0n59" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" data-id="cj5j9pil7000648uh00zsgjbp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/Ajax初体验/" data-id="cj5hxjl810001kwuhkheafgap" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/24/Ajax初体验/" data-id="cj5j9piln000948uhk2k5ndsr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -237,44 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/21/闭包之通俗理解/" data-id="cj5hxjl90000jkwuhnntr13yu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-small-tips" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/20/small-tips/" class="article-date">
-  <time datetime="2017-07-20T07:28:31.000Z" itemprop="datePublished">2017-07-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/20/small-tips/">small tips</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、函数一定要写返回值，否则什么都不返回。<br>2、Array.from(array)：将类数组转化为真正的数组。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/20/small-tips/" data-id="cj5hxjl8a0008kwuh2jz3fhzw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/21/闭包之通俗理解/" data-id="cj5j9pim2000j48uh4faixwkr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -287,7 +311,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -318,6 +342,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/25/认识前端工程化/">认识前端工程化</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/24/JSON浅析/">JSON浅析</a>
           </li>
         
@@ -331,10 +359,6 @@
         
           <li>
             <a href="/2017/07/21/闭包之通俗理解/">闭包之通俗理解</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/20/small-tips/">small tips</a>
           </li>
         
       </ul>
