@@ -68,6 +68,141 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JSON浅析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/24/JSON浅析/" class="article-date">
+  <time datetime="2017-07-24T08:15:36.000Z" itemprop="datePublished">2017-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/24/JSON浅析/">JSON浅析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>概念</h2><br>JSON：JavaScript 对象表示法，是一种轻量级的数据交换格式。<p></p>
+<p>JSON 是存储和交换文本信息的语法。类似 XML。</p>
+<p>JSON 比 XML 更小、更快，更易解析。</p>
+<li>JSON 是由‘名称:值’对组成的集合，例如，”key1”:value1。</li><br><li>JSON 的值(value) 可以是 <strong>双引号（不能是单引号）</strong> 括起来的字符串(string)、数值(number)、true、false、 null、对象(object)或者数组(array)。</li><br><li>JSON 有三种类型的值：<br><br>1、简单值：字符串、数值、布尔值和 null 。<strong>注意：JSON 不支持 undefined。</strong><br><br>2、对象：由{}括起来的，无序的‘名称:值’对集合。如：{“key1”:value1,”key2”:value2,”key3”:value3,…}<br><br>3、数组：由[]括起来的，值的有序集合。如：[{“key1”:value1,”key2”:value2,”key3”:value3},{“key1”:value1,”key2”:value2,”key3”:value3}…]<br></li>
+
+<p></p><h2>JSON使用JavaScript语法</h2><br>因为 JSON 使用 JavaScript 语法，所以无需额外的软件就能处理 JavaScript 中的 JSON。<p></p>
+<p>区别：1、区别于 JS 中的对象字面量，JSON 对象的属性要加引号。 2、JSON 中没有变量的概念，末尾不用加分号。 3、属性的值可以是简单值，也可以是复杂类型值。可以嵌套。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	&quot;name&quot;: &quot;Mary&quot;,</div><div class="line">	&quot;age&quot;: 29,</div><div class="line">	&quot;school&quot;: &#123;</div><div class="line">		&quot;name&quot;: &quot;Mike&quot;,</div><div class="line">		&quot;location&quot;: &quot;Landon Street&quot;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p></p><h2>JSON方法</h2><br>JSON 字符串: 指符合 JSON 格式的 JS 字符串。 如: var str1 = ‘{ “name”: “cxh”, “sex”: “man” }’; <p></p>
+<p>JSON 对象: 指符合 JSON 格式的 JS 对象。 如：var str2 = { “name”: “cxh”, “sex”: “man” };</p>
+<li>stringify(): 把 JS 对象序列化为 JSON 字符串</li><br><li>parse(): 把 JSON 字符串解析为原生 JS 值。</li>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/24/JSON浅析/" data-id="cj5hxjl890004kwuh7g9iokqy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js中substr-substring-indexOf-lastIndexOf的用法小结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" class="article-date">
+  <time datetime="2017-07-24T07:21:34.000Z" itemprop="datePublished">2017-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/">js中substr,substring,indexOf,lastIndexOf的用法小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>substr</h2><br>substr(start,length)表示从start位置开始，截取length长度的字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.substr(<span class="number">7</span>,<span class="number">3</span>));</div></pre></td></tr></table></figure><p></p>
+<p>弹出值为：off</p>
+<p></p><h2>substring</h2><br>substring(start,end)表示从start到end之间的字符串，包括start位置的字符但是不包括end位置的字符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.substring(<span class="number">7</span>,<span class="number">10</span>));</div></pre></td></tr></table></figure><p></p>
+<p>弹出值为：off</p>
+<p></p><h2>indexOf</h2><br>indexOf() 方法返回某个指定的字符串值在字符串中首次出现的位置（从左向右）。没有匹配的则返回-1，否则返回首次出现位置的字符串的下标值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.indexOf(<span class="string">'t'</span>));</div><div class="line">alert(src.indexOf(<span class="string">'i'</span>));</div><div class="line">alert(src.indexOf(<span class="string">'g'</span>));</div></pre></td></tr></table></figure><p></p>
+<p>弹出值依次为：-1,0,3</p>
+<p></p><h2>lastIndexOf</h2><br>lastIndexOf()方法返回从右向左出现某个字符或字符串的首个字符索引值（与indexOf相反）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.lastIndexOf(<span class="string">'/'</span>));</div><div class="line">alert(src.lastIndexOf(<span class="string">'g'</span>));</div></pre></td></tr></table></figure><p></p>
+<p>弹出值依次为：6,15</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" data-id="cj5hxjl8a000bkwuh9exb0n59" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ajax初体验" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/24/Ajax初体验/" class="article-date">
+  <time datetime="2017-07-24T01:48:50.000Z" itemprop="datePublished">2017-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/24/Ajax初体验/">Ajax初体验</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>语法</h2><br>创建 XHR 对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div></pre></td></tr></table></figure><p></p>
+<p>低版本的IE需要使用以下语法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</div></pre></td></tr></table></figure></p>
+<p>兼容写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> xhr;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">createXMLHttprequest</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject)</div><div class="line">        xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</div><div class="line">        xmlHttp = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p></p><h2>用法</h2><br>使用 XHR 对象有两个方法：open() &amp; send()<p></p>
+<li>open() 接收三个参数：要发送的请求的类型（get、post等）、请求的 URL 和表示是否发送异步请求的布尔值（false为同步，true为异步。默认为true）<br><br>默认情况下，JavaScript在发送 AJAX请求 时，URL 的域名必须和当前页面完全一致。<br>完全一致的意思是，域名要相同（www.example.com和example.com不同），协议要相同（http和https不同），端口号要相同（默认是:80端口，它和:8080就不同）。<br></li><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">"get"</span>,<span class="string">"example.php"</span>,<span class="literal">false</span>);</div></pre></td></tr></table></figure><br><br>以上代码会启动一个针对 example.php 的 GET 请求。有两点需要注意：<br><br>1、URL 相对于执行代码的当前页面（也可使用绝对路径）。<br><br>2、调用 open() 方法时并不会真正发送请求，而是启动一个请求待发送。<br><br><li>若要发送一个特定的请求，必须调用 send()方法：</li><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.send(<span class="literal">null</span>);</div></pre></td></tr></table></figure><br><br>send() 方法接收一个参数，即作为请求主体发送的数据。若不需要发送数据，则必须传入 null，对于某些浏览器这个参数是必需的。<br>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/24/Ajax初体验/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/24/Ajax初体验/" data-id="cj5hxjl810001kwuhkheafgap" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-闭包之通俗理解" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/21/闭包之通俗理解/" class="article-date">
@@ -102,7 +237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/21/闭包之通俗理解/" data-id="cj5dvfzxa000gekuhqp1qgp1u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/21/闭包之通俗理解/" data-id="cj5hxjl90000jkwuhnntr13yu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,127 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/20/small-tips/" data-id="cj5dvfzwu0008ekuhh7tvgkx6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-范式初体验" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/19/范式初体验/" class="article-date">
-  <time datetime="2017-07-19T01:10:44.000Z" itemprop="datePublished">2017-07-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/19/范式初体验/">范式初体验</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、命令式<br>2、声明式<br>3、面向对象<br>4、函数式</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/19/范式初体验/" data-id="cj5dvfzwu000fekuhrxp4togm" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-prototype原型链" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/19/prototype原型链/" class="article-date">
-  <time datetime="2017-07-19T00:32:07.000Z" itemprop="datePublished">2017-07-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/19/prototype原型链/">prototype原型链</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>构造函数</h2><br>按照惯例，构造函数要以一个大写字母开头，而非构造函数要以一个小写字母开头。例如：<p></p>
-        
-          <p class="article-more-link">
-            <a href="/2017/07/19/prototype原型链/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/19/prototype原型链/" data-id="cj5dvfzwu0009ekuha5i4ikgm" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Javascript内置对象" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/18/Javascript内置对象/" class="article-date">
-  <time datetime="2017-07-18T05:09:29.000Z" itemprop="datePublished">2017-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/Javascript内置对象/">Javascript内置对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String.</p>
-<p>分为基本类型：underfined, boolean, null, number, string 和引用类型。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/07/18/Javascript内置对象/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/18/Javascript内置对象/" data-id="cj5dvfzwe0004ekuh67p3u85x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/20/small-tips/" data-id="cj5hxjl8a0008kwuh2jz3fhzw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -303,23 +318,23 @@
       <ul>
         
           <li>
+            <a href="/2017/07/24/JSON浅析/">JSON浅析</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/">js中substr,substring,indexOf,lastIndexOf的用法小结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/24/Ajax初体验/">Ajax初体验</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/21/闭包之通俗理解/">闭包之通俗理解</a>
           </li>
         
           <li>
             <a href="/2017/07/20/small-tips/">small tips</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/19/范式初体验/">范式初体验</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/19/prototype原型链/">prototype原型链</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/18/Javascript内置对象/">Javascript内置对象</a>
           </li>
         
       </ul>

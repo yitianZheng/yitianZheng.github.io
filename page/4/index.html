@@ -68,6 +68,137 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Canvas的语法及基本用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/12/Canvas的语法及基本用法/" class="article-date">
+  <time datetime="2017-07-12T13:46:25.000Z" itemprop="datePublished">2017-07-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/12/Canvas的语法及基本用法/">Canvas的语法及基本用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>canvas 可直接在网页上绘制图形。</strong></p>
+<h2>建立画布</h2><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"myCanvas"</span> <span class="attr">width</span>=<span class="string">"400"</span> <span class="attr">height</span>=<span class="string">"400"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure><br><br>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/12/Canvas的语法及基本用法/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/12/Canvas的语法及基本用法/" data-id="cj5hxjl7u0000kwuhefy6h0d2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-暑期培训第二天" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/暑期培训第二天/" class="article-date">
+  <time datetime="2017-07-11T09:21:07.000Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/11/暑期培训第二天/">暑期培训第二天</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>DOM &amp; BOM</h2><br>HTML是一棵树，DOM是操纵这棵树的方法。DOM的节点包括元素节点、属性节点和文本节点。<p></p>
+<p>元素节点（如：p 、div 等各种标签），属性节点（如：href、src 等），文本节点即标签所包含的文本内容。</p>
+<p>监听器 addEventListener (event, fn, boolen),移除监听器 removeEventListener (event, fn, boolen)</p>
+<p>【注意！移除时所有参数要一致！且事件名称不能带 <strong>“on”</strong> 】  此方法不适用IE9以下。</p>
+<p>IE9适用方法: attachEvent (event, fn)  【注意！事件名称要带 <strong>“on”</strong> 】</p>
+<p>兼容写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(object.addEventListener)&#123;</div><div class="line"> 		object.addEventListener();</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123;</div><div class="line"> 		object.attachEvent();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/11/暑期培训第二天/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/暑期培训第二天/" data-id="cj5hxjl8z000ikwuhu2gg260a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于CLI的基本使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/11/关于CLI的基本使用/" class="article-date">
+  <time datetime="2017-07-10T16:00:51.000Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/11/关于CLI的基本使用/">关于CLI的基本使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CLI是Command Line Interface的缩写，即命令行界面。<br>mkdir + 文件名：创建一个文件夹<br>rm : 移动文件<br>cd + 目录名: 进入指定目录<br>cd ../ : 回到当前目录上一级<br>ls : 查看当前目录下的所有文件<br>vim + 文件名：创建一个文件并进入编辑界面 &gt;&gt; i:进入插入模式 &gt;&gt; Esc:返回浏览模式 &gt;&gt; shift + : + w : 保存 &gt;&gt; shift + : + q :退出编辑界面<br>shift + : + wq : 保存并退出<br>cat + 文件名：抓取文件中的字符<br>pwd : 显示当前目录</p>
+<p><strong>写一篇新博客</strong><br>hexo new + “标题” &gt;&gt; 在文件夹中找到相应md文件，用sublime进入编辑后保存 &gt;&gt; hexo g上传到本地 &gt;&gt; hexo d上传到服务器  </p>
+<p><strong>git使用：分布式版本系统</strong></p>
+<p>建立仓库：</p>
+<p>在个人主页中的 repositories 中新建一个仓库 &gt;&gt; 复制仓库链接 &gt;&gt; 在你想把仓库放入的文件夹里 Git Bash Here,在命令行中 git clone + 链接 &gt;&gt; </p>
+<p>把你要放进仓库的文件拖入 &gt;&gt; 在命令行中 git add + 文件名 &gt;&gt; git commit -m “备注” &gt;&gt; git log 查看日志 &gt;&gt; git push origin master </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/11/关于CLI的基本使用/" data-id="cj5hxjl8q000dkwuhr2hhzdy4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-My-first-passage" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/10/My-first-passage/" class="article-date">
@@ -95,7 +226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj5dvfzwe0003ekuhicvl8zzb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/My-first-passage/" data-id="cj5hxjl860003kwuh4dyfjxy9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj5dvfzwu0007ekuh6rn9s37p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj5hxjl8a000akwuhw18entyu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -184,23 +315,23 @@
       <ul>
         
           <li>
+            <a href="/2017/07/24/JSON浅析/">JSON浅析</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/">js中substr,substring,indexOf,lastIndexOf的用法小结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/24/Ajax初体验/">Ajax初体验</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/21/闭包之通俗理解/">闭包之通俗理解</a>
           </li>
         
           <li>
             <a href="/2017/07/20/small-tips/">small tips</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/19/范式初体验/">范式初体验</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/19/prototype原型链/">prototype原型链</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/18/Javascript内置对象/">Javascript内置对象</a>
           </li>
         
       </ul>
