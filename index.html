@@ -68,6 +68,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ES6之模板字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/27/ES6之模板字符串/" class="article-date">
+  <time datetime="2017-07-27T01:06:12.000Z" itemprop="datePublished">2017-07-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/27/ES6之模板字符串/">ES6之模板字符串</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function authorize(user, action) &#123; </div><div class="line">	if (!user.hasPrivilege(action)) &#123; </div><div class="line">		throw new Error(`User $&#123;user.name&#125; is not authorized to do $&#123;action&#125;.`); </div><div class="line">	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面代码中，<strong>${user.name}</strong> 和 <strong>${action}</strong> 被称为模板占位符，JavaScript 将把 user.name 和 action 的值分别插到对应的位置上，然后生成像这样 <strong>“User jorendorff is not authorized to do hockey.”</strong> 的字符串。</p>
+<p>现在，我们看到了一个比 + 运算符更优雅的语法，下面是一些你期待的特性：</p>
+<p>模板占位符可以是任何 JavaScript 表达式，所以函数调用和四则运算等都是合法的。（甚至你还可以在一个模板字符串中嵌套另一个模板字符串。）</p>
+<p>如果一个值不是字符串，它将被转换为字符串。例如，如果 action 是一个对象，那么该对象的 .toString() 将被调用，来将其转换为字符串。</p>
+<p>如果你想在模板字符串中使用反引号，你需要使用反斜杠 \ 将其转义。</p>
+<p>同样地，如果想在模板字符串中输出 <strong>${</strong> ，也需要使用反斜杠将其转义：<strong>\${ 或 $\{</strong>。</p>
+<p>模板字符串可以跨越多行：</p>
+<p><code>$(&quot;#warning&quot;).html(&lt;h1&gt;Watch out!&lt;/h1&gt; &lt;p&gt;Unauthorized hockeying can result in penalties of up to ${maxPenalty} minutes.&lt;/p&gt;);</code></p>
+<p>模板字符串中所有的空格、换行和缩进，都将被原样输出到结果字符串中。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/27/ES6之模板字符串/" data-id="cj5lqtsu10000lcuh2510u5h1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JS之数据类型转化" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/26/JS之数据类型转化/" class="article-date">
@@ -126,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/26/JS之数据类型转化/" data-id="cj5l5jpam0002gsuhru3s2i0m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/26/JS之数据类型转化/" data-id="cj5lqtsug0008lcuh8w0svh97" class="article-share-link">Share</a>
       
       
     </footer>
@@ -171,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/25/JS模块化编程/" data-id="cj5l5jpam0006gsuhkiizd00e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/25/JS模块化编程/" data-id="cj5lqtsuw000blcuhrg2me79c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/25/认识前端工程化/" data-id="cj5l5jpbh000kgsuh7zjqix7c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/25/认识前端工程化/" data-id="cj5lqtsvr000llcuhduo3d5nc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -262,51 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/JSON浅析/" data-id="cj5l5jpb10008gsuh0nauacox" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js中substr-substring-indexOf-lastIndexOf的用法小结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" class="article-date">
-  <time datetime="2017-07-24T07:21:34.000Z" itemprop="datePublished">2017-07-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/">js中substr,substring,indexOf,lastIndexOf的用法小结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>substr</h2><br>substr(start,length)表示从start位置开始，截取length长度的字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.substr(<span class="number">7</span>,<span class="number">3</span>));</div></pre></td></tr></table></figure><p></p>
-<p>弹出值为：off</p>
-<p></p><h2>substring</h2><br>substring(start,end)表示从start到end之间的字符串，包括start位置的字符但是不包括end位置的字符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.substring(<span class="number">7</span>,<span class="number">10</span>));</div></pre></td></tr></table></figure><p></p>
-<p>弹出值为：off</p>
-<p></p><h2>indexOf</h2><br>indexOf() 方法返回某个指定的字符串值在字符串中首次出现的位置（从左向右）。没有匹配的则返回-1，否则返回首次出现位置的字符串的下标值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.indexOf(<span class="string">'t'</span>));</div><div class="line">alert(src.indexOf(<span class="string">'i'</span>));</div><div class="line">alert(src.indexOf(<span class="string">'g'</span>));</div></pre></td></tr></table></figure><p></p>
-<p>弹出值依次为：-1,0,3</p>
-<p></p><h2>lastIndexOf</h2><br>lastIndexOf()方法返回从右向左出现某个字符或字符串的首个字符索引值（与indexOf相反）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.lastIndexOf(<span class="string">'/'</span>));</div><div class="line">alert(src.lastIndexOf(<span class="string">'g'</span>));</div></pre></td></tr></table></figure><p></p>
-<p>弹出值依次为：6,15</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" data-id="cj5l5jpbh000agsuh7gdmngd1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/24/JSON浅析/" data-id="cj5lqtsug0007lcuho4780um7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -337,7 +339,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">23</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
     </div>
   </div>
 
@@ -348,6 +350,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/07/27/ES6之模板字符串/">ES6之模板字符串</a>
+          </li>
         
           <li>
             <a href="/2017/07/26/JS之数据类型转化/">JS之数据类型转化</a>
@@ -363,10 +369,6 @@
         
           <li>
             <a href="/2017/07/24/JSON浅析/">JSON浅析</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/">js中substr,substring,indexOf,lastIndexOf的用法小结</a>
           </li>
         
       </ul>
