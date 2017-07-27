@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Myblog</title>
+  <title>JS之数据类型转化 | Myblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="start">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Myblog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="数据类型JavaScript的数据类型有七种： Boolean：布尔值，true 和 false 两个特定值 Null：表示无值，即此处的值就是“无”的状态 Undefined： 表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值 Number：整数和小数 String：字符组成的文本 Symbol (这个是ES6新定义的数据类型) Object：各种值组成的集合 其中Boolea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS之数据类型转化">
+<meta property="og:url" content="http://yoursite.com/2017/07/26/JS之数据类型转化/index.html">
 <meta property="og:site_name" content="Myblog">
-<meta property="og:description" content="start">
+<meta property="og:description" content="数据类型JavaScript的数据类型有七种： Boolean：布尔值，true 和 false 两个特定值 Null：表示无值，即此处的值就是“无”的状态 Undefined： 表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值 Number：整数和小数 String：字符组成的文本 Symbol (这个是ES6新定义的数据类型) Object：各种值组成的集合 其中Boolea">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2017/1707/typeof-1.png">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2017/1707/constructor-1.png">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2017/1707/constructor-3.png">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2017/1707/number-1.png">
+<meta property="og:image" content="http://www.w3cplus.com/sites/default/files/blogs/2017/1707/string-1.png">
+<meta property="og:updated_time" content="2017-07-26T16:03:29.742Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Myblog">
-<meta name="twitter:description" content="start">
+<meta name="twitter:title" content="JS之数据类型转化">
+<meta name="twitter:description" content="数据类型JavaScript的数据类型有七种： Boolean：布尔值，true 和 false 两个特定值 Null：表示无值，即此处的值就是“无”的状态 Undefined： 表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值 Number：整数和小数 String：字符组成的文本 Symbol (这个是ES6新定义的数据类型) Object：各种值组成的集合 其中Boolea">
+<meta name="twitter:image" content="http://www.w3cplus.com/sites/default/files/blogs/2017/1707/typeof-1.png">
   
     <link rel="alternate" href="/atom.xml" title="Myblog" type="application/atom+xml">
   
@@ -66,9 +73,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-JS之数据类型转化" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JS之数据类型转化" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/26/JS之数据类型转化/" class="article-date">
   <time datetime="2017-07-26T15:11:48.000Z" itemprop="datePublished">2017-07-26</time>
@@ -81,8 +86,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/26/JS之数据类型转化/">JS之数据类型转化</a>
+    <h1 class="article-title" itemprop="name">
+      JS之数据类型转化
     </h1>
   
 
@@ -132,195 +137,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-JS模块化编程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/25/JS模块化编程/" class="article-date">
-  <time datetime="2017-07-25T09:25:01.000Z" itemprop="datePublished">2017-07-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/25/JS模块化编程/">JS模块化编程</a>
-    </h1>
+    <a href="/2017/07/25/JS模块化编程/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS模块化编程</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="对象写法"><a href="#对象写法" class="headerlink" title="对象写法"></a>对象写法</h2><p>模块即实现特定功能的一组方法。只要把不同的函数（以及记录状态的变量）简单地放在一起，就算是一个模块。</p>
-<p>若多个函数依次调用，缺点很明显：”污染”了全局变量，无法保证不与其他模块发生变量名冲突，而且模块成员之间看不出直接关系。</p>
-<p>避免这种缺点，可以使用对象写法：把模块写成一个对象，把所有的模块成员（即所要调用的函数）写进一个对象里。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> module1 = <span class="keyword">new</span> <span class="built_in">Object</span>(&#123;</div><div class="line">	<span class="attr">_count</span>: <span class="number">0</span>,</div><div class="line">	<span class="attr">m1</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">//code here</span></div><div class="line">	&#125;,</div><div class="line">	<span class="attr">m2</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">//code here</span></div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>则调用函数即访问对象的属性： module1.m1();</p>
-<p>但是，这样的写法会暴露所有模块成员，内部状态可以被外部改写。比如，外部代码可以直接改变内部计数器的值： module1._count = 5;<br>
-        
-          <p class="article-more-link">
-            <a href="/2017/07/25/JS模块化编程/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/25/JS模块化编程/" data-id="cj5l5jpam0006gsuhkiizd00e" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-认识前端工程化" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/25/认识前端工程化/" class="article-date">
-  <time datetime="2017-07-25T06:45:31.000Z" itemprop="datePublished">2017-07-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/25/认识前端工程化/">认识前端工程化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>前端工程化的含义</h2><br>1、持续集成。<p></p>
-<p>2、规范化。</p>
-<p>3、模块化。</p>
-<p>4、单元和功能测试。</p>
-<p>5、自动化。<br>
-        
-          <p class="article-more-link">
-            <a href="/2017/07/25/认识前端工程化/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/25/认识前端工程化/" data-id="cj5l5jpbh000kgsuh7zjqix7c" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JSON浅析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/24/JSON浅析/" class="article-date">
-  <time datetime="2017-07-24T08:15:36.000Z" itemprop="datePublished">2017-07-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/24/JSON浅析/">JSON浅析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>概念</h2><br>JSON：JavaScript 对象表示法，是一种轻量级的数据交换格式。<p></p>
-<p>JSON 是存储和交换文本信息的语法。类似 XML。</p>
-<p>JSON 比 XML 更小、更快，更易解析。</p>
-<li>JSON 是由‘名称:值’对组成的集合，例如，”key1”:value1。</li><br><li>JSON 的值(value) 可以是 <strong>双引号（不能是单引号）</strong> 括起来的字符串(string)、数值(number)、true、false、 null、对象(object)或者数组(array)。</li><br><li>JSON 有三种类型的值：<br><br>1、简单值：字符串、数值、布尔值和 null 。<strong>注意：JSON 不支持 undefined。</strong><br><br>2、对象：由{}括起来的，无序的‘名称:值’对集合。如：{“key1”:value1,”key2”:value2,”key3”:value3,…}<br><br>3、数组：由[]括起来的，值的有序集合。如：[{“key1”:value1,”key2”:value2,”key3”:value3},{“key1”:value1,”key2”:value2,”key3”:value3}…]<br></li>
-
-<p></p><h2>JSON使用JavaScript语法</h2><br>因为 JSON 使用 JavaScript 语法，所以无需额外的软件就能处理 JavaScript 中的 JSON。<p></p>
-<p>区别：1、区别于 JS 中的对象字面量，JSON 对象的属性要加引号。 2、JSON 中没有变量的概念，末尾不用加分号。 3、属性的值可以是简单值，也可以是复杂类型值。可以嵌套。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	&quot;name&quot;: &quot;Mary&quot;,</div><div class="line">	&quot;age&quot;: 29,</div><div class="line">	&quot;school&quot;: &#123;</div><div class="line">		&quot;name&quot;: &quot;Mike&quot;,</div><div class="line">		&quot;location&quot;: &quot;Landon Street&quot;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p></p><h2>JSON方法</h2><br>JSON 字符串: 指符合 JSON 格式的 JS 字符串。 如: var str1 = ‘{ “name”: “cxh”, “sex”: “man” }’; <p></p>
-<p>JSON 对象: 指符合 JSON 格式的 JS 对象。 如：var str2 = { “name”: “cxh”, “sex”: “man” };</p>
-<li>stringify(): 把 JS 对象序列化为 JSON 字符串</li><br><li>parse(): 把 JSON 字符串解析为原生 JS 值。</li>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/JSON浅析/" data-id="cj5l5jpb10008gsuh0nauacox" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js中substr-substring-indexOf-lastIndexOf的用法小结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" class="article-date">
-  <time datetime="2017-07-24T07:21:34.000Z" itemprop="datePublished">2017-07-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/">js中substr,substring,indexOf,lastIndexOf的用法小结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>substr</h2><br>substr(start,length)表示从start位置开始，截取length长度的字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.substr(<span class="number">7</span>,<span class="number">3</span>));</div></pre></td></tr></table></figure><p></p>
-<p>弹出值为：off</p>
-<p></p><h2>substring</h2><br>substring(start,end)表示从start到end之间的字符串，包括start位置的字符但是不包括end位置的字符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.substring(<span class="number">7</span>,<span class="number">10</span>));</div></pre></td></tr></table></figure><p></p>
-<p>弹出值为：off</p>
-<p></p><h2>indexOf</h2><br>indexOf() 方法返回某个指定的字符串值在字符串中首次出现的位置（从左向右）。没有匹配的则返回-1，否则返回首次出现位置的字符串的下标值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.indexOf(<span class="string">'t'</span>));</div><div class="line">alert(src.indexOf(<span class="string">'i'</span>));</div><div class="line">alert(src.indexOf(<span class="string">'g'</span>));</div></pre></td></tr></table></figure><p></p>
-<p>弹出值依次为：-1,0,3</p>
-<p></p><h2>lastIndexOf</h2><br>lastIndexOf()方法返回从右向左出现某个字符或字符串的首个字符索引值（与indexOf相反）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.lastIndexOf(<span class="string">'/'</span>));</div><div class="line">alert(src.lastIndexOf(<span class="string">'g'</span>));</div></pre></td></tr></table></figure><p></p>
-<p>弹出值依次为：6,15</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" data-id="cj5l5jpbh000agsuh7gdmngd1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">
