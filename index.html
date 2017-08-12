@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Myblog</title>
+  <title>yitian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="start">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Myblog">
+<meta property="og:title" content="yitian&#39;s blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Myblog">
+<meta property="og:site_name" content="yitian&#39;s blog">
 <meta property="og:description" content="start">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Myblog">
+<meta name="twitter:title" content="yitian&#39;s blog">
 <meta name="twitter:description" content="start">
   
-    <link rel="alternate" href="/atom.xml" title="Myblog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="yitian&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -36,11 +36,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Myblog</a>
+        <a href="/" id="logo">yitian&#39;s blog</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">blog</a>
+          <a href="/" id="subtitle">along the road</a>
         </h2>
       
     </div>
@@ -67,6 +67,47 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Night-s-Watch暑期培训总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/11/Night-s-Watch暑期培训总结/" class="article-date">
+  <time datetime="2017-08-11T12:13:54.000Z" itemprop="datePublished">2017-08-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/11/Night-s-Watch暑期培训总结/">Night&#39;s Watch暑期培训总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>（此处省略一万字……）<br>
+        
+          <p class="article-more-link">
+            <a href="/2017/08/11/Night-s-Watch暑期培训总结/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/11/Night-s-Watch暑期培训总结/" data-id="cj680pl3k0007i8uhrds9vh6s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-ES6之模板字符串" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -104,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/27/ES6之模板字符串/" data-id="cj5lqtsu10000lcuh2510u5h1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/27/ES6之模板字符串/" data-id="cj680pl350004i8uhwadhw02n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,35 +185,16 @@
 <p>String：字符组成的文本</p>
 <p>Symbol (这个是ES6新定义的数据类型)</p>
 <p>Object：各种值组成的集合</p>
-<p>其中Boolean、Null、Undefined、Number、String和Symbol称为原始类型，即它们是最基本的数据类型，不能再细分。而 Object 称为合成类型，因为一个对象往往是多个原始类型的值的合成，可以看作是一个存放各种值的容器。其中对象又可分成三个子类型：<br>侠义的对象（object）、数组（array）、函数（function）</p>
-<h2 id="数据类型检测"><a href="#数据类型检测" class="headerlink" title="数据类型检测"></a>数据类型检测</h2><p>在JavaScript中有四种方法，可以确定一个值到底是什么类型：</p>
-<p>typeof运算符</p>
-<p>instanceof运算符</p>
-<p>constructor运算符</p>
-<p>Object.prototype.toString方法</p>
-<h3 id="typeof运算符"><a href="#typeof运算符" class="headerlink" title="typeof运算符"></a>typeof运算符</h3><p><img src="http://www.w3cplus.com/sites/default/files/blogs/2017/1707/typeof-1.png" alt=""></p>
-<h3 id="instanceof运算符"><a href="#instanceof运算符" class="headerlink" title="instanceof运算符"></a>instanceof运算符</h3><p>instanceof 运算符用于检查某个对象的原型链是否包含某个构造函数的 prototype 属性。</p>
-<p>使用instanceof来判断A是否为B的实例对，表达式为A instanceof B，如果A是B的实例则返回true，否则返回false。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 比如直接原型关系</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span> (<span class="params"></span>) </span>&#123;&#125;</div><div class="line">(<span class="keyword">new</span> A) <span class="keyword">instanceof</span> A; <span class="comment">// =&gt; true</span></div><div class="line"></div><div class="line"><span class="comment">// 原型链上的间接原型</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span> (<span class="params"></span>) </span>&#123;&#125;</div><div class="line">B.prototype = <span class="keyword">new</span> A</div><div class="line">(<span class="keyword">new</span> B) <span class="keyword">instanceof</span> A <span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure></p>
-<p>在JavaScript原型继承结构里面，用[[Prototype]]表示对象隐式的原型，在JavaScript中用<strong>proto</strong>表示，并且在Firefox和Chrome浏览器中是可以访问得到这个属性的，但是IE下不行。所有JavaScript对象都有<strong>proto</strong>属性，但只有Object.prototype.<strong>proto</strong>为null，前提是没有在Firefox或者Chrome下修改过这个属性。这个属性指向它的原型对象。至于显示的原型，在JavaScript里用 prototype 属性表示。</p>
-<p><strong>instanceof 只能用来判断两个对象是否属于原型链的关系， 而不能获取对象的具体类型。</strong></p>
-<h3 id="constructor运算符"><a href="#constructor运算符" class="headerlink" title="constructor运算符"></a>constructor运算符</h3><p>当一个函数foo被定义时，JavaScript会给foo函数添加prototype原型，然后再在prototype上添加一个constructor属性，并让其指向foo的引用，如下：<br><img src="http://www.w3cplus.com/sites/default/files/blogs/2017/1707/constructor-1.png" alt=""><br>当执行var bar = new foo()时，foo被当成了构造函数，bar是foo的实例对象，此时foo原型上的constructor传递到了bar上，因此bar.constructor == foo（返回的是一个true）。</p>
-<p>可以看出，JavaScript在函数foo的原型上定义了constructor，当foo被当作构造函数用来创建对象时，创建的新对象就被标记为foo类型，使得新对象有名有姓，可以追溯。同理，JavaScript中的数据类型也遵守这个规则：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="string">'123'</span>.constructor == <span class="built_in">String</span>; </div><div class="line"><span class="number">123.</span><span class="keyword">constructor</span> == Number; </div><div class="line">true.<span class="keyword">constructor</span> == Boolean; </div><div class="line">[1, 2, 3].<span class="keyword">constructor</span> == Array; </div><div class="line">&#123;&#125;.constructor == <span class="built_in">Object</span>; </div><div class="line"><span class="keyword">new</span> <span class="built_in">Function</span>().constructor == <span class="built_in">Function</span>; </div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>().constructor == <span class="built_in">Date</span>; </div><div class="line"><span class="keyword">new</span> <span class="built_in">Error</span>().constructor == <span class="built_in">Error</span>; </div><div class="line"><span class="built_in">document</span>.constructor == HTMLDocument; </div><div class="line"><span class="built_in">window</span>.constructor == Window; </div><div class="line"><span class="literal">null</span>.constructor == <span class="built_in">Object</span>; </div><div class="line"><span class="literal">undefined</span>.constructor == <span class="built_in">Object</span>;</div></pre></td></tr></table></figure></p>
-<p>在JavaScript中null和undefined是比较特殊的数据类型，也是无效的对象，因此是不会有constructor存在的，这两种类型的数据需要通过typeof来判断。另外，JavaScript对象的constructor是不稳定的，这个主要体现在自定义对象上，当开发者重写prototype后，原有的constructor会丢失，constructor会默认为Object。<br><img src="http://www.w3cplus.com/sites/default/files/blogs/2017/1707/constructor-3.png" alt=""><br>为什么变成了Object？</p>
-<p>prototype被重新赋值的是一个{}，{}是new Object()的字面量，因此new Object()会将Object原型上的constructor传递给{}，也就是Object本身。因此，为了规范，在重写对象原型时一般都需要重新给constructor赋值，以保证实例对象的类型不被改写</p>
-<h3 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h3><p>toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，更严格的讲，是 toString运行时this指向的对象类型, 返回的类型格式为[object,xxx],xxx是具体的数据类型，其中包括：String,Number,Boolean,Undefined,Null,Function,Date,Array,RegExp,Error,HTMLDocument,… 基本上所有对象的类型都可以通过这个方法获取到。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">''</span>) ; <span class="comment">// [object String]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">1</span>) ; <span class="comment">// [object Number] </span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">true</span>) ; <span class="comment">// [object Boolean]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>) ; <span class="comment">// [object Undefined] </span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>) ; <span class="comment">// [object Null] </span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Function</span>()) ; <span class="comment">// [object Function] </span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>()) ; <span class="comment">// [object Date] </span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call([]) ; <span class="comment">// [object Array] </span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">RegExp</span>()) ; <span class="comment">// [object RegExp] </span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Error</span>()) ; <span class="comment">// [object Error]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">document</span>) ; <span class="comment">// [object HTMLDocument] </span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">window</span>) ; <span class="comment">//[object global] window是全局对象global的引用</span></div></pre></td></tr></table></figure></p>
-<p>需要注意的是，必须通过Object.prototype.toString.call来获取，而不能直接 new Date().toString()。</p>
-<h2 id="强制转化"><a href="#强制转化" class="headerlink" title="强制转化"></a>强制转化</h2><p>强制转换主要是指使用Number()、String()和Boolean()三个构造函数，手动将各种类型的值，转换成number、string和boolean。</p>
-<p>使用Number()函数，可以将任意类型的值转化成数值</p>
-<p>使用String()函数，可以将任意类型的值转换成字符串</p>
-<p>使用Boolean()函数，可以将任意类型的变量转换为布尔值</p>
-<p><img src="http://www.w3cplus.com/sites/default/files/blogs/2017/1707/number-1.png" alt=""><br><img src="http://www.w3cplus.com/sites/default/files/blogs/2017/1707/string-1.png" alt=""></p>
-<p>Boolean()的转换规则相对简单：除了以下六个值的转换结果为false，其他的值全部为true。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Boolean(undefined); // =&gt; false</div><div class="line">Boolean(null); // =&gt; false</div><div class="line">Boolean(0); // =&gt; false</div><div class="line">Boolean(NaN); // =&gt; false</div><div class="line">Boolean(&apos;&apos;); // =&gt; false</div></pre></td></tr></table></figure></p>
-<p>注意：所有对象，包括空对象的转换结果都是true，甚至连false对应的布尔对象new Boolean(false)也是true:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Boolean(&#123;&#125;); // =&gt; true</div><div class="line">Boolean([]); // =&gt; true</div><div class="line">Boolean(new Boolean(false)); // =&gt; true</div></pre></td></tr></table></figure></p>
-
+<p>其中Boolean、Null、Undefined、Number、String和Symbol称为原始类型，即它们是最基本的数据类型，不能再细分。而 Object 称为合成类型，因为一个对象往往是多个原始类型的值的合成，可以看作是一个存放各种值的容器。其中对象又可分成三个子类型：<br>侠义的对象（object）、数组（array）、函数（function）<br>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/26/JS之数据类型转化/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/26/JS之数据类型转化/" data-id="cj5lqtsug0008lcuh8w0svh97" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/26/JS之数据类型转化/" data-id="cj680pl400008i8uhywgkp5ia" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/25/JS模块化编程/" data-id="cj5lqtsuw000blcuhrg2me79c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/25/JS模块化编程/" data-id="cj680pl40000bi8uhpdo6o15b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -262,53 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/25/认识前端工程化/" data-id="cj5lqtsvr000llcuhduo3d5nc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JSON浅析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/24/JSON浅析/" class="article-date">
-  <time datetime="2017-07-24T08:15:36.000Z" itemprop="datePublished">2017-07-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/24/JSON浅析/">JSON浅析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>概念</h2><br>JSON：JavaScript 对象表示法，是一种轻量级的数据交换格式。<p></p>
-<p>JSON 是存储和交换文本信息的语法。类似 XML。</p>
-<p>JSON 比 XML 更小、更快，更易解析。</p>
-<li>JSON 是由‘名称:值’对组成的集合，例如，”key1”:value1。</li><br><li>JSON 的值(value) 可以是 <strong>双引号（不能是单引号）</strong> 括起来的字符串(string)、数值(number)、true、false、 null、对象(object)或者数组(array)。</li><br><li>JSON 有三种类型的值：<br><br>1、简单值：字符串、数值、布尔值和 null 。<strong>注意：JSON 不支持 undefined。</strong><br><br>2、对象：由{}括起来的，无序的‘名称:值’对集合。如：{“key1”:value1,”key2”:value2,”key3”:value3,…}<br><br>3、数组：由[]括起来的，值的有序集合。如：[{“key1”:value1,”key2”:value2,”key3”:value3},{“key1”:value1,”key2”:value2,”key3”:value3}…]<br></li>
-
-<p></p><h2>JSON使用JavaScript语法</h2><br>因为 JSON 使用 JavaScript 语法，所以无需额外的软件就能处理 JavaScript 中的 JSON。<p></p>
-<p>区别：1、区别于 JS 中的对象字面量，JSON 对象的属性要加引号。 2、JSON 中没有变量的概念，末尾不用加分号。 3、属性的值可以是简单值，也可以是复杂类型值。可以嵌套。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	&quot;name&quot;: &quot;Mary&quot;,</div><div class="line">	&quot;age&quot;: 29,</div><div class="line">	&quot;school&quot;: &#123;</div><div class="line">		&quot;name&quot;: &quot;Mike&quot;,</div><div class="line">		&quot;location&quot;: &quot;Landon Street&quot;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p></p><h2>JSON方法</h2><br>JSON 字符串: 指符合 JSON 格式的 JS 字符串。 如: var str1 = ‘{ “name”: “cxh”, “sex”: “man” }’; <p></p>
-<p>JSON 对象: 指符合 JSON 格式的 JS 对象。 如：var str2 = { “name”: “cxh”, “sex”: “man” };</p>
-<li>stringify(): 把 JS 对象序列化为 JSON 字符串</li><br><li>parse(): 把 JSON 字符串解析为原生 JS 值。</li>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/JSON浅析/" data-id="cj5lqtsug0007lcuho4780um7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/25/认识前端工程化/" data-id="cj680pl4g000mi8uhdslbp83n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -339,7 +315,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
     </div>
   </div>
 
@@ -350,6 +326,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/08/11/Night-s-Watch暑期培训总结/">Night&#39;s Watch暑期培训总结</a>
+          </li>
         
           <li>
             <a href="/2017/07/27/ES6之模板字符串/">ES6之模板字符串</a>
@@ -365,10 +345,6 @@
         
           <li>
             <a href="/2017/07/25/认识前端工程化/">认识前端工程化</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/24/JSON浅析/">JSON浅析</a>
           </li>
         
       </ul>
