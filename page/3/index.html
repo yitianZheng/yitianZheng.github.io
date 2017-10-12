@@ -68,6 +68,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js中substr-substring-indexOf-lastIndexOf的用法小结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" class="article-date">
+  <time datetime="2017-07-24T07:21:34.000Z" itemprop="datePublished">2017-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/">js中substr,substring,indexOf,lastIndexOf的用法小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>substr</h2><br>substr(start,length)表示从start位置开始，截取length长度的字符串。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.substr(<span class="number">7</span>,<span class="number">3</span>));</div></pre></td></tr></table></figure><p></p>
+<p>弹出值为：off</p>
+<p></p><h2>substring</h2><br>substring(start,end)表示从start到end之间的字符串，包括start位置的字符但是不包括end位置的字符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.substring(<span class="number">7</span>,<span class="number">10</span>));</div></pre></td></tr></table></figure><p></p>
+<p>弹出值为：off</p>
+<p></p><h2>indexOf</h2><br>indexOf() 方法返回某个指定的字符串值在字符串中首次出现的位置（从左向右）。没有匹配的则返回-1，否则返回首次出现位置的字符串的下标值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.indexOf(<span class="string">'t'</span>));</div><div class="line">alert(src.indexOf(<span class="string">'i'</span>));</div><div class="line">alert(src.indexOf(<span class="string">'g'</span>));</div></pre></td></tr></table></figure><p></p>
+<p>弹出值依次为：-1,0,3</p>
+<p></p><h2>lastIndexOf</h2><br>lastIndexOf()方法返回从右向左出现某个字符或字符串的首个字符索引值（与indexOf相反）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> src=<span class="string">"images/off_1.png"</span>;</div><div class="line">alert(src.lastIndexOf(<span class="string">'/'</span>));</div><div class="line">alert(src.lastIndexOf(<span class="string">'g'</span>));</div></pre></td></tr></table></figure><p></p>
+<p>弹出值依次为：6,15</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" data-id="cj8lj93ba000em4uhmr3l5msg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Ajax初体验" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/24/Ajax初体验/" class="article-date">
@@ -103,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/Ajax初体验/" data-id="cj8kablm60000couh8brn0uoo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/24/Ajax初体验/" data-id="cj8lj939z0000m4uh4xamg0sy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/21/闭包之通俗理解/" data-id="cj8kablo2000rcouh8bqwult2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/21/闭包之通俗理解/" data-id="cj8lj93c5000sm4uh6b1zshs2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -184,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/20/small-tips/" data-id="cj8kablnh000gcouhj0280ies" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/20/small-tips/" data-id="cj8lj93bp000im4uhlu0597bm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,48 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/19/范式初体验/" data-id="cj8kablnw000pcouha55ponaf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-prototype原型链" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/19/prototype原型链/" class="article-date">
-  <time datetime="2017-07-19T00:32:07.000Z" itemprop="datePublished">2017-07-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/19/prototype原型链/">prototype原型链</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>构造函数</h2><br>按照惯例，构造函数要以一个大写字母开头，而非构造函数要以一个小写字母开头。例如：<p></p>
-        
-          <p class="article-more-link">
-            <a href="/2017/07/19/prototype原型链/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/19/prototype原型链/" data-id="cj8kablng000fcouhge3m5y1w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/19/范式初体验/" data-id="cj8lj93c5000pm4uhc1tmgzwy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -293,7 +296,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
     </div>
   </div>
 
@@ -304,6 +307,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/10/09/Vue的条件渲染及列表渲染/">Vue的条件渲染及列表渲染</a>
+          </li>
         
           <li>
             <a href="/2017/10/05/框架学习之vue-js/">框架学习之vue.js</a>
@@ -319,10 +326,6 @@
         
           <li>
             <a href="/2017/08/11/Night-s-Watch暑期培训总结/">Night&#39;s Watch暑期培训总结</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/27/ES6之模板字符串/">ES6之模板字符串</a>
           </li>
         
       </ul>

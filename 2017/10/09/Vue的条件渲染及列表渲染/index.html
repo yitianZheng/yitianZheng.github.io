@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Vue的条件渲染及列表渲染 | yitian&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="条件渲染v-if1、在 Vue.js ，我们使用 v-if 指令实现同样的功能：12345&amp;lt;h1 v-if=&quot;ok&quot;&amp;gt;Yes&amp;lt;/h1&amp;gt;//也可以用 v-else 添加一个 “else” 块：当 v-if 的值为假时，v-else 可见。//v-else 元素必须紧跟在 v-if 或者 v-else-if 元素的后面——否则它将不会被识别。&amp;lt;h1 v-if=&quot;ok&quot;&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue的条件渲染及列表渲染">
+<meta property="og:url" content="http://yoursite.com/2017/10/09/Vue的条件渲染及列表渲染/index.html">
+<meta property="og:site_name" content="yitian&#39;s blog">
+<meta property="og:description" content="条件渲染v-if1、在 Vue.js ，我们使用 v-if 指令实现同样的功能：12345&amp;lt;h1 v-if=&quot;ok&quot;&amp;gt;Yes&amp;lt;/h1&amp;gt;//也可以用 v-else 添加一个 “else” 块：当 v-if 的值为假时，v-else 可见。//v-else 元素必须紧跟在 v-if 或者 v-else-if 元素的后面——否则它将不会被识别。&amp;lt;h1 v-if=&quot;ok&quot;&amp;g">
+<meta property="og:image" content="http://yoursite.com/images/vue6.png">
+<meta property="og:image" content="http://yoursite.com/images/vue4.png">
+<meta property="og:updated_time" content="2017-10-12T04:08:59.173Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue的条件渲染及列表渲染">
+<meta name="twitter:description" content="条件渲染v-if1、在 Vue.js ，我们使用 v-if 指令实现同样的功能：12345&amp;lt;h1 v-if=&quot;ok&quot;&amp;gt;Yes&amp;lt;/h1&amp;gt;//也可以用 v-else 添加一个 “else” 块：当 v-if 的值为假时，v-else 可见。//v-else 元素必须紧跟在 v-if 或者 v-else-if 元素的后面——否则它将不会被识别。&amp;lt;h1 v-if=&quot;ok&quot;&amp;g">
+<meta name="twitter:image" content="http://yoursite.com/images/vue6.png">
+  
+    <link rel="alternate" href="/atom.xml" title="yitian&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yitian&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">along the road</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Vue的条件渲染及列表渲染" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/09/Vue的条件渲染及列表渲染/" class="article-date">
+  <time datetime="2017-10-09T14:52:10.000Z" itemprop="datePublished">2017-10-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue的条件渲染及列表渲染
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a><code>v-if</code></h3><p>1、在 Vue.js ，我们使用 v-if 指令实现同样的功能：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">//也可以用 v-else 添加一个 “else” 块：当 v-if 的值为假时，v-else 可见。</div><div class="line">//v-else 元素必须紧跟在 v-if 或者 v-else-if 元素的后面——否则它将不会被识别。</div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>No<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>2、在<code>&lt;template&gt;</code>中配合 v-if 条件渲染一整组</p>
+<p>因为 v-if 是一个指令，需要将它添加到一个元素上。但是如果我们想切换多个元素呢？此时我们可以把一个<code>&lt;template&gt;</code>元素当做包装元素，并在上面使用 v-if。最终的渲染结果不会包含<code>&lt;template&gt;</code>元素。下图可以很清晰地看出：</p>
+<p><img src="/images/vue6.png" alt=""><br><img src="/images/vue4.png" alt=""></p>
+<p>3、<code>v-else-if</code>(2.1.0 新增)<br>v-else-if，顾名思义，充当 v-if 的“else-if 块”。可以链式地使用多次：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"type === 'A'"</span>&gt;</span></div><div class="line">  A</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">"type === 'B'"</span>&gt;</span></div><div class="line">  B</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">"type === 'C'"</span>&gt;</span></div><div class="line">  C</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  Not A/B/C</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>类似于 v-else，v-else-if 必须紧跟在 v-if 或者 v-else-if 元素之后。</p>
+<p>4、用<code>key</code>管理可复用的元素<br>高效地复用元素除了可以提高渲染速度，还可以让代码简洁：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your username"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your email address"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>那么在上面的代码中切换 loginType 将不会清除用户已经输入的内容。因为两个模板使用了相同的元素，<code>&lt;input&gt;</code>不会被替换掉——仅仅是替换了它的 placeholder。<br>若需要一种方式来声明“这两个元素是完全独立的——不要复用它们”。只需添加一个具有唯一值的 key 属性即可：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your username"</span> <span class="attr">key</span>=<span class="string">"username-input"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your email address"</span> <span class="attr">key</span>=<span class="string">"email-input"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line">//现在，每次切换时，输入框都将被重新渲染。</div><div class="line">//注意，<span class="tag">&lt;<span class="name">label</span>&gt;</span> 元素仍然会被高效地复用，因为它们没有添加 key 属性。</div></pre></td></tr></table></figure></p>
+<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a><code>v-show</code></h3><p>另一个用于根据条件展示元素的选项是 v-show 指令。用法大致一样：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-show</span>=<span class="string">"ok"</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>不同的是带有 v-show 的元素始终会被渲染并保留在 DOM 中。v-show 是简单地切换元素的 CSS 属性 display 。<br><strong>注意，v-show 不支持<code>&lt;template&gt;</code>语法，也不支持 v-else。</strong></p>
+<h3 id="v-if-vs-v-show"><a href="#v-if-vs-v-show" class="headerlink" title="v-if vs v-show"></a><code>v-if</code> vs <code>v-show</code></h3><p>v-if 是“真正的”条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。<br>v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。<br>相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。<br>一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件不太可能改变，则使用 v-if 较好。</p>
+<h3 id="v-if-与-v-for-一起使用"><a href="#v-if-与-v-for-一起使用" class="headerlink" title="v-if 与 v-for 一起使用"></a><code>v-if</code> 与 <code>v-for</code> 一起使用</h3><p>当 v-if 与 v-for 一起使用时，v-for 具有比 v-if 更高的优先级。</p>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><h3 id="用v-for把一个数组对应为一组元素"><a href="#用v-for把一个数组对应为一组元素" class="headerlink" title="用v-for把一个数组对应为一组元素"></a>用<code>v-for</code>把一个数组对应为一组元素</h3><p>我们用 v-for 指令根据一组数组的选项列表进行渲染。v-for 指令需要使用 item in items 形式的特殊语法，items 是源数据数组并且 item 是数组元素迭代的别名。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"example-1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">    &#123;&#123; item.message &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> example1 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example-1'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">items</span>: [</div><div class="line">      &#123; <span class="attr">message</span>: <span class="string">'Foo'</span> &#125;,</div><div class="line">      &#123; <span class="attr">message</span>: <span class="string">'Bar'</span> &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<li>Foo</li><br><li>Bar</li><br>在 v-for 块中，我们拥有对父作用域属性的完全访问权限。v-for 还支持一个可选的第二个参数为当前项的索引。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"example-2"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in items"</span>&gt;</span></div><div class="line">    &#123;&#123; parentMessage &#125;&#125; - &#123;&#123; index &#125;&#125; - &#123;&#123; item.message &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure><br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> example2 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example-2'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">parentMessage</span>: <span class="string">'Parent'</span>,</div><div class="line">    <span class="attr">items</span>: [</div><div class="line">      &#123; <span class="attr">message</span>: <span class="string">'Foo'</span> &#125;,</div><div class="line">      &#123; <span class="attr">message</span>: <span class="string">'Bar'</span> &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure><br><br>结果：<br><br><li>Parent - 0 - Foo</li><br><li>Parent - 1 - Bar</li><br>你也可以用 of 替代 in 作为分隔符，因为它是最接近 JavaScript 迭代器的语法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item of items"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure><br><br>### 一个对象的<code>v-for</code><br>你也可以用 v-for 通过一个对象的属性来迭代。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"v-for-object"</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"value in object"</span>&gt;</span></div><div class="line">    &#123;&#123; value &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure><br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#v-for-object'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">object</span>: &#123;</div><div class="line">      <span class="attr">firstName</span>: <span class="string">'John'</span>,</div><div class="line">      <span class="attr">lastName</span>: <span class="string">'Doe'</span>,</div><div class="line">      <span class="attr">age</span>: <span class="number">30</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure><br><br>结果：<br><br><li>John</li><br><li>Doe</li><br><li>30</li>
+
+<p>也可以提供第二个参数为键名，第三个参数为索引：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"v-for-object"</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(value, key, index) in object"</span>&gt;</span></div><div class="line">    &#123;&#123; index &#125;&#125;. &#123;&#123; key &#125;&#125;: &#123;&#123; value &#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><p>当 Vue.js 用 v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略。这个默认的模式是高效的，但是只适用于<strong>不依赖子组件状态或临时 DOM 状态 (例如：表单输入值)</strong>的列表渲染输出。为了区别，就要为每项提供一个唯一 key 属性。理想的 key 值是每项都有的且唯一的 id。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">:key</span>=<span class="string">"item.id"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- 内容 --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>建议尽可能在使用 v-for 时提供 key，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升。</p>
+<h3 id="变异方法"><a href="#变异方法" class="headerlink" title="变异方法"></a>变异方法</h3><p>Vue 包含一组观察数组的变异方法，所以它们也将会触发视图更新。这些方法如下：</p>
+<p><li>push()：往数组最后面添加一个元素，成功返回当前数组的长度。</li></p>
+<p><li>pop()：删除数组的最后一个元素，成功返回删除元素的值。</li></p>
+<p><li>shift()：删除数组的第一个元素，成功返回删除元素的值。</li></p>
+<p><li>unshift()：往数组最前面添加一个元素，成功返回当前数组的长度。</li></p>
+<p><li>splice()：有三个参数，第一个是想要删除的元素的下标（必选），第二个是想要删除的个数（必选），第三个是删除后想要在原位置替换的值（可选）。</li></p>
+<p><li>sort()：使数组按照字符编码默认从小到大排序,成功返回排序后的数组。</li></p>
+<p><li>reverse()：将数组倒序，成功返回倒序后的数组。</li><br>例如：对 items 数组调用变异方法：<code>example1.items.push({ message: &#39;Baz&#39; })</code> 。</p>
+<h3 id="替换数组"><a href="#替换数组" class="headerlink" title="替换数组"></a>替换数组</h3><p>变异方法会改变被这些方法调用的原始数组。相比之下，也有非变异方法，例如：filter(), concat() 和 slice()。这些不会改变原始数组，但总是返回一个新数组。当使用非变异方法时，可以用新数组替换旧数组：</p>
+<p><li>concat()：它可以创建当前数组的一个副本，然后将接受到的参数添加到这个副本的末尾，最后返回新构建的数组。</li></p>
+<p><li>slice()：slice()方法可以接受一或两个参数，即要返回项的起始和结束位置。这里又产生了两种情况：（1）在只有一个参数的情况下，该方法返回从该参数指定位置开始到当前数组末尾的所有项。（2）如果有两个参数，该方法返回起始和结束位置之间的项，注意但不包括结束位置的项。</li><br><strong>注意：如果slice()方法的参数中有一个负数，则用数组长度加上该数来确定相应的位置。如，在一个包含5项的数组上调用slice(-2,-1)与调用slice(3,4)得到的结果相同。如果结束位置小于起始位置，则返回空数组。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//filter()方法起过滤作用</span></div><div class="line">example1.items = example1.items.filter(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> item.message.match(<span class="regexp">/Foo/</span>)   <span class="comment">//匹配 item.message 中含有/Foo/的项并返回</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>由于 JavaScript 的限制，Vue 不能检测以下变动的数组：<br>当你利用索引直接设置一个项时，例如：<code>vm.items[indexOfItem] = newValue</code><br>当你修改数组的长度时，例如：<code>vm.items.length = newLength</code><br>为了解决第一类问题，以下两种方式都可以实现和<code>vm.items[indexOfItem] = newValue</code>相同的效果，同时也将触发状态更新：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Vue.set</span></div><div class="line">Vue.set(example1.items, indexOfItem, newValue)</div><div class="line"><span class="comment">// Array.prototype.splice</span></div><div class="line">example1.items.splice(indexOfItem, <span class="number">1</span>, newValue)</div></pre></td></tr></table></figure></p>
+<p>为了解决第二类问题，你可以使用 splice：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">example1.items.splice(newLength)</div></pre></td></tr></table></figure></p>
+<h3 id="对象更改检测注意事项"><a href="#对象更改检测注意事项" class="headerlink" title="对象更改检测注意事项"></a>对象更改检测注意事项</h3><p>还是由于 JavaScript 的限制，Vue 不能检测对象属性的添加或删除：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="comment">// `vm.a` 现在是响应式的</span></div><div class="line">vm.b = <span class="number">2</span></div><div class="line"><span class="comment">// `vm.b` 不是响应式的</span></div></pre></td></tr></table></figure></p>
+<p>对于已经创建的实例，Vue 不能动态添加根级别的响应式属性。但是，可以使用<code>Vue.set(object, key, value)</code>方法向嵌套对象添加响应式属性。例如，对于：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">userProfile</span>: &#123;</div><div class="line">      <span class="attr">name</span>: <span class="string">'Anika'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>你可以添加一个新的 age 属性到嵌套的 userProfile 对象：<code>Vue.set(vm.userProfile, &#39;age&#39;, 27)</code></p>
+<p>你还可以使用<code>vm.$set</code>实例方法，它只是全局 Vue.set 的别名：<code>this.$set(this.userProfile, &#39;age&#39;, 27)</code></p>
+<p>有时你可能需要为已有对象赋予多个新属性，比如使用 Object.assign() 或 _.extend()。在这种情况下，你应该用两个对象的属性创建一个新的对象。所以，如果你想添加新的响应式属性，不要像这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.assign(<span class="keyword">this</span>.userProfile, &#123;</div><div class="line">  <span class="attr">age</span>: <span class="number">27</span>,</div><div class="line">  <span class="attr">favoriteColor</span>: <span class="string">'Vue Green'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>你应该这样做：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.userProfile = <span class="built_in">Object</span>.assign(&#123;&#125;, <span class="keyword">this</span>.userProfile, &#123;</div><div class="line">  <span class="attr">age</span>: <span class="number">27</span>,</div><div class="line">  <span class="attr">favoriteColor</span>: <span class="string">'Vue Green'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/09/Vue的条件渲染及列表渲染/" data-id="cj8lj93au0008m4uh4aofnts7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/05/框架学习之vue-js/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">框架学习之vue.js</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/09/Vue的条件渲染及列表渲染/">Vue的条件渲染及列表渲染</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/05/框架学习之vue-js/">框架学习之vue.js</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/24/无所事事刷anyview的日子（chapter-03-04）/">无所事事刷anyview的日子（chapter 03~04）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/21/无所事事刷anyview的日子（chapter 01~02）/">无所事事刷anyview的日子（chapter 01~02）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/11/Night-s-Watch暑期培训总结/">Night&#39;s Watch暑期培训总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 yitianZheng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
