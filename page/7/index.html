@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ES6之模板字符串 | yitian&#39;s blog</title>
+  <title>yitian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345function authorize(user, action) &amp;#123; 	if (!user.hasPrivilege(action)) &amp;#123; 		throw new Error(`User $&amp;#123;user.name&amp;#125; is not authorized to do $&amp;#123;action&amp;#125;.`); 	&amp;#125; &amp;#125; 上面代码中">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ES6之模板字符串">
-<meta property="og:url" content="http://yoursite.com/2017/07/27/ES6之模板字符串/index.html">
+  <meta name="description" content="start">
+<meta property="og:type" content="website">
+<meta property="og:title" content="yitian&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/page/7/index.html">
 <meta property="og:site_name" content="yitian&#39;s blog">
-<meta property="og:description" content="12345function authorize(user, action) &amp;#123; 	if (!user.hasPrivilege(action)) &amp;#123; 		throw new Error(`User $&amp;#123;user.name&amp;#125; is not authorized to do $&amp;#123;action&amp;#125;.`); 	&amp;#125; &amp;#125; 上面代码中">
-<meta property="og:updated_time" content="2017-07-27T01:26:20.655Z">
+<meta property="og:description" content="start">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6之模板字符串">
-<meta name="twitter:description" content="12345function authorize(user, action) &amp;#123; 	if (!user.hasPrivilege(action)) &amp;#123; 		throw new Error(`User $&amp;#123;user.name&amp;#125; is not authorized to do $&amp;#123;action&amp;#125;.`); 	&amp;#125; &amp;#125; 上面代码中">
+<meta name="twitter:title" content="yitian&#39;s blog">
+<meta name="twitter:description" content="start">
   
     <link rel="alternate" href="/atom.xml" title="yitian&#39;s blog" type="application/atom+xml">
   
@@ -67,10 +66,12 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-ES6之模板字符串" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/07/27/ES6之模板字符串/" class="article-date">
-  <time datetime="2017-07-27T01:06:12.000Z" itemprop="datePublished">2017-07-27</time>
+    <a href="/2017/07/10/hello-world/" class="article-date">
+  <time datetime="2017-07-10T11:06:30.944Z" itemprop="datePublished">2017-07-10</time>
 </a>
     
   </div>
@@ -80,8 +81,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      ES6之模板字符串
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/10/hello-world/">Hello World</a>
     </h1>
   
 
@@ -89,49 +90,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function authorize(user, action) &#123; </div><div class="line">	if (!user.hasPrivilege(action)) &#123; </div><div class="line">		throw new Error(`User $&#123;user.name&#125; is not authorized to do $&#123;action&#125;.`); </div><div class="line">	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面代码中，<strong>${user.name}</strong> 和 <strong>${action}</strong> 被称为模板占位符，JavaScript 将把 user.name 和 action 的值分别插到对应的位置上，然后生成像这样 <strong>“User jorendorff is not authorized to do hockey.”</strong> 的字符串。</p>
-<p>现在，我们看到了一个比 + 运算符更优雅的语法，下面是一些你期待的特性：</p>
-<p>模板占位符可以是任何 JavaScript 表达式，所以函数调用和四则运算等都是合法的。（甚至你还可以在一个模板字符串中嵌套另一个模板字符串。）</p>
-<p>如果一个值不是字符串，它将被转换为字符串。例如，如果 action 是一个对象，那么该对象的 .toString() 将被调用，来将其转换为字符串。</p>
-<p>如果你想在模板字符串中使用反引号，你需要使用反斜杠 \ 将其转义。</p>
-<p>同样地，如果想在模板字符串中输出 <strong>${</strong> ，也需要使用反斜杠将其转义：<strong>\${ 或 $\{</strong>。</p>
-<p>模板字符串可以跨越多行：</p>
-<p><code>$(&quot;#warning&quot;).html(&lt;h1&gt;Watch out!&lt;/h1&gt; &lt;p&gt;Unauthorized hockeying can result in penalties of up to ${maxPenalty} minutes.&lt;/p&gt;);</code></p>
-<p>模板字符串中所有的空格、换行和缩进，都将被原样输出到结果字符串中。</p>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/27/ES6之模板字符串/" data-id="cj9dhwgrp00030wuhd2sp5rtg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/10/hello-world/" data-id="cj9dhwgsj000f0wuhe16s0s85" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2017/08/11/Night-s-Watch暑期培训总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Night&#39;s Watch暑期培训总结
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/07/26/JS之数据类型转化/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JS之数据类型转化</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/6/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
+  </nav>
 </section>
         
           <aside id="sidebar">
