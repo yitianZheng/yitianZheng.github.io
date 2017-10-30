@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>yitian&#39;s blog</title>
+  <title>Vue之事件处理 | yitian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="start">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yitian&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="监听事件可以用 v-on 指令监听 DOM 事件来触发一些简单的 JavaScript 代码。1234&amp;lt;div id=&quot;example-1&quot;&amp;gt;  &amp;lt;button v-on:click=&quot;counter += 1&quot;&amp;gt;增加 1&amp;lt;/button&amp;gt;  &amp;lt;p&amp;gt;这个按钮被点击了 &amp;#123;&amp;#123; counter &amp;#125;&amp;#125; 次。&amp;lt;/p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue之事件处理">
+<meta property="og:url" content="http://yoursite.com/2017/10/29/Vue之事件处理/index.html">
 <meta property="og:site_name" content="yitian&#39;s blog">
-<meta property="og:description" content="start">
+<meta property="og:description" content="监听事件可以用 v-on 指令监听 DOM 事件来触发一些简单的 JavaScript 代码。1234&amp;lt;div id=&quot;example-1&quot;&amp;gt;  &amp;lt;button v-on:click=&quot;counter += 1&quot;&amp;gt;增加 1&amp;lt;/button&amp;gt;  &amp;lt;p&amp;gt;这个按钮被点击了 &amp;#123;&amp;#123; counter &amp;#125;&amp;#125; 次。&amp;lt;/p">
+<meta property="og:updated_time" content="2017-10-29T14:26:15.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yitian&#39;s blog">
-<meta name="twitter:description" content="start">
+<meta name="twitter:title" content="Vue之事件处理">
+<meta name="twitter:description" content="监听事件可以用 v-on 指令监听 DOM 事件来触发一些简单的 JavaScript 代码。1234&amp;lt;div id=&quot;example-1&quot;&amp;gt;  &amp;lt;button v-on:click=&quot;counter += 1&quot;&amp;gt;增加 1&amp;lt;/button&amp;gt;  &amp;lt;p&amp;gt;这个按钮被点击了 &amp;#123;&amp;#123; counter &amp;#125;&amp;#125; 次。&amp;lt;/p">
   
     <link rel="alternate" href="/atom.xml" title="yitian&#39;s blog" type="application/atom+xml">
   
@@ -66,9 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Vue之事件处理" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Vue之事件处理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/29/Vue之事件处理/" class="article-date">
   <time datetime="2017-10-29T12:44:31.000Z" itemprop="datePublished">2017-10-29</time>
@@ -81,8 +80,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/29/Vue之事件处理/">Vue之事件处理</a>
+    <h1 class="article-title" itemprop="name">
+      Vue之事件处理
     </h1>
   
 
@@ -123,180 +122,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Vue的条件渲染及列表渲染" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/09/Vue的条件渲染及列表渲染/" class="article-date">
-  <time datetime="2017-10-09T14:52:10.000Z" itemprop="datePublished">2017-10-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/09/Vue的条件渲染及列表渲染/">Vue的条件渲染及列表渲染</a>
-    </h1>
+    <a href="/2017/10/09/Vue的条件渲染及列表渲染/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue的条件渲染及列表渲染</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a><code>v-if</code></h3><p>1、在 Vue.js ，我们使用 v-if 指令实现同样的功能：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">//也可以用 v-else 添加一个 “else” 块：当 v-if 的值为假时，v-else 可见。</div><div class="line">//v-else 元素必须紧跟在 v-if 或者 v-else-if 元素的后面——否则它将不会被识别。</div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>No<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
-        
-          <p class="article-more-link">
-            <a href="/2017/10/09/Vue的条件渲染及列表渲染/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/09/Vue的条件渲染及列表渲染/" data-id="cj9cr9i2g000dssuhsqtuqbxr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-框架学习之vue-js" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/05/框架学习之vue-js/" class="article-date">
-  <time datetime="2017-10-05T07:59:07.000Z" itemprop="datePublished">2017-10-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/05/框架学习之vue-js/">框架学习之vue.js</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="直接-lt-script-gt-引入"><a href="#直接-lt-script-gt-引入" class="headerlink" title="直接&lt;script&gt;引入"></a>直接<code>&lt;script&gt;</code>引入</h3><p>直接下载 vue.js 文件并用<code>&lt;script&gt;</code>标签引入，Vue 会被注册为一个全局变量。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/10/05/框架学习之vue-js/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/05/框架学习之vue-js/" data-id="cj9cr9i2v000ossuhh2vx9wzy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-无所事事刷anyview的日子（chapter-03-04）" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/24/无所事事刷anyview的日子（chapter-03-04）/" class="article-date">
-  <time datetime="2017-09-24T13:02:33.000Z" itemprop="datePublished">2017-09-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/24/无所事事刷anyview的日子（chapter-03-04）/">无所事事刷anyview的日子（chapter 03~04）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>持续更新中……赶紧刷完anyview然后继续学习老本行……<br>
-        
-          <p class="article-more-link">
-            <a href="/2017/09/24/无所事事刷anyview的日子（chapter-03-04）/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/24/无所事事刷anyview的日子（chapter-03-04）/" data-id="cj9cr9i2w000pssuheje88lc6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-无所事事刷anyview的日子（chapter 01~02）" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/09/21/无所事事刷anyview的日子（chapter 01~02）/" class="article-date">
-  <time datetime="2017-09-21T14:21:06.000Z" itemprop="datePublished">2017-09-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/21/无所事事刷anyview的日子（chapter 01~02）/">无所事事刷anyview的日子（chapter 01~02）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>好久没更博了，实在是很懒了。开学后都没怎么看前端的知识，把主要精力都放在课程上了。主要是大二觉得课程变难变多，也想好好学。还有的想法是，先把学习弄好，然后之后才能留出更多精力来忙其他的事情。事情总会一件一件一件一件一件一件一件一件一件一件慢慢做完的……</p>
-<p>最近都在抓紧时间看数据结构，感觉大二老师讲的都很快很乱，都要自学了= =。数据结构感觉是培养一种编程思维，对思维的锻炼很有帮助。一边看书一边刷anyview，还是学得比较快的。<br>
-        
-          <p class="article-more-link">
-            <a href="/2017/09/21/无所事事刷anyview的日子（chapter 01~02）/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/21/无所事事刷anyview的日子（chapter 01~02）/" data-id="cj9cr9i2t000mssuhb40tvtyj" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">
