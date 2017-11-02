@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Vue之组件 | yitian&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="全局注册注册一个全局组件：Vue.component(tagName, options)1234Vue.component(&apos;my-component&apos;, &amp;#123;	// 选项&amp;#125;)// 自定义标签的命名最好遵循 W3C 规则（小写，并且包含一个短杠）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue之组件">
+<meta property="og:url" content="http://yoursite.com/2017/10/30/Vue之组件/index.html">
+<meta property="og:site_name" content="yitian&#39;s blog">
+<meta property="og:description" content="全局注册注册一个全局组件：Vue.component(tagName, options)1234Vue.component(&apos;my-component&apos;, &amp;#123;	// 选项&amp;#125;)// 自定义标签的命名最好遵循 W3C 规则（小写，并且包含一个短杠）">
+<meta property="og:updated_time" content="2017-11-02T15:02:48.770Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue之组件">
+<meta name="twitter:description" content="全局注册注册一个全局组件：Vue.component(tagName, options)1234Vue.component(&apos;my-component&apos;, &amp;#123;	// 选项&amp;#125;)// 自定义标签的命名最好遵循 W3C 规则（小写，并且包含一个短杠）">
+  
+    <link rel="alternate" href="/atom.xml" title="yitian&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yitian&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">along the road</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Vue之组件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/30/Vue之组件/" class="article-date">
+  <time datetime="2017-10-30T03:47:03.000Z" itemprop="datePublished">2017-10-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue之组件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><p>注册一个全局组件：<code>Vue.component(tagName, options)</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</div><div class="line">	<span class="comment">// 选项</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">// 自定义标签的命名最好遵循 W3C 规则（小写，并且包含一个短杠）</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>组件在注册之后，便可以作为自定义元素 <code>&lt;my-component&gt;&lt;/my-component&gt;</code> 在一个实例的模板中使用。<br><strong>注意确保在初始化根实例之前注册组件：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">my-component</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 注册</span></div><div class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;A custom component!&lt;/div&gt;'</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">// 创建根实例</span></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>渲染为：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>A custom component!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h3><p>你不必把每个组件都注册到全局。你可以通过某个 Vue 实例/组件的实例选项 <code>components</code> 注册仅在其作用域中可用的组件：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Child = &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;A custom component!&lt;/div&gt;'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  components: &#123;</div><div class="line">    <span class="comment">// &lt;my-component&gt; 将只在父组件模板中可用</span></div><div class="line">    <span class="string">'my-component'</span>: Child</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>这种封装也适用于其它可注册的 Vue 功能，比如指令。</p>
+<h3 id="DOM-模板解析注意事项"><a href="#DOM-模板解析注意事项" class="headerlink" title="DOM 模板解析注意事项"></a>DOM 模板解析注意事项</h3><p>当使用 DOM 作为模板时 (例如，使用 el 选项来把 Vue 实例挂载到一个已有内容的元素上)，你会受到 HTML 本身的一些限制，因为 Vue 只有在浏览器解析、规范化模板之后才能获取其内容。尤其要注意，像 <code>&lt;ul&gt;、&lt;ol&gt;、&lt;table&gt;、&lt;select&gt;</code>这样的元素里允许包含的元素有限制，而另一些像 <code>&lt;option&gt;</code> 这样的元素只能出现在某些特定元素的内部。<br>在自定义组件中使用这些受限制的元素时会导致一些问题，例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">my-row</span>&gt;</span>...<span class="tag">&lt;/<span class="name">my-row</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>自定义组件 <code>&lt;my-row&gt;</code> 会被当作无效的内容，因此会导致错误的渲染结果。变通的方案是使用特殊的 <strong>is</strong> 特性：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span> <span class="attr">is</span>=<span class="string">"my-row"</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>应当注意，如果使用来自以下来源之一的字符串模板，则没有这些限制：</p>
+<p>1、 <code>&lt;script type=&quot;text/x-template&quot;&gt;</code><br>使用此方法，你的模板被定义在例如 index.html 文件中的 script 标签里。此 script 标签使用 <strong>text/x-template</strong> 标记，并由组件定义的 <strong>id</strong> 引用。<br>它允许你使用适当的 HTML 标记编写你的 HTML，不过不好的一面是，它把模板和组件定义的其它部分分离开来。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'my-checkbox'</span>, &#123;</div><div class="line">	<span class="attr">template</span>: <span class="string">'#checkbox-template'</span>, </div><div class="line">	data() &#123; </div><div class="line">		<span class="keyword">return</span> &#123; </div><div class="line">			<span class="attr">checked</span>: <span class="literal">false</span>, </div><div class="line">			<span class="attr">title</span>: <span class="string">'Check me'</span> </div><div class="line">		&#125;</div><div class="line">	&#125;, </div><div class="line">	<span class="attr">methods</span>: &#123; </div><div class="line">		check() &#123; </div><div class="line">			<span class="keyword">this</span>.checked = !<span class="keyword">this</span>.checked; </div><div class="line">		&#125;</div><div class="line">	&#125; </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"checkbox-template"</span>&gt;</span><span class="xml"> </span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"checkbox-wrapper"</span> @<span class="attr">click</span>=<span class="string">"check"</span>&gt;</span> </div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">"&#123; checkbox: true, checked: checked &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>2、 JavaScript 内联模板字符串<br>默认情况下，模板会被定义为一个字符串。然而字符串中的模板是非常难以理解的。除了广泛的浏览器支持之外，这种方法没有太多用处。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'my-checkbox'</span>, &#123;</div><div class="line">    <span class="attr">template</span>: <span class="string">'&lt;div class="checkbox-wrapper" @click="check"&gt;&lt;div :class="&#123; checkbox: true, checked: checked &#125;"&gt;&lt;/div&gt;&lt;div class="title"&gt;&lt;/div&gt;&lt;/div&gt;'</span>,</div><div class="line">    data() &#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            <span class="attr">checked</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">title</span>: <span class="string">'Check me'</span></div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>: &#123;</div><div class="line">        check() &#123;</div><div class="line">            <span class="keyword">this</span>.checked = !<span class="keyword">this</span>.checked; </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>3、 .vue 组件</p>
+<p>因此，请尽可能使用字符串模板。</p>
+<p> <a href="http://www.w3cplus.com/vue/seven-ways-to-define-a-component-template-by-vuejs.html?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">这篇文章有详细阐述，点击查看</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/10/30/Vue之组件/" data-id="cj9igrjq1000794uhr9d43qs5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/30/Vue之表单输入绑定/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue之表单输入绑定</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/10/30/Vue之组件/">Vue之组件</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/30/Vue之表单输入绑定/">Vue之表单输入绑定</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/29/Vue之事件处理/">Vue之事件处理</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/09/Vue的条件渲染及列表渲染/">Vue的条件渲染及列表渲染</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/05/框架学习之vue-js/">框架学习之vue.js</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 yitianZheng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
