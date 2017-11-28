@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>yitian&#39;s blog</title>
+  <title>Vue 过渡&amp;动画 | yitian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="start">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yitian&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="单元素/组件的过渡Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加 entering/leaving 过渡 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点一个典型的用 CSS 过渡的例子：12345678&amp;lt;div id=&quot;demo&quot;&amp;gt;  &amp;lt;button v-on:click=&quot;show = !show&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue 过渡&amp;动画">
+<meta property="og:url" content="http://yoursite.com/2017/11/28/Vue-过渡-动画/index.html">
 <meta property="og:site_name" content="yitian&#39;s blog">
-<meta property="og:description" content="start">
+<meta property="og:description" content="单元素/组件的过渡Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加 entering/leaving 过渡 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点一个典型的用 CSS 过渡的例子：12345678&amp;lt;div id=&quot;demo&quot;&amp;gt;  &amp;lt;button v-on:click=&quot;show = !show&quot;">
+<meta property="og:image" content="http://yoursite.com/2017/11/28/images/transition.png">
+<meta property="og:updated_time" content="2017-11-28T14:16:57.176Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yitian&#39;s blog">
-<meta name="twitter:description" content="start">
+<meta name="twitter:title" content="Vue 过渡&amp;动画">
+<meta name="twitter:description" content="单元素/组件的过渡Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加 entering/leaving 过渡 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点一个典型的用 CSS 过渡的例子：12345678&amp;lt;div id=&quot;demo&quot;&amp;gt;  &amp;lt;button v-on:click=&quot;show = !show&quot;">
+<meta name="twitter:image" content="http://yoursite.com/2017/11/28/images/transition.png">
   
     <link rel="alternate" href="/atom.xml" title="yitian&#39;s blog" type="application/atom+xml">
   
@@ -66,9 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Vue-过渡-动画" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Vue-过渡-动画" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/11/28/Vue-过渡-动画/" class="article-date">
   <time datetime="2017-11-28T07:16:36.000Z" itemprop="datePublished">2017-11-28</time>
@@ -81,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/28/Vue-过渡-动画/">Vue 过渡&amp;动画</a>
+    <h1 class="article-title" itemprop="name">
+      Vue 过渡&amp;动画
     </h1>
   
 
@@ -131,181 +132,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Vue之组件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/30/Vue之组件/" class="article-date">
-  <time datetime="2017-10-30T03:47:03.000Z" itemprop="datePublished">2017-10-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/30/Vue之组件/">Vue之组件</a>
-    </h1>
+    <a href="/2017/10/30/Vue之组件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue之组件</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><p>注册一个全局组件：<code>Vue.component(tagName, options)</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</div><div class="line">	<span class="comment">// 选项</span></div><div class="line">&#125;)</div><div class="line"><span class="comment">// 自定义标签的命名最好遵循 W3C 规则（小写，并且包含一个短杠）</span></div></pre></td></tr></table></figure></p>
-        
-          <p class="article-more-link">
-            <a href="/2017/10/30/Vue之组件/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/30/Vue之组件/" data-id="cjajn7h3q000dusuhn31ueb0c" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-Vue之表单输入绑定" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/30/Vue之表单输入绑定/" class="article-date">
-  <time datetime="2017-10-30T01:08:26.000Z" itemprop="datePublished">2017-10-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/30/Vue之表单输入绑定/">Vue之表单输入绑定</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="v-model-基础用法"><a href="#v-model-基础用法" class="headerlink" title="v-model 基础用法"></a>v-model 基础用法</h3><p>v-model 本质上是语法糖，它负责监听用户的输入事件以更新数据，并特别处理一些极端的例子。你可以用 v-model 指令在表单控件元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。</p>
-<p><strong>注意：v-model 会忽略所有表单元素的 value、checked、selected 特性的初始值。因为它会选择 Vue 实例数据来作为具体的值。你应该通过 JavaScript 在组件的 data 选项中声明初始值。(一定要给初始值，否则不能实现双向绑定)</strong><br>
-        
-          <p class="article-more-link">
-            <a href="/2017/10/30/Vue之表单输入绑定/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/30/Vue之表单输入绑定/" data-id="cjajn7h47000gusuhhmevsq3f" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Vue之事件处理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/29/Vue之事件处理/" class="article-date">
-  <time datetime="2017-10-29T12:44:31.000Z" itemprop="datePublished">2017-10-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/29/Vue之事件处理/">Vue之事件处理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="监听事件"><a href="#监听事件" class="headerlink" title="监听事件"></a>监听事件</h3><p>可以用 v-on 指令监听 DOM 事件来触发一些简单的 JavaScript 代码。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example-1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"counter += 1"</span>&gt;</span>增加 1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>这个按钮被点击了 &#123;&#123; counter &#125;&#125; 次。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> example1 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example-1'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">counter</span>: <span class="number">0</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2017/10/29/Vue之事件处理/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/29/Vue之事件处理/" data-id="cjajn7h3o000cusuhg8vf2990" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Vue的条件渲染及列表渲染" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/09/Vue的条件渲染及列表渲染/" class="article-date">
-  <time datetime="2017-10-09T14:52:10.000Z" itemprop="datePublished">2017-10-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/09/Vue的条件渲染及列表渲染/">Vue的条件渲染及列表渲染</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a><code>v-if</code></h3><p>1、在 Vue.js ，我们使用 v-if 指令实现同样的功能：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">//也可以用 v-else 添加一个 “else” 块：当 v-if 的值为假时，v-else 可见。</div><div class="line">//v-else 元素必须紧跟在 v-if 或者 v-else-if 元素的后面——否则它将不会被识别。</div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span>Yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span>No<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure></p>
-        
-          <p class="article-more-link">
-            <a href="/2017/10/09/Vue的条件渲染及列表渲染/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/09/Vue的条件渲染及列表渲染/" data-id="cjajn7h4d000iusuhytbx0s78" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">

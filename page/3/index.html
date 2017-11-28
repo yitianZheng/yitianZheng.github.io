@@ -68,6 +68,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JS之数据类型转化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/26/JS之数据类型转化/" class="article-date">
+  <time datetime="2017-07-26T15:11:48.000Z" itemprop="datePublished">2017-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/26/JS之数据类型转化/">JS之数据类型转化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>JavaScript的数据类型有七种：</p>
+<p>Boolean：布尔值，true 和 false 两个特定值</p>
+<p>Null：表示无值，即此处的值就是“无”的状态</p>
+<p>Undefined： 表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值</p>
+<p>Number：整数和小数</p>
+<p>String：字符组成的文本</p>
+<p>Symbol (这个是ES6新定义的数据类型)</p>
+<p>Object：各种值组成的集合</p>
+<p>其中Boolean、Null、Undefined、Number、String和Symbol称为原始类型，即它们是最基本的数据类型，不能再细分。而 Object 称为合成类型，因为一个对象往往是多个原始类型的值的合成，可以看作是一个存放各种值的容器。其中对象又可分成三个子类型：<br>侠义的对象（object）、数组（array）、函数（function）<br>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/26/JS之数据类型转化/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/26/JS之数据类型转化/" data-id="cjajn7h3e0008usuhhv72likp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JS模块化编程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/25/JS模块化编程/" class="article-date">
@@ -103,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/25/JS模块化编程/" data-id="cjajadll6000680uhkppc2hwe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/25/JS模块化编程/" data-id="cjajn7h3h0009usuh3gi43y1b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -148,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/25/认识前端工程化/" data-id="cjajadlmh000u80uhv21u1ix5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/25/认识前端工程化/" data-id="cjajn7h5o000uusuh2xsca3td" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/JSON浅析/" data-id="cjajadll6000580uhp21jjw5v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/24/JSON浅析/" data-id="cjajn7h360007usuhfmhq56q9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -238,52 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" data-id="cjajadlm1000h80uhza53ly94" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Ajax初体验" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/24/Ajax初体验/" class="article-date">
-  <time datetime="2017-07-24T01:48:50.000Z" itemprop="datePublished">2017-07-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/24/Ajax初体验/">Ajax初体验</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><h2>语法</h2><br>创建 XHR 对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div></pre></td></tr></table></figure><p></p>
-<p>低版本的IE需要使用以下语法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</div></pre></td></tr></table></figure></p>
-<p>兼容写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> xhr;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">createXMLHttprequest</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject)</div><div class="line">        xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</div><div class="line">        xmlHttp = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p></p><h2>用法</h2><br>使用 XHR 对象有两个方法：open() &amp; send()<p></p>
-<li>open() 接收三个参数：要发送的请求的类型（get、post等）、请求的 URL 和表示是否发送异步请求的布尔值（false为同步，true为异步。默认为true）<br><br>默认情况下，JavaScript在发送 AJAX请求 时，URL 的域名必须和当前页面完全一致。<br>完全一致的意思是，域名要相同（www.example.com和example.com不同），协议要相同（http和https不同），端口号要相同（默认是:80端口，它和:8080就不同）。<br></li><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">"get"</span>,<span class="string">"example.php"</span>,<span class="literal">false</span>);</div></pre></td></tr></table></figure><br><br>以上代码会启动一个针对 example.php 的 GET 请求。有两点需要注意：<br><br>1、URL 相对于执行代码的当前页面（也可使用绝对路径）。<br><br>2、调用 open() 方法时并不会真正发送请求，而是启动一个请求待发送。<br><br><li>若要发送一个特定的请求，必须调用 send()方法：</li><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.send(<span class="literal">null</span>);</div></pre></td></tr></table></figure><br><br>send() 方法接收一个参数，即作为请求主体发送的数据。若不需要发送数据，则必须传入 null，对于某些浏览器这个参数是必需的。<br>
-        
-          <p class="article-more-link">
-            <a href="/2017/07/24/Ajax初体验/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/24/Ajax初体验/" data-id="cjajadlkq000080uh086wr8dh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/24/js中substr-substring-indexOf-lastIndexOf的用法小结/" data-id="cjajn7h4j000ousuhjmmtrop9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -314,7 +318,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
     </div>
   </div>
 
@@ -325,6 +329,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/11/28/Vue-过渡-动画/">Vue 过渡&amp;动画</a>
+          </li>
         
           <li>
             <a href="/2017/10/30/Vue之组件/">Vue之组件</a>
@@ -340,10 +348,6 @@
         
           <li>
             <a href="/2017/10/09/Vue的条件渲染及列表渲染/">Vue的条件渲染及列表渲染</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/05/框架学习之vue-js/">框架学习之vue.js</a>
           </li>
         
       </ul>

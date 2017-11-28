@@ -68,6 +68,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Ajax初体验" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/24/Ajax初体验/" class="article-date">
+  <time datetime="2017-07-24T01:48:50.000Z" itemprop="datePublished">2017-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/24/Ajax初体验/">Ajax初体验</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><h2>语法</h2><br>创建 XHR 对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div></pre></td></tr></table></figure><p></p>
+<p>低版本的IE需要使用以下语法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</div></pre></td></tr></table></figure></p>
+<p>兼容写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> xhr;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">createXMLHttprequest</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject)</div><div class="line">        xmlHttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</div><div class="line">        xmlHttp = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p></p><h2>用法</h2><br>使用 XHR 对象有两个方法：open() &amp; send()<p></p>
+<li>open() 接收三个参数：要发送的请求的类型（get、post等）、请求的 URL 和表示是否发送异步请求的布尔值（false为同步，true为异步。默认为true）<br><br>默认情况下，JavaScript在发送 AJAX请求 时，URL 的域名必须和当前页面完全一致。<br>完全一致的意思是，域名要相同（www.example.com和example.com不同），协议要相同（http和https不同），端口号要相同（默认是:80端口，它和:8080就不同）。<br></li><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">"get"</span>,<span class="string">"example.php"</span>,<span class="literal">false</span>);</div></pre></td></tr></table></figure><br><br>以上代码会启动一个针对 example.php 的 GET 请求。有两点需要注意：<br><br>1、URL 相对于执行代码的当前页面（也可使用绝对路径）。<br><br>2、调用 open() 方法时并不会真正发送请求，而是启动一个请求待发送。<br><br><li>若要发送一个特定的请求，必须调用 send()方法：</li><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.send(<span class="literal">null</span>);</div></pre></td></tr></table></figure><br><br>send() 方法接收一个参数，即作为请求主体发送的数据。若不需要发送数据，则必须传入 null，对于某些浏览器这个参数是必需的。<br>
+        
+          <p class="article-more-link">
+            <a href="/2017/07/24/Ajax初体验/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/24/Ajax初体验/" data-id="cjajn7h2j0000usuhrw83glax" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-闭包之通俗理解" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/21/闭包之通俗理解/" class="article-date">
@@ -102,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/21/闭包之通俗理解/" data-id="cjajadlmh000v80uhg2qnw1hx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/21/闭包之通俗理解/" data-id="cjajn7h5r000wusuhezt3t5an" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/20/small-tips/" data-id="cjajadlm1000l80uh6t4h8ugl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/20/small-tips/" data-id="cjajn7h4b000husuhdv1i4471" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/19/范式初体验/" data-id="cjajadlmh000q80uhtprlooef" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/19/范式初体验/" data-id="cjajn7h5k000susuhmmi7tv5e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,49 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/19/prototype原型链/" data-id="cjajadlm1000j80uhcvu3p4ix" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Javascript内置对象" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/18/Javascript内置对象/" class="article-date">
-  <time datetime="2017-07-18T05:09:29.000Z" itemprop="datePublished">2017-07-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/Javascript内置对象/">Javascript内置对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>包括 Array, Boolean, Date, Function, Math, Number, RegExp, and String.</p>
-<p>分为基本类型：underfined, boolean, null, number, string 和引用类型。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/07/18/Javascript内置对象/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/18/Javascript内置对象/" data-id="cjajadll6000780uhjj3ai0oq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/19/prototype原型链/" data-id="cjajn7h4i000nusuh96lkcr5d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -290,7 +293,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
     </div>
   </div>
 
@@ -301,6 +304,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/11/28/Vue-过渡-动画/">Vue 过渡&amp;动画</a>
+          </li>
         
           <li>
             <a href="/2017/10/30/Vue之组件/">Vue之组件</a>
@@ -316,10 +323,6 @@
         
           <li>
             <a href="/2017/10/09/Vue的条件渲染及列表渲染/">Vue的条件渲染及列表渲染</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/05/框架学习之vue-js/">框架学习之vue.js</a>
           </li>
         
       </ul>
