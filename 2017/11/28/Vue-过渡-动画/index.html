@@ -5,17 +5,17 @@
   
   <title>Vue 过渡&amp;动画 | yitian&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单元素/组件的过渡Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加 entering/leaving 过渡 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点一个典型的用 CSS 过渡的例子：12345678&amp;lt;div id=&quot;demo&quot;&amp;gt;  &amp;lt;button v-on:click=&quot;show = !show&quot;">
+  <meta name="description" content="单元素/组件的过渡Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加 entering/leaving 过渡 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue 过渡&amp;动画">
 <meta property="og:url" content="http://yoursite.com/2017/11/28/Vue-过渡-动画/index.html">
 <meta property="og:site_name" content="yitian&#39;s blog">
-<meta property="og:description" content="单元素/组件的过渡Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加 entering/leaving 过渡 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点一个典型的用 CSS 过渡的例子：12345678&amp;lt;div id=&quot;demo&quot;&amp;gt;  &amp;lt;button v-on:click=&quot;show = !show&quot;">
+<meta property="og:description" content="单元素/组件的过渡Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加 entering/leaving 过渡 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点">
 <meta property="og:image" content="http://yoursite.com/2017/11/28/images/transition.png">
-<meta property="og:updated_time" content="2017-11-28T14:16:57.176Z">
+<meta property="og:updated_time" content="2017-11-29T13:49:50.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 过渡&amp;动画">
-<meta name="twitter:description" content="单元素/组件的过渡Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加 entering/leaving 过渡 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点一个典型的用 CSS 过渡的例子：12345678&amp;lt;div id=&quot;demo&quot;&amp;gt;  &amp;lt;button v-on:click=&quot;show = !show&quot;">
+<meta name="twitter:description" content="单元素/组件的过渡Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加 entering/leaving 过渡 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点">
 <meta name="twitter:image" content="http://yoursite.com/2017/11/28/images/transition.png">
   
     <link rel="alternate" href="/atom.xml" title="yitian&#39;s blog" type="application/atom+xml">
@@ -95,7 +95,7 @@
 <p><li>条件渲染 (使用 v-if)</li></p>
 <p><li>条件展示 (使用 v-show)</li></p>
 <p><li>动态组件</li></p>
-<p><li>组件根节点</li><br>一个典型的用 CSS 过渡的例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"show = !show"</span>&gt;</span></div><div class="line">    Toggle</div><div class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fade"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">"show"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><li>组件根节点</li><br><a id="more"></a><br>一个典型的用 CSS 过渡的例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"show = !show"</span>&gt;</span></div><div class="line">    Toggle</div><div class="line">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"fade"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">"show"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#demo'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">show</span>: <span class="literal">true</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.fade-enter-active</span>, <span class="selector-class">.fade-leave-active</span> &#123;</div><div class="line">  <span class="attribute">transition</span>: opacity .<span class="number">5s</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.fade-enter</span>, <span class="selector-class">.fade-leave-to</span> <span class="comment">/* .fade-leave-active in below version 2.1.8 */</span> &#123;</div><div class="line">  <span class="attribute">opacity</span>: <span class="number">0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>当插入或删除包含在 transition 组件中的元素时，Vue 将会做以下处理：<br>1、 自动嗅探目标元素是否应用了 CSS 过渡或动画，如果是，在恰当的时机添加/删除 CSS 类名。<br>2、 如果过渡组件提供了 JavaScript 钩子函数，这些钩子函数将在恰当的时机被调用。<br>3、 如果没有找到 JavaScript 钩子并且也没有检测到 CSS 过渡/动画，DOM 操作 (插入/删除) 在下一帧中立即执行。</p>
@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/28/Vue-过渡-动画/" data-id="cjajn7h330006usuhoe0oi6sa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/28/Vue-过渡-动画/" data-id="cjal3wr8700089ouhnp6ngh0a" class="article-share-link">Share</a>
       
       
     </footer>
