@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javascript中var let const声明的区别 | yitian&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="初步了解 let 用法后，觉得有必要总结一下 JS 中三种变量声明的区别，不然很容易混淆。（let &amp;amp; const 为 ES6 增加的声明命令）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript中var let const声明的区别">
+<meta property="og:url" content="http://yoursite.com/2018/01/30/javascript中var-let-const声明的区别/index.html">
+<meta property="og:site_name" content="yitian&#39;s blog">
+<meta property="og:description" content="初步了解 let 用法后，觉得有必要总结一下 JS 中三种变量声明的区别，不然很容易混淆。（let &amp;amp; const 为 ES6 增加的声明命令）">
+<meta property="og:image" content="http://yoursite.com/images/difference.png">
+<meta property="og:updated_time" content="2018-01-30T13:28:53.817Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript中var let const声明的区别">
+<meta name="twitter:description" content="初步了解 let 用法后，觉得有必要总结一下 JS 中三种变量声明的区别，不然很容易混淆。（let &amp;amp; const 为 ES6 增加的声明命令）">
+<meta name="twitter:image" content="http://yoursite.com/images/difference.png">
+  
+    <link rel="alternate" href="/atom.xml" title="yitian&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yitian&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">along the road</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javascript中var-let-const声明的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/30/javascript中var-let-const声明的区别/" class="article-date">
+  <time datetime="2018-01-30T12:22:09.000Z" itemprop="datePublished">2018-01-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript中var let const声明的区别
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>初步了解 let 用法后，觉得有必要总结一下 JS 中三种变量声明的区别，不然很容易混淆。（let &amp; const 为 ES6 增加的声明命令）<br><a id="more"></a></p>
+<h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><ul>
+<li><p>var 声明变量时，可以同时初始化变量。</p>
+</li>
+<li><p>使用 var 语句声明的变量的作用域是当前执行位置的上下文：一个函数的内部（声明在函数内）或者全局（声明在函数外）。<br><strong>注意：var 声明变量的作用域只能是全局域或者是函数域，而不能是块级域。</strong> 这是 var 和 let 声明变量的作用域最大的不同。</p>
+</li>
+<li><p>给一个非声明变量赋值会隐式创建一个全局变量（造成代码污染，成为全局object的一个属性）。声明变量和非声明变量的区别是：</p>
+</li>
+</ul>
+<ol>
+<li>声明变量的作用域限制在其声明位置的上下文中，而非声明变量总是全局的。</li>
+<li>声明变量在任何代码执行前创建，而非声明变量只有在执行赋值操作的时候才会被创建。</li>
+<li><p>声明变量是它所在上下文环境的不可配置属性（configurable: false），非声明变量在全局域中是可配置的（例如非声明变量可以用 delete 删除）。</p>
+<p>提倡必须使用声明变量！！！（无论是否在函数内）</p>
+</li>
+</ol>
+<ul>
+<li>变量提升：由于变量声明（以及其他声明）总是在任意代码执行之前处理的，所以在代码中的任意位置声明变量总是等效于在代码开头声明。这意味着变量可以在声明之前使用。这是 var 与 let 声明之间最大的不同。如下图：<br><img src="/images/difference.png" alt=""></li>
+</ul>
+<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><ul>
+<li><p>let 声明了一个块级域的局部变量，并且可以给它一个初始化值。</p>
+</li>
+<li><p>let 把变量的作用域限制在块级域中。</p>
+</li>
+<li><p>let 声明的变量作用域包含定义它的块以及任何包含的子块中。这点与 var 相似。</p>
+</li>
+<li><p>在同一个函数或同一个作用域中用 let 重复定义一个变量将引起 TypeError 。</p>
+</li>
+<li><p>let 提供了一种在块的范围内获取变量的值，而不会影响块外面名字相同的变量的值的方法。</p>
+</li>
+<li><p>let 不存在变量提升。</p>
+</li>
+</ul>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><ul>
+<li><p>const 声明创建一个只读的常量。这不意味着常量指向的值不可变，而是变量标识符的值只能赋值一次。(注意区分常量的值和常量指向的值的不同)<br>注：这点与Java C++中类似。即：指向常量的指针，表示这个指针不能改变所指向变量的值，仅表示“只读”。但是被指向的变量的值可以通过其他手段改变。</p>
+</li>
+<li><p>可以在全局作用域或者函数内声明常量，常量需要被初始化。</p>
+</li>
+<li><p>常量拥有块作用域，和使用 let 定义的变量十分相似。常量的值不能通过再赋值改变，也不能再次声明。</p>
+</li>
+<li><p>一个常量不能和它所在相同作用域内的其他变量或函数拥有相同的名称。</p>
+</li>
+<li><p>常量可以是一个具体的值，也可以是一个对象。注意：常量是对象时，对象内部的属性可变而不受保护。例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> myObject = &#123;<span class="string">"key"</span>:<span class="string">"value"</span>&#125;;</div><div class="line">myObject = &#123;<span class="string">"newKey"</span>:<span class="string">"newValue"</span>&#125;; <span class="comment">// 报错，常量不能再次赋值改变</span></div><div class="line">myObject.key = <span class="string">"newValue"</span>; <span class="comment">// 成功，可修改对象常量的属性</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="http://blog.csdn.net/woshizhhblog/article/details/53907005" target="_blank" rel="external">☆ 参阅此文章</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/30/javascript中var-let-const声明的区别/" data-id="cjd1md7ld000ljouhfcu6i3b4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/28/寒假-BEGIN/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">寒假--BEGIN</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/30/javascript中var-let-const声明的区别/">javascript中var let const声明的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/28/寒假-BEGIN/">寒假--BEGIN</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/20/ES6入门（一）/">ES6入门（一）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/28/Vue-过渡-动画/">Vue 过渡&amp;动画</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/30/Vue之组件/">Vue之组件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 yitianZheng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
