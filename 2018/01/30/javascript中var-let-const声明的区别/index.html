@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="yitian&#39;s blog">
 <meta property="og:description" content="初步了解 let 用法后，觉得有必要总结一下 JS 中三种变量声明的区别，不然很容易混淆。（let &amp;amp; const 为 ES6 增加的声明命令）">
 <meta property="og:image" content="http://yoursite.com/images/difference.png">
-<meta property="og:updated_time" content="2018-01-30T13:28:53.817Z">
+<meta property="og:updated_time" content="2018-01-31T14:23:41.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript中var let const声明的区别">
 <meta name="twitter:description" content="初步了解 let 用法后，觉得有必要总结一下 JS 中三种变量声明的区别，不然很容易混淆。（let &amp;amp; const 为 ES6 增加的声明命令）">
@@ -127,7 +127,7 @@
 <h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><ul>
 <li><p>const 声明创建一个只读的常量。这不意味着常量指向的值不可变，而是变量标识符的值只能赋值一次。(注意区分常量的值和常量指向的值的不同)<br>注：这点与Java C++中类似。即：指向常量的指针，表示这个指针不能改变所指向变量的值，仅表示“只读”。但是被指向的变量的值可以通过其他手段改变。</p>
 </li>
-<li><p>可以在全局作用域或者函数内声明常量，常量需要被初始化。</p>
+<li><p>可以在全局作用域或者函数内声明常量，声明后必须同时赋值。对于const来说，只声明不赋值，就会报错。</p>
 </li>
 <li><p>常量拥有块作用域，和使用 let 定义的变量十分相似。常量的值不能通过再赋值改变，也不能再次声明。</p>
 </li>
@@ -142,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/30/javascript中var-let-const声明的区别/" data-id="cjd1md7ld000ljouhfcu6i3b4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/30/javascript中var-let-const声明的区别/" data-id="cjd37a47r000knwuh9zlm4o5z" class="article-share-link">Share</a>
       
       
     </footer>
