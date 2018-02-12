@@ -68,6 +68,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ES6入门（三）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/08/ES6入门（三）/" class="article-date">
+  <time datetime="2018-02-08T14:34:00.000Z" itemprop="datePublished">2018-02-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/08/ES6入门（三）/">ES6入门（三）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h2><h3 id="字符的-Unicode-表示法"><a href="#字符的-Unicode-表示法" class="headerlink" title="字符的 Unicode 表示法"></a>字符的 Unicode 表示法</h3><p>JavaScript 允许采用 \uxxxx 形式表示一个字符，其中 xxxx 表示字符的 Unicode 码点。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">"\u0061"</span></div><div class="line"><span class="comment">// "a"</span></div></pre></td></tr></table></figure></p>
+<p>但是，这种表示法只限于码点在 \u0000~\uFFFF 之间的字符。超出这个范围的字符，必须用两个双字节的形式表示。</p>
+<p>ES6 对这一点做出了改进，只要将码点放入大括号，就能正确解读该字符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="string">"\u&#123;20BB7&#125;"</span></div><div class="line"><span class="comment">// "𠮷"</span></div><div class="line"></div><div class="line"><span class="string">"\u&#123;41&#125;\u&#123;42&#125;\u&#123;43&#125;"</span></div><div class="line"><span class="comment">// "ABC"</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> hello = <span class="number">123</span>;</div><div class="line">hell\u&#123;<span class="number">6</span>F&#125; <span class="comment">// 123</span></div><div class="line"></div><div class="line"><span class="string">'\u&#123;1F680&#125;'</span> === <span class="string">'\uD83D\uDE80'</span></div><div class="line"><span class="comment">// true</span></div><div class="line"><span class="comment">// 大括号表示法与四字节的 UTF-16 编码是等价的。</span></div></pre></td></tr></table></figure></p>
+<p>有了这种表示法之后，JavaScript 共有 6 种方法可以表示一个字符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="string">'\z'</span> === <span class="string">'z'</span>  <span class="comment">// true</span></div><div class="line"><span class="string">'\172'</span> === <span class="string">'z'</span> <span class="comment">// true</span></div><div class="line"><span class="string">'\x7A'</span> === <span class="string">'z'</span> <span class="comment">// true</span></div><div class="line"><span class="string">'\u007A'</span> === <span class="string">'z'</span> <span class="comment">// true</span></div><div class="line"><span class="string">'\u&#123;7A&#125;'</span> === <span class="string">'z'</span> <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/08/ES6入门（三）/" data-id="cjdkd11gc000070uh1a89wo6o" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ES6入门（二）" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/02/02/ES6入门（二）/" class="article-date">
@@ -99,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/02/ES6入门（二）/" data-id="cjdeegibe0000v0uheae3x8kl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/02/ES6入门（二）/" data-id="cjdkd11gw000670uhinmmo48q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/30/javascript中var-let-const声明的区别/" data-id="cjdeegicz000hv0uhmlo0jd9u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/30/javascript中var-let-const声明的区别/" data-id="cjdkd11i0000p70uh0f8ee68e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/28/寒假-BEGIN/" data-id="cjdeegidg000rv0uhwxka1b84" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/28/寒假-BEGIN/" data-id="cjdkd11ia000u70uhi2o3dnxf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -218,49 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/20/ES6入门（一）/" data-id="cjdeegibq0003v0uhif0x7o5f" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Vue-过渡-动画" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/28/Vue-过渡-动画/" class="article-date">
-  <time datetime="2017-11-28T07:16:36.000Z" itemprop="datePublished">2017-11-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/28/Vue-过渡-动画/">Vue 过渡&amp;动画</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="单元素-组件的过渡"><a href="#单元素-组件的过渡" class="headerlink" title="单元素/组件的过渡"></a>单元素/组件的过渡</h3><p>Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加 entering/leaving 过渡</p>
-<li>条件渲染 (使用 v-if)</li><br><li>条件展示 (使用 v-show)</li><br><li>动态组件</li><br><li>组件根节点</li><br>
-        
-          <p class="article-more-link">
-            <a href="/2017/11/28/Vue-过渡-动画/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/28/Vue-过渡-动画/" data-id="cjdeegicr000dv0uht30bozvj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/20/ES6入门（一）/" data-id="cjdkd11gw000570uhf4rfp8sz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -291,7 +289,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
     </div>
   </div>
 
@@ -302,6 +300,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/02/08/ES6入门（三）/">ES6入门（三）</a>
+          </li>
         
           <li>
             <a href="/2018/02/02/ES6入门（二）/">ES6入门（二）</a>
@@ -317,10 +319,6 @@
         
           <li>
             <a href="/2018/01/20/ES6入门（一）/">ES6入门（一）</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/28/Vue-过渡-动画/">Vue 过渡&amp;动画</a>
           </li>
         
       </ul>
