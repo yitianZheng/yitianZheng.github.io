@@ -91,14 +91,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h2><h3 id="字符的-Unicode-表示法"><a href="#字符的-Unicode-表示法" class="headerlink" title="字符的 Unicode 表示法"></a>字符的 Unicode 表示法</h3><p>JavaScript 允许采用 \uxxxx 形式表示一个字符，其中 xxxx 表示字符的 Unicode 码点。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">"\u0061"</span></div><div class="line"><span class="comment">// "a"</span></div></pre></td></tr></table></figure></p>
-<p>但是，这种表示法只限于码点在 \u0000~\uFFFF 之间的字符。超出这个范围的字符，必须用两个双字节的形式表示。</p>
-<p>ES6 对这一点做出了改进，只要将码点放入大括号，就能正确解读该字符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="string">"\u&#123;20BB7&#125;"</span></div><div class="line"><span class="comment">// "𠮷"</span></div><div class="line"></div><div class="line"><span class="string">"\u&#123;41&#125;\u&#123;42&#125;\u&#123;43&#125;"</span></div><div class="line"><span class="comment">// "ABC"</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> hello = <span class="number">123</span>;</div><div class="line">hell\u&#123;<span class="number">6</span>F&#125; <span class="comment">// 123</span></div><div class="line"></div><div class="line"><span class="string">'\u&#123;1F680&#125;'</span> === <span class="string">'\uD83D\uDE80'</span></div><div class="line"><span class="comment">// true</span></div><div class="line"><span class="comment">// 大括号表示法与四字节的 UTF-16 编码是等价的。</span></div></pre></td></tr></table></figure></p>
-<p>有了这种表示法之后，JavaScript 共有 6 种方法可以表示一个字符。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="string">'\z'</span> === <span class="string">'z'</span>  <span class="comment">// true</span></div><div class="line"><span class="string">'\172'</span> === <span class="string">'z'</span> <span class="comment">// true</span></div><div class="line"><span class="string">'\x7A'</span> === <span class="string">'z'</span> <span class="comment">// true</span></div><div class="line"><span class="string">'\u007A'</span> === <span class="string">'z'</span> <span class="comment">// true</span></div><div class="line"><span class="string">'\u&#123;7A&#125;'</span> === <span class="string">'z'</span> <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
-
+<p>但是，这种表示法只限于码点在 \u0000~\uFFFF 之间的字符。超出这个范围的字符，必须用两个双字节的形式表示。<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/02/08/ES6入门（三）/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/08/ES6入门（三）/" data-id="cjdkd11gc000070uh1a89wo6o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/08/ES6入门（三）/" data-id="cjdy80ivk0000hguh0696mbzc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/02/ES6入门（二）/" data-id="cjdkd11gw000670uhinmmo48q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/02/ES6入门（二）/" data-id="cjdy80iwo0005hguh5lmb4z70" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/30/javascript中var-let-const声明的区别/" data-id="cjdkd11i0000p70uh0f8ee68e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/30/javascript中var-let-const声明的区别/" data-id="cjdy80ixi000ohguhadqi1vhy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/28/寒假-BEGIN/" data-id="cjdkd11ia000u70uhi2o3dnxf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/28/寒假-BEGIN/" data-id="cjdy80ixs000whguh3tiy1hp0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -258,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/20/ES6入门（一）/" data-id="cjdkd11gw000570uhf4rfp8sz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/20/ES6入门（一）/" data-id="cjdy80iwe0004hguhfnby93zt" class="article-share-link">Share</a>
       
       
     </footer>
