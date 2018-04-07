@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>一些零碎的笔记 | yitian&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="运算符今天在一个公众号文章里看到一道题目：12&apos;5&apos; + 3&apos;5&apos; - 3 输出结果会是什么呢？我在控制台试了一下，结果是：12&apos;5&apos; + 3  // =&amp;gt; &apos;53&apos;&apos;5&apos; - 3  // =&amp;gt; 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些零碎的笔记">
+<meta property="og:url" content="http://yoursite.com/2018/04/07/一些零碎的笔记/index.html">
+<meta property="og:site_name" content="yitian&#39;s blog">
+<meta property="og:description" content="运算符今天在一个公众号文章里看到一道题目：12&apos;5&apos; + 3&apos;5&apos; - 3 输出结果会是什么呢？我在控制台试了一下，结果是：12&apos;5&apos; + 3  // =&amp;gt; &apos;53&apos;&apos;5&apos; - 3  // =&amp;gt; 2">
+<meta property="og:updated_time" content="2018-04-07T06:08:05.361Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一些零碎的笔记">
+<meta name="twitter:description" content="运算符今天在一个公众号文章里看到一道题目：12&apos;5&apos; + 3&apos;5&apos; - 3 输出结果会是什么呢？我在控制台试了一下，结果是：12&apos;5&apos; + 3  // =&amp;gt; &apos;53&apos;&apos;5&apos; - 3  // =&amp;gt; 2">
+  
+    <link rel="alternate" href="/atom.xml" title="yitian&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yitian&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">along the road</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-一些零碎的笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/07/一些零碎的笔记/" class="article-date">
+  <time datetime="2018-04-07T02:47:29.000Z" itemprop="datePublished">2018-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      一些零碎的笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>今天在一个公众号文章里看到一道题目：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">'5'</span> + <span class="number">3</span></div><div class="line"><span class="string">'5'</span> - <span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>输出结果会是什么呢？我在控制台试了一下，结果是：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">'5'</span> + <span class="number">3</span>  <span class="comment">// =&gt; '53'</span></div><div class="line"><span class="string">'5'</span> - <span class="number">3</span>  <span class="comment">// =&gt; 2</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>在 MDN 上复习了一下相关知识点。</p>
+<p>加法运算符的作用是数值求和，或者字符串拼接。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Number + Number -&gt; 数字相加</span></div><div class="line"><span class="number">1</span> + <span class="number">2</span> <span class="comment">// 3</span></div><div class="line"></div><div class="line"><span class="comment">// Boolean + Number -&gt; 数字相加</span></div><div class="line"><span class="literal">true</span> + <span class="number">1</span> <span class="comment">// 2</span></div><div class="line"></div><div class="line"><span class="comment">// Boolean + Boolean -&gt; 数字相加</span></div><div class="line"><span class="literal">false</span> + <span class="literal">false</span> <span class="comment">// 0</span></div><div class="line"></div><div class="line"><span class="comment">// Number + String -&gt; 字符串连接</span></div><div class="line"><span class="number">5</span> + <span class="string">"foo"</span> <span class="comment">// "5foo"</span></div><div class="line"></div><div class="line"><span class="comment">// String + Boolean -&gt; 字符串连接</span></div><div class="line"><span class="string">"foo"</span> + <span class="literal">false</span> <span class="comment">// "foofalse"</span></div><div class="line"></div><div class="line"><span class="comment">// String + String -&gt; 字符串连接</span></div><div class="line"><span class="string">"foo"</span> + <span class="string">"bar"</span> <span class="comment">// "foobar"</span></div></pre></td></tr></table></figure></p>
+<p>我自己的理解是：转换类型的优先级 Boolean &lt; Number &lt; String，布尔值与布尔值或数字相加，布尔值都先转换成数字，再做加法；数字和字符串相加，数字转换成字符串，再进行字符串的拼接。</p>
+<p>JS 运算符，除了加法有类型转换的歧义外，其他减、乘、除、求余运算都会先转换运算符两边的类型为 Number 后再做运算。</p>
+<h2 id="特殊值"><a href="#特殊值" class="headerlink" title="特殊值"></a>特殊值</h2><p>JavaScript 总共有 7 种数据类型：</p>
+<ul>
+<li><p>基本数据类型：number，string，boolean</p>
+</li>
+<li><p>复合数据类型：object（对象，数组，还有一些专用对象如：Date，Error，RegExp）</p>
+</li>
+<li><p>函数数据类型：function</p>
+</li>
+<li><p>特殊数据类型：null，undefined</p>
+</li>
+</ul>
+<p>Number 类型包括两个特殊值：NaN 和 Infinity。</p>
+<p>NaN：当一个运算产生了未定义的结果或该运算发生错误，则返回一个非数字的特殊值 NaN。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">0</span>/<span class="number">0</span>;  </div><div class="line"><span class="built_in">console</span>.log(num);  <span class="comment">// =&gt; NaN  </span></div><div class="line"><span class="string">"foo"</span> - <span class="number">3</span>;  <span class="comment">// =&gt; NaN</span></div></pre></td></tr></table></figure></p>
+<p>NaN 不和任何数值相等，包括它本身。这一点可以用来判断一个值是否为 NaN。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="literal">NaN</span>;  </div><div class="line"><span class="keyword">var</span> b = <span class="literal">NaN</span>;  </div><div class="line"><span class="built_in">console</span>.log(a == b);  <span class="comment">// =&gt; false</span></div><div class="line"><span class="string">``</span><span class="string">`  </span></div><div class="line">Infinity：当一个浮点数超过了 JavaScript 所能表示的最大值时，其结果为一个特殊的无穷大值Infinity。</div><div class="line">`<span class="string">``</span> javascript</div><div class="line"><span class="keyword">var</span> a = <span class="number">9e999999</span>;  </div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// =&gt; Infinity  </span></div><div class="line"><span class="literal">Infinity</span> * <span class="number">0</span>  <span class="comment">// =&gt; NaN</span></div><div class="line"><span class="literal">Infinity</span> * <span class="literal">Infinity</span>  <span class="comment">// =&gt; Infinity</span></div><div class="line"><span class="number">2.0</span> / <span class="number">0</span>    <span class="comment">// =&gt; Infinity</span></div><div class="line"><span class="number">2.0</span> / <span class="number">0.0</span>  <span class="comment">// =&gt; Infinity </span></div><div class="line"><span class="number">2.0</span> / <span class="number">-0.0</span>  <span class="comment">// =&gt; -Infinity</span></div></pre></td></tr></table></figure></p>
+<p>JS 的特殊数据类型包括 null 和 undefined。</p>
+<p>null：表示无值，有别于其他所有值， 如果一个变量的值为 null，表示该变量的值不是一个有效的对象（数字/字符串…）。<br><strong>注意：JavaScript 中，typeof 运算符将报告 null 值为 Object 类型，而非 null 类型，这点潜在的混淆是为了向下兼容</strong></p>
+<p>undefined 表示：1、未定义的数据 2、定义未赋值的数据 3、不存在的属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a;  </div><div class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// =&gt; undefined  </span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.abcdef);  <span class="comment">// =&gt; undefined</span></div></pre></td></tr></table></figure></p>
+<p>typeof 运算符将 Date 和 Array 都认为是 Object 类型，要区分可用对象的 constructor 属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"123"</span>;  </div><div class="line"><span class="built_in">console</span>.log(str.constructor == <span class="built_in">String</span>);  <span class="comment">// =&gt; true  </span></div><div class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];  </div><div class="line"><span class="built_in">console</span>.log(array.constructor == <span class="built_in">Array</span>);  <span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure></p>
+<p>也可以使用 instanceof 关键字<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(date <span class="keyword">instanceof</span> <span class="built_in">Date</span>);  <span class="comment">// =&gt; true</span></div></pre></td></tr></table></figure></p>
+<h2 id="精度"><a href="#精度" class="headerlink" title="精度"></a>精度</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 加法 =====================</span></div><div class="line"><span class="comment">// 0.1 + 0.2 = 0.30000000000000004</span></div><div class="line"><span class="comment">// 0.7 + 0.1 = 0.7999999999999999</span></div><div class="line"><span class="comment">// 0.2 + 0.4 = 0.6000000000000001</span></div><div class="line"><span class="comment">// 2.22 + 0.1 = 2.3200000000000003</span></div><div class="line"> </div><div class="line"><span class="comment">// 减法 =====================</span></div><div class="line"><span class="comment">// 1.5 - 1.2 = 0.30000000000000004</span></div><div class="line"><span class="comment">// 0.3 - 0.2 = 0.09999999999999998</span></div><div class="line"> </div><div class="line"><span class="comment">// 乘法 =====================</span></div><div class="line"><span class="comment">// 19.9 * 100 = 1989.9999999999998</span></div><div class="line"><span class="comment">// 19.9 * 10 * 10 = 1990</span></div><div class="line"><span class="comment">// 1306377.64 * 100 = 130637763.99999999</span></div><div class="line"><span class="comment">// 1306377.64 * 10 * 10 = 130637763.99999999</span></div><div class="line"><span class="comment">// 0.7 * 180 = 125.99999999999999</span></div><div class="line"><span class="comment">// 9.7 * 100 = 969.9999999999999</span></div><div class="line"><span class="comment">// 39.7 * 100 = 3970.0000000000005</span></div><div class="line"> </div><div class="line"><span class="comment">// 除法 =====================</span></div><div class="line"><span class="comment">// 0.3 / 0.1 = 2.9999999999999996</span></div><div class="line"><span class="comment">// 0.69 / 10 = 0.06899999999999999</span></div></pre></td></tr></table></figure>
+<p>在 JavaScript 中整数和浮点数都属于 Number 数据类型，所有数字都是以 64 位浮点数形式储存，即便整数也是如此。<br>计算机是按照二进制来处理数的，所以小数也是转换为二进制来计算的，且 JS 采用的是 64 位双精度浮点数，支持小数最多到 53 位，而且很多小数的二进制都是无限循环小数。<br>但控制台输出结果，0.2-0.1 的确是 0.1，动笔计算一下过程验证一下：0.2 二进制为 0.00110011…001101，0.1 二进制为 0.000110011…001101，其实看出来 0.2 的二进制相对于 0.1 的二进制是做了 1 位的位移，二进制相减的结果整好和减数的二进制相等，也就是 0.2(二进制)  - 0.1(二进制) = 0.1(二进制)。小数相减 0.8-0.4，0.6-0.3 这一类都是这样，二进制运算与数学运算结果恰好相等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/07/一些零碎的笔记/" data-id="cjfoucs89000jgguh98vr95lr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/02/08/ES6入门（三）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ES6入门（三）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">24</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/07/一些零碎的笔记/">一些零碎的笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/08/ES6入门（三）/">ES6入门（三）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/02/ES6入门（二）/">ES6入门（二）</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/30/javascript中var-let-const声明的区别/">javascript中var let const声明的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/28/寒假-BEGIN/">寒假--BEGIN</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 yitianZheng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
